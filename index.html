@@ -1042,7 +1042,7 @@
                 <!-- Left Column: Content -->
                 <div class="space-y-12">
                     <div class="space-y-6">
-                        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 tracking-tighter leading-[1.1]">
+                        <h2 class="text-5xl md:text-5xl font-bold text-gray-900 tracking-tighter leading-[1.1]">
                             Make your users fall in love with Sales!
                         </h2>
                         <p class="text-xl text-gray-600 font-bold max-w-xl leading-relaxed">
@@ -1077,7 +1077,7 @@
                     <!-- Dynamic Description Area -->
                     <div id="agent-description"
                         class="pt-10 border-t border-gray-100 min-h-[140px] transition-opacity duration-300">
-                        <p class="text-gray-600 text-xl leading-relaxed">
+                        <p class="text-gray-600 text-base leading-relaxed">
                             SuDu learns from your production guidelines and acts as a virtual coach, guiding your
                             planners through the complex scheduling process with real-time AI optimization.
                         </p>
@@ -1088,11 +1088,13 @@
                         <p class="metric-label text-[13px] uppercase tracking-[0.2em] text-gray-400 font-bold mb-3">
                             Adoption rate of automated planning
                         </p>
-                        <div class="metric-value text-6xl font-bold text-gray-900 tracking-tighter">98% +</div>
+                        <div
+                            class="metric-value text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#35E5A2] to-[#33DDFF] tracking-tighter">
+                            98% +</div>
                     </div>
 
                     <a href="waitlist.html"
-                        class="inline-flex items-center justify-center px-10 py-5 bg-black text-white font-bold rounded-2xl hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                        class="inline-flex items-center justify-center px-10 py-5 bg-[#011916] text-white font-bold rounded-2xl hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-[0.98]">
                         Request Demo
                     </a>
                 </div>
@@ -1177,7 +1179,11 @@
             }
         ];
 
-        function switchAgent(index) {
+        let currentAgentIndex = 0;
+        let autoSlideInterval;
+
+        function switchAgent(index, resetTimer = true) {
+            currentAgentIndex = index;
             const tabs = document.querySelectorAll('.agent-tab');
             const descArea = document.getElementById('agent-description');
             const metricLabel = document.querySelector('.metric-label');
@@ -1211,7 +1217,26 @@
 
                 descArea.style.opacity = 1;
             }, 200);
+
+            // Reset auto-slide timer when user manually clicks
+            if (resetTimer) {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
         }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                currentAgentIndex = (currentAgentIndex + 1) % agents.length;
+                switchAgent(currentAgentIndex, false);
+            }, 4000); // Change slide every 4 seconds
+        }
+
+        // Initialize: Start from index 0 (Text) and begin auto-slide
+        document.addEventListener('DOMContentLoaded', () => {
+            switchAgent(0, false);
+            startAutoSlide();
+        });
     </script>
 
     <!-- Benefits Section (Features) -->
