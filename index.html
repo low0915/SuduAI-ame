@@ -1561,6 +1561,218 @@
     </script>
 
 
+    <section class="rillet-section">
+        <style>
+            .rillet-section {
+                font-family: Inter, sans-serif;
+                background: #ffffff;
+                color: #1f2937;
+                padding: 60px 20px;
+            }
+
+            .rillet-container {
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            .rillet-title {
+                text-align: center;
+                font-size: 40px;
+                margin-bottom: 10px;
+            }
+
+            .rillet-subtitle {
+                text-align: center;
+                max-width: 760px;
+                margin: 0 auto 40px;
+                line-height: 1.6;
+                color: #6b7280;
+            }
+
+            /* ===== GRID: 2 CARDS PER ROW ===== */
+            .rillet-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+            }
+
+            /* ===== CARD ===== */
+            .rillet-card {
+                background: #f3f4f6;
+                border: 1px solid #e5e7eb;
+                border-radius: 18px;
+                padding: 28px;
+                position: relative;
+                transition: all .35s ease;
+                min-height: 220px;
+                overflow: hidden;
+            }
+
+            .rillet-card h3 {
+                margin: 0 0 16px;
+                font-size: 26px;
+                font-weight: 600;
+            }
+
+            .rillet-card ul {
+                margin: 0;
+                padding-left: 22px;
+                line-height: 1.8;
+            }
+
+            .rillet-card li {
+                margin-bottom: 8px;
+            }
+
+            /* ===== EXPAND AREA ===== */
+            .rillet-more {
+                margin-top: 14px;
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all .35s ease;
+                color: #4b5563;
+                line-height: 1.7;
+            }
+
+            /* ===== BUTTON ===== */
+            .rillet-btn {
+                display: inline-block;
+                margin-top: 18px;
+                padding: 12px 18px;
+                border-radius: 12px;
+                border: 1px solid #d1d5db;
+                text-decoration: none;
+                color: #111827;
+                font-weight: 500;
+                transition: all .25s ease;
+                background: white;
+            }
+
+            .rillet-btn:hover {
+                background: #111827;
+                color: white;
+            }
+
+            /* ===== FEATURE CARD (LIKE IMAGE 2) ===== */
+            .rillet-card.feature {
+                background: #b8d8bd;
+                border: none;
+            }
+
+            .rillet-badge {
+                position: absolute;
+                top: -14px;
+                left: 26px;
+                background: #eef2ff;
+                color: #4f46e5;
+                border: 2px solid #c7d2fe;
+                font-size: 13px;
+                padding: 6px 12px;
+                border-radius: 999px;
+                font-weight: 600;
+            }
+
+            /* ===== HOVER EXPAND LIKE IMAGE 2 ===== */
+            .rillet-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+            }
+
+            .rillet-card:hover .rillet-more {
+                opacity: 1;
+                max-height: 200px;
+            }
+
+            /* When hovering a feature card, make it span full row */
+            .rillet-card.feature:hover {
+                grid-column: span 2;
+            }
+
+            /* ===== MOBILE ===== */
+            @media (max-width: 720px) {
+                .rillet-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .rillet-card.feature:hover {
+                    grid-column: span 1;
+                }
+            }
+        </style>
+
+        <div class="rillet-container">
+            <h2 class="rillet-title font-bold py-12">Why Teams Choose SuDu AI</h2>
+
+
+            <div class="rillet-grid">
+
+                <!-- NetSuite -->
+                <div class="rillet-card">
+                    <h3>NetSuite</h3>
+                    <ul>
+                        <li>Long implementations</li>
+                        <li>Custom scripts and workarounds</li>
+                        <li>Expensive consultants to stay operational</li>
+                    </ul>
+                    <div class="rillet-more">
+                        Additional setup complexity, heavy customization layers, and ongoing admin cost.
+                    </div>
+                    <a href="#" class="rillet-btn">Compare →</a>
+                </div>
+
+                <!-- NetSuite -->
+                <div class="rillet-card">
+                    <h3>NetSuite</h3>
+                    <ul>
+                        <li>Long implementations</li>
+                        <li>Custom scripts and workarounds</li>
+                        <li>Expensive consultants to stay operational</li>
+                    </ul>
+                    <div class="rillet-more">
+                        Additional setup complexity, heavy customization layers, and ongoing admin cost.
+                    </div>
+                    <a href="#" class="rillet-btn">Compare →</a>
+                </div>
+
+                <!-- Sage -->
+                <div class="rillet-card">
+                    <h3>Sage Intacct</h3>
+                    <ul>
+                        <li>Manual reconciliations</li>
+                        <li>Rigid reporting</li>
+                        <li>Data spread across tools</li>
+                    </ul>
+                    <div class="rillet-more">
+                        Requires extra reporting layers and multiple external dashboards.
+                    </div>
+                    <a href="#" class="rillet-btn">Compare →</a>
+                </div>
+
+                <!-- QuickBooks -->
+                <div class="rillet-card">
+                    <h3>QuickBooks</h3>
+                    <ul>
+                        <li>No real multi-entity support</li>
+                        <li>Spreadsheet metrics</li>
+                        <li>Breaks as you scale</li>
+                    </ul>
+                    <div class="rillet-more">
+                        Heavy spreadsheet reliance and manual SaaS metric tracking.
+                    </div>
+                    <a href="#" class="rillet-btn">Compare →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
 
 
 
