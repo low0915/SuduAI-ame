@@ -391,7 +391,7 @@
     <section id="products-dual" class="py-24 bg-white relative overflow-hidden reveal">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-tight">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#06390C] tracking-tight leading-tight">
                     Two separate products <br> that are better together.
                 </h2>
 
@@ -1043,7 +1043,7 @@
                 <!-- Left Column: Content -->
                 <div class="space-y-12">
                     <div class="space-y-6">
-                        <h2 class="text-5xl md:text-5xl font-bold text-gray-900 tracking-tighter leading-[1.1]">
+                        <h2 class="text-5xl md:text-5xl font-bold text-[#06390C] tracking-tighter leading-[1.1]">
                             Make your users fall in love with Sales!
                         </h2>
                         <p class="text-xl text-gray-600 font-bold max-w-xl leading-relaxed">
@@ -1095,7 +1095,7 @@
                     </div>
 
                     <a href=""
-                        class="inline-flex items-center justify-center px-10 py-5 bg-[#011916] text-white font-bold rounded-2xl hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                        class="inline-flex items-center justify-center px-10 py-5 bg-[#06390C] text-white font-bold rounded-2xl hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-[0.98]">
                         Request Demo
                     </a>
                 </div>
@@ -1355,7 +1355,7 @@
         </div>
     </section>
 
-    <section class="bg-gradient-to-b from-white to-blue-50 py-16">
+    <section class="bg-gradient-to-b from-white to-emerald-100 py-16">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
@@ -1430,6 +1430,95 @@
         </div>
     </section>
 
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+
+            <!-- Title -->
+            <h2 class="text-3xl md:text-4xl font-semibold mb-14 text-[#06390C]">
+                Measurable Impact, in Weeks
+            </h2>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <p class="text-sm text-[#06390C] font-bold mb-4">
+                        📦 Inventory Accuracy
+                    </p>
+                    <p class="text-5xl font-semibold text-[#06390C] mb-4">
+                        +<span class="counter" data-target="80">0</span>%
+                    </p>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Stock Updates Improve Accuracy
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <p class="text-sm text-[#06390C] font-bold mb-4">
+                        ⏱️ Operational Efficiency
+                    </p>
+                    <p class="text-5xl font-semibold text-[#06390C] mb-4">
+                        -<span class="counter" data-target="50">0</span>%
+                    </p>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Reduction In Manual Work
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                    <p class="text-sm text-[#06390C] mb-4">
+                        🏭 Production Performance
+                    </p>
+                    <p class="text-5xl font-semibold text-[#06390C] mb-4">
+                        +<span class="counter" data-target="20">0</span>%
+                    </p>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Faster Production Cycle
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        let started = false;
+
+        const startCount = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = 200;
+
+                const updateCount = () => {
+                    const increment = target / speed;
+                    if (count < target) {
+                        count += increment;
+                        counter.innerText = Math.ceil(count);
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && !started) {
+                started = true;
+                startCount();
+            }
+        }, { threshold: 0.4 });
+
+        observer.observe(document.querySelector('.counter'));
+    </script>
 
 
 
