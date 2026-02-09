@@ -597,6 +597,46 @@
             }
         </style>
     </noscript>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'sudu-main': '#011916',
+                        'sudu-sec': '#35E5A2',
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#35E5A2',
+                            500: '#2ec28b',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#011916',
+                            950: '#002104',
+                        },
+                        dark: {
+                            bg: '#011916',
+                            surface: '#004708',
+                            border: '#35E5A2'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #35E5A233 0deg, #01191600 360deg)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body
@@ -605,144 +645,115 @@
 
     <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-    <header data-elementor-type="header" data-elementor-id="10397"
-        class="elementor elementor-10397 elementor-location-header" data-elementor-post-type="elementor_library">
-        <div class="elementor-element elementor-element-730876e elementor-hidden-mobile e-flex e-con-boxed e-con e-parent"
-            data-id="730876e" data-element_type="container"
-            data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
-            <div class="e-con-inner">
-                <div class="elementor-element elementor-element-b696818 e-flex e-con-boxed e-con e-parent"
-                    data-id="b696818" data-element_type="container"
-                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                    <div class="e-con-inner">
-                        <div class="elementor-element elementor-element-656a7a3 e-con-full e-flex e-con e-parent"
-                            data-id="656a7a3" data-element_type="container">
-                            <div class="elementor-element elementor-element-c3878f1 elementor-widget elementor-widget-image"
-                                data-id="c3878f1" data-element_type="widget" data-widget_type="image.default">
-                                <div class="elementor-widget-container">
-                                    <a href="index.html">
-                                        <img width="362" height="77"
-                                            src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20362%2077'%3E%3C/svg%3E"
-                                            class="attachment-full size-full wp-image-10393" alt=""
-                                            data-lazy-srcset="https://www.sudu.ai/wp-content/uploads/2024/10/logo.png 362w, https://www.sudu.ai/wp-content/uploads/2024/10/logo-300x64.png 300w"
-                                            data-lazy-sizes="(max-width: 362px) 100vw, 362px"
-                                            data-lazy-src="https://www.sudu.ai/wp-content/uploads/2024/10/logo.png" /><noscript><img
-                                                width="362" height="77"
-                                                src="https://www.sudu.ai/wp-content/uploads/2024/10/logo.png"
-                                                class="attachment-full size-full wp-image-10393" alt=""
-                                                srcset="https://www.sudu.ai/wp-content/uploads/2024/10/logo.png 362w, https://www.sudu.ai/wp-content/uploads/2024/10/logo-300x64.png 300w"
-                                                sizes="(max-width: 362px) 100vw, 362px" /></noscript> </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="elementor-element elementor-element-ba5d349 e-con-full e-flex e-con e-parent"
-                            data-id="ba5d349" data-element_type="container">
-                            <div class="elementor-element elementor-element-71b6d7f elementor-nav-menu__align-center elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu"
-                                data-id="71b6d7f" data-element_type="widget"
-                                data-settings="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}"
-                                data-widget_type="nav-menu.default">
-                                <div class="elementor-widget-container">
-                                    <nav aria-label="Menu"
-                                        class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
-                                        <ul id="menu-1-71b6d7f" class="elementor-nav-menu">
-                                            <li
-                                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11150 current_page_item menu-item-11430">
-                                                <a href="" aria-current="page"
-                                                    class="elementor-item elementor-item-active">Product</a>
-                                            </li>
-                                            <li
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10745">
-                                                <a href="" class="elementor-item">Career</a>
-                                            </li>
-                                            <li
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10781">
-                                                <a href="" class="elementor-item">Contact
-                                                    Us</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                    <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"
-                                        aria-hidden="true">
-                                        <ul id="menu-2-71b6d7f" class="elementor-nav-menu">
-                                            <li
-                                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11150 current_page_item menu-item-11430">
-                                                <a href="" aria-current="page"
-                                                    class="elementor-item elementor-item-active"
-                                                    tabindex="-1">Product</a>
-                                            </li>
-                                            <li
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10745">
-                                                <a href="" class="elementor-item" tabindex="-1">Career</a>
-                                            </li>
-                                            <li
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10781">
-                                                <a href="" class="elementor-item" tabindex="-1">Contact Us</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="elementor-element elementor-element-de62b40 e-con-full e-flex e-con e-parent"
-                            data-id="de62b40" data-element_type="container">
-                            <div class="elementor-element elementor-element-72605c3 elementor-align-right elementor-widget elementor-widget-button"
-                                data-id="72605c3" data-element_type="widget" data-widget_type="button.default">
-                                <div class="elementor-widget-container">
-                                    <div class="elementor-button-wrapper">
-                                        <a class="elementor-button elementor-button-link elementor-size-sm"
-                                            href="https://www.sudu.ai/contact-us/">
-                                            <span class="elementor-button-content-wrapper">
-                                                <span class="elementor-button-text">Request Demo</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Navbar -->
+    <nav
+        class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 transition-all duration-300 border border-white/10 bg-white/50 backdrop-blur-xl rounded-[10px] px-6 h-14 flex items-center justify-between shadow-2xl shadow-black/50">
+
+        <div class="flex items-center gap-2 flex-1">
+            <a href="index.html" class="flex items-center gap-2">
+                <div
+                    class="w-6 h-6 bg-gradient-to-br from-sudu-sec to-emerald-600 rounded flex items-center justify-center text-black font-bold text-xs shadow-lg shadow-sudu-sec/20">
+                    S
                 </div>
+                <span class="text-sm font-semibold tracking-tight text-[#003406]">SuDu AI</span>
+            </a>
+        </div>
+
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-6 text-xs font-medium text-[#003406]">
+            <a href="product.html" class="hover:text-sudu-sec transition-colors">Product</a>
+            <a href="careers.html" class="hover:text-sudu-sec transition-colors">Career</a>
+            <a href="contact.html" class="hover:text-sudu-sec transition-colors">Contact Us</a>
+        </div>
+
+        <div class="flex items-center gap-3 flex-1 justify-end">
+            <!-- Desktop CTA Buttons -->
+            <a href="#features"
+                class="hidden md:block text-xs text-[#003406] font-medium bg-transparent hover:bg-[#002304] hover:text-white px-4 py-1.5 rounded-[10px] border border-[#003406] transition-all">See
+                It in Action</a>
+            <a href="waitlist.html"
+                class="hidden md:block text-xs text-white font-medium bg-[#003406] hover:bg-[#002304] px-4 py-1.5 rounded-[10px] transition-all">Request
+                a Demo</a>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-black p-2 hover:text-sudu-sec transition-colors">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu"
+        class="fixed top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-40 bg-white/50 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden transition-all duration-300 opacity-0 pointer-events-none scale-95">
+        <div class="flex flex-col p-6 space-y-4">
+            <a href="product.html"
+                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Product</a>
+            <a href="careers.html"
+                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Career</a>
+            <a href="contact.html"
+                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Contact Us</a>
+            <div class="pt-4 border-t border-white/10 space-y-2">
+                <a href="#features"
+                    class="block text-center text-sm text-[#003406] font-medium bg-white hover:bg-gray-50 px-4 py-2.5 rounded-full border border-[#003406] transition-all">See
+                    It in Action</a>
+                <a href="waitlist.html"
+                    class="block text-center text-sm text-white font-medium bg-[#003406] hover:bg-[#002304] px-4 py-2.5 rounded-full transition-all">Request
+                    a Demo</a>
             </div>
         </div>
-        <div class="elementor-element elementor-element-86cfd3c elementor-hidden-desktop elementor-hidden-tablet e-flex e-con-boxed e-con e-parent"
-            data-id="86cfd3c" data-element_type="container"
-            data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
-            <div class="e-con-inner">
-                <div class="elementor-element elementor-element-526a631 e-con-full e-flex e-con e-parent"
-                    data-id="526a631" data-element_type="container">
-                    <div class="elementor-element elementor-element-a656944 elementor-widget elementor-widget-image"
-                        data-id="a656944" data-element_type="widget" data-widget_type="image.default">
-                        <div class="elementor-widget-container">
-                            <a href="https://www.demo.sudu.ai">
-                                <img width="362" height="77"
-                                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20362%2077'%3E%3C/svg%3E"
-                                    class="attachment-large size-large wp-image-10393" alt=""
-                                    data-lazy-srcset="https://www.sudu.ai/wp-content/uploads/2024/10/logo.png 362w, https://www.sudu.ai/wp-content/uploads/2024/10/logo-300x64.png 300w"
-                                    data-lazy-sizes="(max-width: 362px) 100vw, 362px"
-                                    data-lazy-src="https://www.sudu.ai/wp-content/uploads/2024/10/logo.png" /><noscript><img
-                                        width="362" height="77"
-                                        src="https://www.sudu.ai/wp-content/uploads/2024/10/logo.png"
-                                        class="attachment-large size-large wp-image-10393" alt=""
-                                        srcset="https://www.sudu.ai/wp-content/uploads/2024/10/logo.png 362w, https://www.sudu.ai/wp-content/uploads/2024/10/logo-300x64.png 300w"
-                                        sizes="(max-width: 362px) 100vw, 362px" /></noscript> </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="elementor-element elementor-element-116088e e-con-full e-flex e-con e-parent"
-                    data-id="116088e" data-element_type="container">
-                    <div class="elementor-element elementor-element-9775af2 elementor-view-default elementor-widget elementor-widget-icon"
-                        data-id="9775af2" data-element_type="widget" data-widget_type="icon.default">
-                        <div class="elementor-widget-container">
-                            <div class="elementor-icon-wrapper">
-                                <a class="elementor-icon"
-                                    href="#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjEwNjA1IiwidG9nZ2xlIjpmYWxzZX0%3D">
-                                    <i aria-hidden="true" class="fas fa-bars"></i> </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    </div>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            // Null checks to prevent errors if elements don't exist
+            if (!mobileMenuBtn || !mobileMenu) {
+                return;
+            }
+            
+            let isMenuOpen = false;
+
+            mobileMenuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+
+                if (isMenuOpen) {
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+                    mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+                } else {
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                }
+            });
+
+            // Close menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    isMenuOpen = false;
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    isMenuOpen = false;
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+                }
+            });
+        });
+        
+        // Initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
 
     <main id="content" class="site-main post-11150 page type-page status-publish hentry">
 
