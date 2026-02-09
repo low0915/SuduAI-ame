@@ -1589,7 +1589,7 @@
                 color: #6b7280;
             }
 
-            /* ===== GRID: 2 CARDS PER ROW ===== */
+            /* ===== GRID — 2 PER ROW ===== */
             .rillet-grid {
                 display: grid;
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1598,55 +1598,86 @@
 
             /* ===== CARD ===== */
             .rillet-card {
-                background: #f3f4f6;
+                border-radius: 20px;
                 border: 1px solid #e5e7eb;
-                border-radius: 18px;
-                padding: 28px;
-                position: relative;
+                background: #f3f4f6;
                 transition: all .35s ease;
-                min-height: 220px;
                 overflow: hidden;
+                /* keep expand inside */
+            }
+
+            .rillet-card.feature {
+                background: #b8d8bd;
+                border: none;
+            }
+
+            .rillet-card-inner {
+                padding: 28px 30px 26px;
+                height: 100%;
             }
 
             .rillet-card h3 {
-                margin: 0 0 16px;
+                margin: 0 0 18px;
                 font-size: 26px;
                 font-weight: 600;
             }
 
+            /* ===== SPLIT EXPAND INSIDE RIGHT SIDE ===== */
+            .rillet-split {
+                display: grid;
+                grid-template-columns: 1fr 0fr;
+                /* collapsed */
+                transition: grid-template-columns .4s ease;
+                height: 100%;
+                gap: 0;
+            }
+
+            .rillet-main {
+                padding-right: 14px;
+            }
+
+            .rillet-expand {
+                overflow: hidden;
+                opacity: 0;
+                transition: opacity .25s ease .15s;
+                border-left: 1px solid rgba(0, 0, 0, 0.08);
+                padding-left: 18px;
+            }
+
+            .rillet-card:hover .rillet-split {
+                grid-template-columns: 1fr 1fr;
+                /* expand to right */
+            }
+
+            .rillet-card:hover .rillet-expand {
+                opacity: 1;
+            }
+
+            /* ===== LIST ===== */
             .rillet-card ul {
                 margin: 0;
-                padding-left: 22px;
+                padding-left: 20px;
                 line-height: 1.8;
+                font-size: 17px;
             }
 
             .rillet-card li {
                 margin-bottom: 8px;
             }
 
-            /* ===== EXPAND AREA ===== */
-            .rillet-more {
-                margin-top: 14px;
-                opacity: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: all .35s ease;
-                color: #4b5563;
-                line-height: 1.7;
-            }
-
             /* ===== BUTTON ===== */
             .rillet-btn {
                 display: inline-block;
-                margin-top: 18px;
+                margin-top: 22px;
                 padding: 12px 18px;
                 border-radius: 12px;
                 border: 1px solid #d1d5db;
                 text-decoration: none;
                 color: #111827;
                 font-weight: 500;
-                transition: all .25s ease;
                 background: white;
+                transition: all .25s ease;
+                font-size: 15px;
             }
 
             .rillet-btn:hover {
@@ -1654,12 +1685,7 @@
                 color: white;
             }
 
-            /* ===== FEATURE CARD (LIKE IMAGE 2) ===== */
-            .rillet-card.feature {
-                background: #b8d8bd;
-                border: none;
-            }
-
+            /* ===== BADGE ===== */
             .rillet-badge {
                 position: absolute;
                 top: -14px;
@@ -1673,20 +1699,14 @@
                 font-weight: 600;
             }
 
-            /* ===== HOVER EXPAND LIKE IMAGE 2 ===== */
+            .rillet-card.feature {
+                position: relative;
+            }
+
+            /* ===== HOVER LIFT ===== */
             .rillet-card:hover {
                 transform: translateY(-4px);
                 box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-            }
-
-            .rillet-card:hover .rillet-more {
-                opacity: 1;
-                max-height: 200px;
-            }
-
-            /* When hovering a feature card, make it span full row */
-            .rillet-card.feature:hover {
-                grid-column: span 2;
             }
 
             /* ===== MOBILE ===== */
@@ -1695,77 +1715,132 @@
                     grid-template-columns: 1fr;
                 }
 
-                .rillet-card.feature:hover {
-                    grid-column: span 1;
+                .rillet-card:hover .rillet-split {
+                    grid-template-columns: 1fr;
+                }
+
+                .rillet-expand {
+                    opacity: 1;
+                    border-left: none;
+                    padding-left: 0;
+                    padding-top: 14px;
                 }
             }
         </style>
 
         <div class="rillet-container">
-            <h2 class="rillet-title font-bold py-12">Why Teams Choose SuDu AI</h2>
-
+            <h2 class="rillet-title">Why teams switch to Rillet</h2>
+            <p class="rillet-subtitle">
+                Four tools compared — hover each card to reveal more details on the right side inside the card.
+            </p>
 
             <div class="rillet-grid">
 
-                <!-- NetSuite -->
+                <!-- CARD 1 -->
                 <div class="rillet-card">
-                    <h3>NetSuite</h3>
-                    <ul>
-                        <li>Long implementations</li>
-                        <li>Custom scripts and workarounds</li>
-                        <li>Expensive consultants to stay operational</li>
-                    </ul>
-                    <div class="rillet-more">
-                        Additional setup complexity, heavy customization layers, and ongoing admin cost.
+                    <div class="rillet-card-inner">
+                        <div class="rillet-split">
+                            <div class="rillet-main">
+                                <h3>NetSuite</h3>
+                                <ul>
+                                    <li>Long implementations</li>
+                                    <li>Custom scripts & workarounds</li>
+                                    <li>High consultant cost</li>
+                                </ul>
+                                <a href="#" class="rillet-btn">Compare →</a>
+                            </div>
+                            <div class="rillet-expand">
+                                <ul>
+                                    <li>Heavy admin overhead</li>
+                                    <li>Slow change cycles</li>
+                                    <li>Complex maintenance</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#" class="rillet-btn">Compare →</a>
                 </div>
 
-                <!-- NetSuite -->
+                <!-- CARD 2 -->
                 <div class="rillet-card">
-                    <h3>NetSuite</h3>
-                    <ul>
-                        <li>Long implementations</li>
-                        <li>Custom scripts and workarounds</li>
-                        <li>Expensive consultants to stay operational</li>
-                    </ul>
-                    <div class="rillet-more">
-                        Additional setup complexity, heavy customization layers, and ongoing admin cost.
+                    <div class="rillet-card-inner">
+                        <div class="rillet-split">
+                            <div class="rillet-main">
+                                <h3>NetSuite</h3>
+                                <ul>
+                                    <li>Long implementations</li>
+                                    <li>Custom scripts & workarounds</li>
+                                    <li>High consultant cost</li>
+                                </ul>
+                                <a href="#" class="rillet-btn">Compare →</a>
+                            </div>
+                            <div class="rillet-expand">
+                                <ul>
+                                    <li>Heavy admin overhead</li>
+                                    <li>Slow change cycles</li>
+                                    <li>Complex maintenance</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#" class="rillet-btn">Compare →</a>
                 </div>
 
-                <!-- Sage -->
+
+                <!-- CARD 3 -->
                 <div class="rillet-card">
-                    <h3>Sage Intacct</h3>
-                    <ul>
-                        <li>Manual reconciliations</li>
-                        <li>Rigid reporting</li>
-                        <li>Data spread across tools</li>
-                    </ul>
-                    <div class="rillet-more">
-                        Requires extra reporting layers and multiple external dashboards.
+                    <div class="rillet-card-inner">
+                        <div class="rillet-split">
+                            <div class="rillet-main">
+                                <h3>Sage Intacct</h3>
+                                <ul>
+                                    <li>Manual reconciliations</li>
+                                    <li>Rigid reporting</li>
+                                    <li>Data across tools</li>
+                                </ul>
+                                <a href="#" class="rillet-btn">Compare →</a>
+                            </div>
+                            <div class="rillet-expand">
+                                <ul>
+                                    <li>Extra reporting layers</li>
+                                    <li>Fragmented dashboards</li>
+                                    <li>More integrations needed</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#" class="rillet-btn">Compare →</a>
                 </div>
 
-                <!-- QuickBooks -->
+                <!-- CARD 4 -->
                 <div class="rillet-card">
-                    <h3>QuickBooks</h3>
-                    <ul>
-                        <li>No real multi-entity support</li>
-                        <li>Spreadsheet metrics</li>
-                        <li>Breaks as you scale</li>
-                    </ul>
-                    <div class="rillet-more">
-                        Heavy spreadsheet reliance and manual SaaS metric tracking.
+                    <div class="rillet-card-inner">
+                        <div class="rillet-split">
+                            <div class="rillet-main">
+                                <h3>QuickBooks</h3>
+                                <ul>
+                                    <li>No multi-entity support</li>
+                                    <li>Spreadsheet metrics</li>
+                                    <li>Breaks at scale</li>
+                                </ul>
+                                <a href="#" class="rillet-btn">Compare →</a>
+                            </div>
+                            <div class="rillet-expand">
+                                <ul>
+                                    <li>Manual consolidations</li>
+                                    <li>Audit friction</li>
+                                    <li>Metric tracking outside GL</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#" class="rillet-btn">Compare →</a>
                 </div>
 
             </div>
         </div>
     </section>
+
+
+
+
+
 
 
 
