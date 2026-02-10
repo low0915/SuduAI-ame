@@ -1030,7 +1030,7 @@
     </style>
 
     <!-- Agent Capabilities Section -->
-    <section class="py-32 bg-white relative overflow-hidden">
+    <section class="py-20 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
                 <!-- Left Column: Content -->
@@ -1878,6 +1878,118 @@
                     height: 350px;
                 }
             }
+
+            /* ===== ACCOUNTING INTEGRATION SECTION ===== */
+            .integration-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin-top: 4rem;
+            }
+
+            @media (min-width: 768px) {
+                .integration-grid {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+
+            .logo-card {
+                background: white;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                border-radius: 24px;
+                padding: 3rem 2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            }
+
+            .logo-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: radial-gradient(circle at center, rgba(53, 229, 162, 0.1) 0%, transparent 70%);
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            .logo-card:hover {
+                background: rgba(255, 255, 255, 0.06);
+                transform: translateY(-10px);
+                border-color: rgba(53, 229, 162, 0.2);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            .logo-card:hover::before {
+                opacity: 1;
+            }
+
+            .logo-img {
+                height: 64px;
+                width: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                filter: grayscale(1) opacity(0.6);
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                margin-bottom: 1.5rem;
+            }
+
+            .logo-card:hover .logo-img {
+                filter: grayscale(0) opacity(1);
+                transform: scale(1.05);
+            }
+
+            .logo-name {
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: rgba(1, 25, 22, 0.5);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                transition: color 0.5s ease;
+            }
+
+            .logo-card:hover .logo-name {
+                color: #35E5A2;
+            }
+
+            /* Pulse Animation for Logo Glow */
+            @keyframes logoPulse {
+                0% {
+                    transform: scale(1);
+                    opacity: 0.3;
+                }
+
+                50% {
+                    transform: scale(1.05);
+                    opacity: 0.6;
+                }
+
+                100% {
+                    transform: scale(1);
+                    opacity: 0.3;
+                }
+            }
+
+            .integration-badge {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 8px;
+                height: 8px;
+                background: #35E5A2;
+                border-radius: 50%;
+                box-shadow: 0 0 10px #35E5A2;
+                animation: logoPulse 2s infinite ease-in-out;
+            }
         </style>
 
         <div class="sudu-choose-container">
@@ -2337,10 +2449,76 @@
                 }
 
                 window.addEventListener('scroll', updateTimeline);
-                // Initial check
                 updateTimeline();
             });
         </script>
+    </section>
+
+    <!-- Accounting Integration Section -->
+    <section class="py-32 bg-[#FFFBF5] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20 text-[#011916]">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
+                    Ready to Integrate with Your Accounting System
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Bring your <strong>existing accounting system data</strong> into our WMS and MES, no re-keying, no
+                    disruption.
+                    SuDu AI integrates directly with leading accounting platforms in Southeast Asia, keeping operations
+                    and finance perfectly in sync.
+                </p>
+            </div>
+
+            <div class="integration-grid">
+                <!-- SQL Account -->
+                <div class="logo-card">
+                    <div class="integration-badge"></div>
+                    <div class="flex flex-col items-center">
+                        <div class="logo-img">
+                            <img src="assets/images/sql-account-logo.png" alt="SQL Account" class="max-h-full w-auto">
+                        </div>
+                        <span class="logo-name">SQL Account</span>
+                    </div>
+                </div>
+
+                <!-- AutoCount -->
+                <div class="logo-card">
+                    <div class="integration-badge"></div>
+                    <div class="flex flex-col items-center">
+                        <div class="logo-img">
+                            <img src="assets/images/autocount.png" alt="AutoCount" class="max-h-full w-auto">
+                        </div>
+                        <span class="logo-name">AutoCount</span>
+                    </div>
+                </div>
+
+                <!-- FlowAccount -->
+                <div class="logo-card">
+                    <div class="integration-badge"></div>
+                    <div class="flex flex-col items-center">
+                        <div class="logo-img">
+                            <img src="assets/images/flowaccount.png" alt="FlowAccount" class="max-h-full w-auto">
+                        </div>
+                        <span class="logo-name">FlowAccount</span>
+                    </div>
+                </div>
+
+                <!-- Peak -->
+                <div class="logo-card">
+                    <div class="integration-badge"></div>
+                    <div class="flex flex-col items-center">
+                        <div class="logo-img">
+                            <img src="assets/images/peak.png" alt="PEAK" class="max-h-full w-auto">
+                        </div>
+                        <span class="logo-name">PEAK</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Glows -->
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-sudu-sec/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px]"></div>
     </section>
 
     <!-- Pricing Section -->
