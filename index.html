@@ -375,7 +375,15 @@
     <div class="noise-bg"></div>
 
     <!-- Hero Section -->
-    <section class="relative pt-40 pb-10 lg:pt-52 lg:pb-32 px-6">
+    <section class="relative pt-40 pb-10 lg:pt-52 lg:pb-32 px-6 overflow-hidden">
+        <!-- Video Background -->
+        <div class="absolute inset-0 -z-30 pointer-events-none">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-100">
+                <source src="assets/videos/hero.mp4" type="video/mp4">
+            </video>
+            <!-- Dark Overlay for Contrast -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#011916]/80 via-[#011916]/50 to-[#011916]"></div>
+        </div>
         <!-- Organic Mesh Blobs (askLio style) -->
         <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
             <!-- Blob 1 -->
@@ -730,10 +738,10 @@
     <!-- Better Together Transition Section -->
     <section class="py-24 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-5xl md:text-5xl font-bold text-gray-900 tracking-tighter mb-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#06390C] tracking-tighter mb-4">
                 Better Together
             </h2>
-            <p class="text-xl md:text-xl text-gray-500 font-light tracking-wide">
+            <p class="text-base text-gray-600 max-w-2xl mx-auto font-light tracking-wide">
                 Get everything you need in our system
             </p>
         </div>
@@ -1151,7 +1159,7 @@
 
             <!-- Top Center: Content -->
             <div class="space-y-6 text-center mb-16">
-                <h2 class="text-5xl md:text-6xl font-bold text-[#06390C] tracking-tighter leading-[1.1]">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#06390C] tracking-tighter leading-[1.1]">
                     Make your users fall in love with Sales!
                 </h2>
                 <p class="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -1592,7 +1600,7 @@
         <div class="max-w-6xl mx-auto px-4 text-center">
 
             <!-- Title -->
-            <h2 class="text-3xl md:text-4xl font-semibold mb-14 text-[#06390C]">
+            <h2 class="ttext-4xl md:text-5xl font-bold text-[#06390C] mb-14 ">
                 Measurable Impact, in Weeks
             </h2>
 
@@ -1717,7 +1725,7 @@
     </script>
 
 
-    <section class="rillet-section">
+    <section class="rillet-section hidden">
         <style>
             .rillet-section {
                 font-family: Inter, sans-serif;
@@ -2328,7 +2336,7 @@
                 <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-[#06390C]">
                     Why Teams Choose SuDu AI
                 </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+                <p class="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
                     The next generation of MES & ERP, designed for speed, intelligence, and seamless global
                     operations.
                 </p>
@@ -2365,6 +2373,10 @@
                         </li>
                     </ul>
                 </div>
+
+
+
+
 
                 <!-- Right Card: The "New Way" (SuDu AI) -->
                 <!-- Highlights, scales up, and glows on hover -->
@@ -2420,6 +2432,18 @@
                 </div>
 
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
 
     </section>
