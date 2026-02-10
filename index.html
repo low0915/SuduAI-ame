@@ -141,6 +141,88 @@
             }
         }
 
+        /* Organic Mesh Drift */
+        @keyframes mesh-drift {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+
+            33% {
+                transform: translate(10vw, 5vh) rotate(5deg) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-5vw, 15vh) rotate(-5deg) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+        }
+
+        .animate-mesh-1 {
+            animation: mesh-drift 20s ease-in-out infinite;
+        }
+
+        .animate-mesh-2 {
+            animation: mesh-drift 25s ease-in-out infinite reverse;
+        }
+
+        .animate-mesh-3 {
+            animation: mesh-drift 30s ease-in-out infinite;
+            animation-delay: -5s;
+        }
+
+        /* Noise Texture */
+        .noise-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: -2;
+            mix-blend-mode: overlay;
+        }
+
+        /* Floating Animation */
+        @keyframes float-slow {
+
+            0%,
+            100% {
+                transform: translate(-50%, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(-48%, 2%) scale(1.05);
+            }
+
+            66% {
+                transform: translate(-52%, -2%) scale(0.95);
+            }
+        }
+
+        .animate-float-slow {
+            animation: float-slow 15s ease-in-out infinite;
+        }
+
+        /* Drift Animation for Stars */
+        @keyframes drift {
+            from {
+                transform: translateX(0) translateY(0);
+            }
+
+            to {
+                transform: translateX(var(--drift-x)) translateY(var(--drift-y));
+            }
+        }
+
+        .animate-drift {
+            animation: drift var(--drift-duration) linear infinite alternate;
+        }
+
         /* Reveal Animation Styles */
         .reveal {
             opacity: 0;
@@ -168,7 +250,7 @@
 
         for (let i = 0; i < starCount; i++) {
             const star = document.createElement('div');
-            star.classList.add('star');
+            star.classList.add('star', 'animate-drift');
 
             const x = Math.random() * 100;
             const y = Math.random() * 100;
@@ -177,6 +259,11 @@
             const delay = Math.random() * 5;
             const opacity = Math.random() * 0.5 + 0.3;
 
+            // Drift properties
+            const driftX = (Math.random() - 0.5) * 40; // -20px to 20px
+            const driftY = (Math.random() - 0.5) * 40;
+            const driftDuration = Math.random() * 20 + 10; // 10s to 30s
+
             star.style.left = `${x}%`;
             star.style.top = `${y}%`;
             star.style.width = `${size}px`;
@@ -184,6 +271,9 @@
             star.style.setProperty('--duration', `${duration}s`);
             star.style.setProperty('--delay', `${delay}s`);
             star.style.setProperty('--opacity', opacity);
+            star.style.setProperty('--drift-x', `${driftX}px`);
+            star.style.setProperty('--drift-y', `${driftY}px`);
+            star.style.setProperty('--drift-duration', `${driftDuration}s`);
 
             starsContainer.appendChild(star);
         }
@@ -281,11 +371,34 @@
         });
     </script>
 
+    <!-- Noise Texture -->
+    <div class="noise-bg"></div>
+
     <!-- Hero Section -->
     <section class="relative pt-40 pb-10 lg:pt-52 lg:pb-32 px-6">
-        <!-- Glow Effect -->
+        <!-- Organic Mesh Blobs (askLio style) -->
+        <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+            <!-- Blob 1 -->
+            <div
+                class="absolute -top-1/4 -left-1/4 w-full h-full bg-gradient-to-br from-sudu-sec/10 to-transparent rounded-full blur-[150px] animate-mesh-1 mix-blend-screen opacity-60">
+            </div>
+            <!-- Blob 2 -->
+            <div
+                class="absolute -bottom-1/4 -right-1/4 w-full h-full bg-gradient-to-tl from-teal-500/10 to-transparent rounded-full blur-[150px] animate-mesh-2 mix-blend-screen opacity-40">
+            </div>
+            <!-- Blob 3 (Accent) -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/2 bg-indigo-500/5 rounded-full blur-[120px] animate-mesh-3 mix-blend-overlay opacity-30">
+            </div>
+        </div>
+
+        <!-- Glow Effect Layer 1 -->
         <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-sudu-sec/10 rounded-full blur-[120px] -z-10 opacity-50 pointer-events-none mix-blend-screen">
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-sudu-sec/10 rounded-full blur-[120px] -z-10 opacity-50 pointer-events-none mix-blend-screen animate-float-slow">
+        </div>
+        <!-- Glow Effect Layer 2 (Faster Float) -->
+        <div class="absolute top-[10%] left-[45%] -translate-x-1/2 w-[600px] h-[400px] bg-teal-500/5 rounded-full blur-[100px] -z-10 opacity-30 pointer-events-none mix-blend-screen animate-float-slow"
+            style="animation-duration: 10s; animation-delay: -2s;">
         </div>
 
         <div class="max-w-4xl mx-auto text-center">
@@ -321,7 +434,7 @@
         </div>
 
         <!-- Chat UI Visual -->
-        <div class="mt-20 max-w-5xl mx-auto relative group animate-fade-in-up delay-300">
+        <div class="mt-20 max-w-5xl mx-auto relative group animate-fade-in-up delay-300 hidden">
             <div
                 class="absolute -inset-1 bg-gradient-to-r from-sudu-sec to-teal-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000">
             </div>
@@ -1033,146 +1146,190 @@
 
 
     <section class="py-20 bg-white relative overflow-hidden">
+
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
-                <!-- Left Column: Content -->
-                <div class="space-y-12">
-                    <div class="space-y-6 text-center lg:text-left">
-                        <h2 class="text-5xl md:text-5xl font-bold text-[#06390C] tracking-tighter leading-[1.1]">
-                            Make your users fall in love with Sales!
-                        </h2>
-                        <p class="text-xl text-gray-600 font-bold max-w-xl leading-relaxed mx-auto lg:mx-0">
-                            Automate your orders
-                        </p>
-                        <p class="text-l text-gray-600 max-w-xl leading-relaxed mx-auto lg:mx-0">
-                            Al automatically generates sales orders from customer requests, freeing your team from
-                            repetitive work and ensures each sales order is accurate, complete, and delivered on time.
-                        </p>
-                    </div>
+            <!-- Top Center: Content -->
+            <div class="space-y-6 text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-bold text-[#06390C] tracking-tighter leading-[1.1]">
+                    Make your users fall in love with Sales!
+                </h2>
+                <p class="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    AI automatically generates sales orders from customer requests, freeing your team from
+                    repetitive work and ensures each sales order is accurate, complete, and delivered on time.
+                </p>
+            </div>
 
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Left Column: Tabs & Description (Col 4) -->
+                <div class="lg:col-span-4 space-y-12">
                     <!-- Agent List Tabs -->
-                    <div class="space-y-1">
-                        <div class="agent-tab cursor-pointer py-4 text-xl md:text-xl font-medium transition-all text-gray-300 hover:text-gray-900"
+                    <div class="space-y-4">
+                        <div class="agent-tab cursor-pointer flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-400"
                             onclick="switchAgent(0)">
-                            Text
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dot"></span>
+                            <span class="text-sm font-semibold">Text</span>
                         </div>
-                        <div class="agent-tab cursor-pointer py-4 text-xl md:text-xl font-medium transition-all text-gray-300 hover:text-gray-900"
+                        <div class="agent-tab cursor-pointer flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-400"
                             onclick="switchAgent(1)">
-                            Voice
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dot"></span>
+                            <span class="text-sm font-semibold">Voice</span>
                         </div>
-                        <div class="agent-tab cursor-pointer py-4 text-xl md:text-xl font-medium transition-all text-gray-900 active-agent"
+                        <div class="agent-tab cursor-pointer flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-400"
                             onclick="switchAgent(2)">
-                            Upload
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dot"></span>
+                            <span class="text-sm font-semibold">Upload</span>
                         </div>
-                        <div class="agent-tab cursor-pointer py-4 text-xl md:text-xl font-medium transition-all text-gray-300 hover:text-gray-900"
+                        <div class="agent-tab cursor-pointer flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-400"
                             onclick="switchAgent(3)">
-                            Capture
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dot"></span>
+                            <span class="text-sm font-semibold">Capture</span>
                         </div>
                     </div>
 
                     <!-- Dynamic Description Area -->
-                    <div id="agent-description"
-                        class="pt-10 border-t border-gray-100 min-h-[140px] transition-opacity duration-300">
-                        <p class="text-gray-600 text-base leading-relaxed">
-                            SuDu learns from your production guidelines and acts as a virtual coach, guiding your
-                            planners through the complex scheduling process with real-time AI optimization.
+                    <div id="agent-description" class="transition-opacity duration-300 pt-4">
+                        <p class="text-gray-600 text-[15px] leading-relaxed">
+                            Communicate with the AI Agent using natural language to search records, generate reports,
+                            and perform ERP actions quickly and accurately.
                         </p>
                     </div>
 
-                    <!-- Metric Footer -->
-                    <div class="pt-2">
-                        <p class="metric-label text-[13px] uppercase tracking-[0.2em] text-gray-400 font-bold mb-3">
-                            Adoption rate of automated planning
-                        </p>
-                        <div
-                            class="metric-value text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#35E5A2] to-[#33DDFF] tracking-tighter">
-                            98% +</div>
-                    </div>
-
-                    <a href=""
-                        class="inline-flex items-center justify-center px-10 py-5 bg-[#06390C] text-white font-bold rounded-2xl hover:bg-gray-800 transition-all hover:scale-[1.02] active:scale-[0.98]">
-                        Request Demo
+                    <a href="waitlist.html"
+                        class="inline-flex items-center text-sudu-sec font-bold hover:gap-3 transition-all group">
+                        Request Live Demo
+                        <i data-lucide="arrow-right"
+                            class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
 
-                <!-- Right Column: Visual -->
-                <div class="lg:sticky lg:top-32">
+                <!-- Right Column: Terminal Visual (Col 8) -->
+                <div class="lg:col-span-8">
                     <div
-                        class="bg-gray-50/50 rounded-[40px] p-10 border border-gray-100 aspect-square flex flex-col items-center justify-center relative group">
-                        <span class="text-sm font-medium text-gray-400 absolute top-8 left-10">*Each agent functions
-                            with dedicated workflows</span>
-                        <div
-                            class="w-full h-full bg-white rounded-[32px] border border-gray-200 shadow-[0_20px_50px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center overflow-hidden relative">
-                            <!-- Visual Placeholder -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
-                            <div class="relative z-10 flex flex-col items-center gap-4">
-                                <div
-                                    class="w-20 h-20 rounded-2xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec">
-                                    <i id="agent-icon" data-lucide="cpu" class="w-10 h-10"></i>
+                        class="terminal-window bg-[#0B0F14] rounded-2xl border border-gray-800 shadow-2xl overflow-hidden aspect-[16/10] flex flex-col">
+                        <!-- Terminal Header -->
+                        <div class="h-10 border-b border-white/5 bg-white/5 flex items-center px-4 gap-2">
+                            <div class="flex gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></div>
+                            </div>
+                            <div class="ml-4 text-[10px] text-gray-500 font-mono">sudu_agent_v2.0.exe</div>
+                        </div>
+
+                        <!-- Terminal Body -->
+                        <div class="p-8 font-mono flex-1 flex flex-col">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-[#8B949E]">$</span>
+                                <span class="text-[#E6EDF3] text-sm">initializing <span
+                                        id="term-module">text_module</span>...</span>
+                            </div>
+                            <div class="text-[#238636] text-sm mb-8 animate-pulse">
+                                &gt; Access granted. Agent online.
+                            </div>
+
+                            <!-- Task Display -->
+                            <div class="bg-white/5 rounded-lg p-6 border border-white/5 mb-6">
+                                <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-2">Task</div>
+                                <div id="term-task" class="text-lg text-white font-medium">Natural Language Interaction
                                 </div>
-                                <span id="agent-visual-label" class="text-gray-400 font-medium text-lg">Agent Workflow
-                                    Demo</span>
+                            </div>
+
+                            <!-- Status Display -->
+                            <div class="bg-white/5 rounded-lg p-6 border border-white/5 flex-1 max-h-32 mb-8">
+                                <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-2">Status</div>
+                                <div class="flex items-center gap-2 text-[#238636]">
+                                    <div class="w-2 h-2 rounded-full bg-[#238636] animate-pulse"></div>
+                                    <span id="term-status" class="text-sm">Processing data stream...</span>
+                                </div>
+                            </div>
+
+                            <!-- Metrics -->
+                            <div class="grid grid-cols-3 gap-8 pt-6 border-t border-white/5">
+                                <div>
+                                    <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-1">CPU</div>
+                                    <div id="term-cpu" class="text-xs text-[#E6EDF3]">12%</div>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-1">MEM</div>
+                                    <div id="term-mem" class="text-xs text-[#E6EDF3]">450MB</div>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-1">NET</div>
+                                    <div id="term-net" class="text-xs text-[#E6EDF3]">1.2GB/s</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
     <style>
         .active-agent {
-            color: #111827 !important;
-            padding-left: 1rem;
-            border-left: 4px solid #111827;
+            background-color: white !important;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            color: #06390C !important;
+        }
+
+        .active-agent .dot {
+            background-color: #35E5A2;
+            box-shadow: 0 0 8px #35E5A2;
         }
 
         .agent-tab {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .agent-tab:hover:not(.active-agent) {
-            padding-left: 0.5rem;
+            background-color: #f9fafb;
+            color: #6b7280;
         }
     </style>
 
     <script>
         const agents = [
             {
-                name: "Order Processing Agent",
-                icon: "file-text",
-                description: "AI captures and validates order details from any source, automatically syncing with your ERP to ensure 100% accuracy from the first step.",
-                metricLabel: "Reduction in manual data entry",
-                metricValue: "92%"
+                id: "text",
+                name: "Text",
+                description: "Communicate with the AI Agent using natural language to search records, generate reports, and perform ERP actions quickly and accurately.",
+                consoleTask: "Natural Language Interaction",
+                consoleStatus: "Processing data stream...",
+                cpu: "12%",
+                mem: "450MB",
+                net: "1.2GB/s"
             },
             {
-                name: "Inventory Management Agent",
-                icon: "package",
-                description: "Predictive AI monitors stock levels in real-time, suggesting reorders before shortages occur and optimizing warehouse space automatically.",
-                metricLabel: "Improvement in inventory accuracy",
-                metricValue: "96%"
+                id: "voice",
+                name: "Voice",
+                description: "Seamlessly integrate voice commands to manage production status, update inventory, or query financial data through AI voice synthesis.",
+                consoleTask: "Voice Synthesis Loop",
+                consoleStatus: "Listening for input...",
+                cpu: "18%",
+                mem: "620MB",
+                net: "2.4GB/s"
             },
             {
-                name: "Production Planning Agent",
-                icon: "cpu",
-                description: "SuDu learns from your production guidelines and acts as a virtual coach, guiding your planners through the complex scheduling process with real-time AI optimization.",
-                metricLabel: "Adoption rate of automated planning",
-                metricValue: "98% +"
+                id: "upload",
+                name: "Upload",
+                description: "Advanced document processing automatically extracts metadata from invoices, POs, and shipping manifests to populate your ERP system.",
+                consoleTask: "Document OCR Engine",
+                consoleStatus: "Extracting metadata...",
+                cpu: "25%",
+                mem: "890MB",
+                net: "0.8GB/s"
             },
             {
-                name: "Quality Control Agent",
-                icon: "shield-check",
-                description: "Computer vision and data analysis agents detect anomalies early in the production line, reducing waste and ensuring consistent output quality.",
-                metricLabel: "Decrease in defect rates",
-                metricValue: "45%"
-            },
-            {
-                name: "Logistics Support Agent",
-                icon: "truck",
-                description: "End-to-end tracking agents coordinate shipments and manage carrier communication, providing real-time visibility into your supply chain.",
-                metricLabel: "On-time delivery rate improvement",
-                metricValue: "34%"
+                id: "capture",
+                name: "Capture",
+                description: "Intelligent camera integration allows you to capture physical documents or inventory tags directly into the production workflow.",
+                consoleTask: "Vision Stream Analysis",
+                consoleStatus: "Scanning barcodes...",
+                cpu: "32%",
+                mem: "1.2GB",
+                net: "4.5GB/s"
             }
         ];
 
@@ -1183,20 +1340,22 @@
             currentAgentIndex = index;
             const tabs = document.querySelectorAll('.agent-tab');
             const descArea = document.getElementById('agent-description');
-            const metricLabel = document.querySelector('.metric-label');
-            const metricValue = document.querySelector('.metric-value');
-            const iconEl = document.getElementById('agent-icon');
-            const visualLabel = document.getElementById('agent-visual-label');
+
+            // Console elements
+            const termModule = document.getElementById('term-module');
+            const termTask = document.getElementById('term-task');
+            const termStatus = document.getElementById('term-status');
+            const termCpu = document.getElementById('term-cpu');
+            const termMem = document.getElementById('term-mem');
+            const termNet = document.getElementById('term-net');
 
             tabs.forEach((tab, i) => {
                 if (i === index) {
                     tab.classList.add('active-agent');
-                    tab.classList.remove('text-gray-300');
-                    tab.classList.add('text-gray-900');
+                    tab.classList.remove('text-gray-400');
                 } else {
                     tab.classList.remove('active-agent');
-                    tab.classList.remove('text-gray-900');
-                    tab.classList.add('text-gray-300');
+                    tab.classList.add('text-gray-400');
                 }
             });
 
@@ -1204,13 +1363,14 @@
             descArea.style.opacity = 0;
             setTimeout(() => {
                 descArea.querySelector('p').innerText = agents[index].description;
-                metricLabel.innerText = agents[index].metricLabel;
-                metricValue.innerText = agents[index].metricValue;
-                visualLabel.innerText = agents[index].name + " Workflow";
 
-                // Update Icon
-                iconEl.setAttribute('data-lucide', agents[index].icon);
-                lucide.createIcons();
+                // Update Console
+                termModule.innerText = agents[index].id + "_module";
+                termTask.innerText = agents[index].consoleTask;
+                termStatus.innerText = agents[index].consoleStatus;
+                termCpu.innerText = agents[index].cpu;
+                termMem.innerText = agents[index].mem;
+                termNet.innerText = agents[index].net;
 
                 descArea.style.opacity = 1;
             }, 200);
@@ -1428,7 +1588,7 @@
     </section>
 
 
-    <section class="py-20 bg-gray-50 bg-gradient-to-b from-white to-emerald-50">
+    <section class="py-20 bg-[#FFFBF5]">
         <div class="max-w-6xl mx-auto px-4 text-center">
 
             <!-- Title -->
@@ -1442,7 +1602,7 @@
                 <!-- Card 1 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm">
                     <p class="text-sm text-[#06390C] font-bold mb-4">
-                        📦 Inventory Accuracy
+                        Inventory Accuracy
                     </p>
                     <p class="text-5xl font-semibold text-[#06390C] mb-4">
                         +<span class="counter" data-target="80">0</span>%
@@ -1455,7 +1615,7 @@
                 <!-- Card 2 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm">
                     <p class="text-sm text-[#06390C] font-bold mb-4">
-                        ⏱️ Operational Efficiency
+                        Operational Efficiency
                     </p>
                     <p class="text-5xl font-semibold text-[#06390C] mb-4">
                         -<span class="counter" data-target="50">0</span>%
@@ -1468,7 +1628,7 @@
                 <!-- Card 3 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm">
                     <p class="text-sm text-[#06390C] mb-4">
-                        🏭 Production Performance
+                        Production Performance
                     </p>
                     <p class="text-5xl font-semibold text-[#06390C] mb-4">
                         +<span class="counter" data-target="20">0</span>%
@@ -1481,7 +1641,7 @@
                 <!-- Card 4 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm">
                     <p class="text-sm text-[#06390C] mb-4">
-                        🚚 Order Fulfillment
+                        Order Fulfillment
                     </p>
                     <p class="text-5xl font-semibold text-[#06390C] mb-4">
                         +<span class="counter" data-target="20">0</span>%
@@ -1494,7 +1654,7 @@
                 <!-- Card 5 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm">
                     <p class="text-sm text-[#06390C] mb-4">
-                        🔍 Issue Resolution
+                        Issue Resolution
                     </p>
                     <p class="text-5xl font-semibold text-[#06390C] mb-4">
                         <span class="counter" data-target="4">0</span>X
@@ -1507,7 +1667,7 @@
                 <!-- Card 6 -->
                 <div class="bg-white rounded-2xl p-8 shadow-sm">
                     <p class="text-sm text-[#06390C] mb-4">
-                        💰 Cost Reduction
+                        Cost Reduction
                     </p>
                     <p class="text-5xl font-semibold text-[#06390C] mb-4">
                         -<span class="counter" data-target="20">30</span>%
@@ -2158,7 +2318,8 @@
     </section>
 
 
-    <section class="relative bg-white py-20 px-6 border-y border-gray-100 overflow-hidden">
+    <section
+        class="relative bg-white py-20 px-6 border-y border-gray-100 overflow-hidden bg-gray-50 bg-gradient-to-b from-white to-emerald-50">
 
         <div class="max-w-6xl w-full mx-auto relative z-10">
 
