@@ -191,59 +191,52 @@
 
     <!-- Navbar -->
     <nav
-        class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 transition-all duration-300 border border-white/10 bg-white/50 backdrop-blur-xl rounded-[10px] px-6 h-14 flex items-center justify-between shadow-2xl shadow-black/50">
+        class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1080px] z-50 transition-all duration-300 bg-[#CCCCCC80] rounded-[10px] px-0 h-14 flex items-center shadow-sm">
 
-        <div class="flex items-center gap-2 flex-1">
-            <a href="index.html" class="flex items-center gap-2">
-                <div
-                    class="w-6 h-6 bg-gradient-to-br from-sudu-sec to-emerald-600 rounded flex items-center justify-center text-black font-bold text-xs shadow-lg shadow-sudu-sec/20">
-                    S
-                </div>
-                <span class="text-sm font-semibold tracking-tight text-[#003406]">SuDu AI</span>
+        <!-- Logo Wrap (18%) -->
+        <div class="w-[18%] flex items-center justify-center">
+            <a href="index.html" class="flex items-center justify-center">
+                <img src="assets/images/logo.png" alt="SuDu AI" class="w-[107px] h-auto">
             </a>
         </div>
 
-
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-6 text-xs font-medium text-[#003406]">
-            <a href="" class="hover:text-sudu-sec transition-colors">Product</a>
-            <a href="" class="hover:text-sudu-sec transition-colors">Career</a>
-            <a href="" class="hover:text-sudu-sec transition-colors">Contact Us</a>
+        <!-- Desktop Menu Wrap (62%) -->
+        <div class="w-[62%] hidden md:flex items-center justify-center gap-8 text-[14px] font-medium text-[#003406]">
+            <div class="relative py-2 flex flex-col items-center">
+                <a href="product.html" class="hover:text-[#35E5A2] transition-colors">Product</a>
+                <div class="absolute -bottom-1 w-[110%] h-[2px] bg-[#003406] rounded-full"></div>
+            </div>
+            <a href="careers.html" class="hover:text-[#35E5A2] transition-colors">Career</a>
+            <a href="contact.html" class="hover:text-[#35E5A2] transition-colors">Contact Us</a>
         </div>
 
-        <div class="flex items-center gap-3 flex-1 justify-end">
-            <!-- Desktop CTA Buttons -->
-            <a href="#features"
-                class="hidden md:block text-xs text-[#003406] font-medium bg-transparent hover:bg-[#002304] hover:text-white px-4 py-1.5 rounded-[10px] border border-[#003406] transition-all">See
-                It in Action</a>
-            <a href=""
-                class="hidden md:block text-xs text-white font-medium bg-[#003406] hover:bg-[#002304] px-4 py-1.5 rounded-[10px] transition-all">Request
-                a Demo</a>
+        <!-- Button Wrap (20%) -->
+        <div class="w-[20%] flex items-center justify-center gap-4">
+            <a href="waitlist.html"
+                class="hidden md:block text-[14px] text-white font-normal bg-[#003406] hover:bg-black px-[30px] py-[8px] rounded-[5px] transition-all shadow-[0_0_10px_rgba(0,0,0,0.3)]">Request
+                Demo</a>
 
             <!-- Mobile Hamburger Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-black p-2 hover:text-sudu-sec transition-colors">
-                <i data-lucide="menu" class="w-5 h-5"></i>
+            <button id="mobile-menu-btn" class="md:hidden text-[#003406] p-2 hover:opacity-70 transition-opacity">
+                <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu"
-        class="fixed top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-40 bg-white/50 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden transition-all duration-300 opacity-0 pointer-events-none scale-95">
+        class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-40 bg-[#CCCCCC]/98 backdrop-blur-xl rounded-[10px] border border-white/20 shadow-2xl overflow-hidden transition-all duration-300 opacity-0 pointer-events-none scale-95">
         <div class="flex flex-col p-6 space-y-4">
             <a href="product.html"
-                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Product</a>
+                class="text-base font-medium text-[#003406] py-2 border-l-4 border-[#003406] pl-4">Product</a>
             <a href="careers.html"
-                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Career</a>
-            <a href="contact.html"
-                class="text-sm font-medium text-black hover:text-sudu-sec transition-colors py-2">Contact Us</a>
-            <div class="pt-4 border-t border-white/10 space-y-2">
-                <a href="#features"
-                    class="block text-center text-sm text-[#003406] font-medium bg-white hover:bg-gray-50 px-4 py-2.5 rounded-full border border-[#003406] transition-all">See
-                    It in Action</a>
+                class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Career</a>
+            <a href="contact.html" class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Contact
+                Us</a>
+            <div class="pt-6 border-t border-[#003406]/10">
                 <a href="waitlist.html"
-                    class="block text-center text-sm text-white font-medium bg-[#003406] hover:bg-[#002304] px-4 py-2.5 rounded-full transition-all">Request
-                    a Demo</a>
+                    class="block text-center text-base text-white font-normal bg-[#003406] hover:bg-black px-4 py-3 rounded-lg transition-all shadow-lg">Request
+                    Demo</a>
             </div>
         </div>
     </div>
@@ -1085,7 +1078,7 @@
                     </div>
 
                     <!-- Metric Footer -->
-                    <div class="pt-8">
+                    <div class="pt-2">
                         <p class="metric-label text-[13px] uppercase tracking-[0.2em] text-gray-400 font-bold mb-3">
                             Adoption rate of automated planning
                         </p>
@@ -1636,203 +1629,414 @@
                 padding-right: 14px;
             }
 
-            .rillet-expand {
+            <style>.sudu-choose-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 100px 20px;
+            }
+
+            .sudu-choose-title {
+                text-align: center;
+                font-size: 3.5rem;
+                font-weight: 700;
+                color: #011916;
+                margin-bottom: 1rem;
+                letter-spacing: -0.02em;
+            }
+
+            .sudu-choose-subtitle {
+                text-align: center;
+                font-size: 1.125rem;
+                color: #2F5E3A;
+                margin-bottom: 4rem;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .expanding-cards {
+                display: flex;
+                gap: 1.5rem;
+                height: 500px;
+                width: 100%;
+            }
+
+            .card-wrapper {
+                position: relative;
+                flex: 1;
+                border-radius: 40px;
                 overflow: hidden;
-                opacity: 0;
-                transition: opacity .25s ease .15s;
-                border-left: 1px solid rgba(0, 0, 0, 0.08);
-                padding-left: 18px;
+                cursor: pointer;
+                transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+                background-color: #011916;
             }
 
-            .rillet-card:hover .rillet-split {
-                grid-template-columns: 1fr 1fr;
-                /* expand to right */
+            .card-wrapper:hover {
+                flex: 2.5;
             }
 
-            .rillet-card:hover .rillet-expand {
-                opacity: 1;
+            .card-bg {
+                position: absolute;
+                inset: 0;
+                background-size: cover;
+                background-position: center;
+                opacity: 0.6;
+                transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
-            /* ===== LIST ===== */
-            .rillet-card ul {
-                margin: 0;
-                padding-left: 20px;
-                line-height: 1.8;
-                font-size: 17px;
+            .card-wrapper:hover .card-bg {
+                transform: scale(1.1);
+                opacity: 0.8;
             }
 
-            .rillet-card li {
-                margin-bottom: 8px;
+            .card-overlay {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to bottom, rgba(1, 25, 22, 0) 0%, rgba(1, 25, 22, 0.9) 100%);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 40px;
             }
 
-            /* ===== BUTTON ===== */
-            .rillet-btn {
-                display: inline-block;
-                margin-top: 22px;
-                padding: 12px 18px;
-                border-radius: 12px;
-                border: 1px solid #d1d5db;
-                text-decoration: none;
-                color: #111827;
-                font-weight: 500;
-                background: white;
-                transition: all .25s ease;
-                font-size: 15px;
-            }
-
-            .rillet-btn:hover {
-                background: #111827;
+            .card-content {
                 color: white;
             }
 
-            /* ===== BADGE ===== */
-            .rillet-badge {
+            .card-title-container {
                 position: absolute;
-                top: -14px;
-                left: 26px;
-                background: #eef2ff;
-                color: #4f46e5;
-                border: 2px solid #c7d2fe;
-                font-size: 13px;
-                padding: 6px 12px;
-                border-radius: 999px;
-                font-weight: 600;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                width: 100%;
+                height: auto;
+                padding: 0 20px;
+                z-index: 5;
+                pointer-events: none;
+                transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
 
-            .rillet-card.feature {
-                position: relative;
+            .card-wrapper:hover .card-title-container {
+                top: 80px;
+                transform: translate(-50%, 0);
             }
 
-            /* ===== HOVER LIFT ===== */
-            .rillet-card:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+            .card-title-default {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+                opacity: 1;
             }
 
-            /* ===== MOBILE ===== */
-            @media (max-width: 720px) {
-                .rillet-grid {
-                    grid-template-columns: 1fr;
+            .card-category {
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: white;
+                line-height: 1.2;
+                white-space: nowrap;
+            }
+
+            .card-problem-list {
+                margin-top: 1rem;
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                text-align: left;
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .problem-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                font-size: 0.85rem;
+                color: rgba(255, 255, 255, 0.6);
+                line-height: 1.3;
+            }
+
+            .problem-bullet {
+                width: 4px;
+                height: 4px;
+                background-color: rgba(255, 255, 255, 0.4);
+                border-radius: 50%;
+                margin-top: 6px;
+                flex-shrink: 0;
+            }
+
+            .card-title-hover {
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: white;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%) translateY(20px);
+                opacity: 0;
+                transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+                white-space: nowrap;
+                letter-spacing: -0.02em;
+            }
+
+            .card-wrapper:hover .card-title-default {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            .card-wrapper:hover .card-title-hover {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .card-description {
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.8);
+                max-width: 280px;
+                line-height: 1.5;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+                height: 0;
+                overflow: hidden;
+            }
+
+            .card-wrapper:hover .card-description {
+                opacity: 1;
+                transform: translateY(0);
+                height: auto;
+                margin-top: 1rem;
+            }
+
+            .card-features {
+                margin-top: 1.5rem;
+                list-style: none;
+                padding: 0;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .card-wrapper:hover .card-features {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .feature-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 0.95rem;
+                color: #35E5A2;
+            }
+
+            .feature-icon {
+                width: 16px;
+                height: 16px;
+                stroke-width: 3;
+            }
+
+            .card-number {
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                font-size: 4rem;
+                font-weight: 800;
+                color: rgba(255, 255, 255, 0.05);
+                transition: all 0.5s ease;
+            }
+
+            .card-wrapper:hover .card-number {
+                color: rgba(53, 229, 162, 0.1);
+            }
+
+            @media (max-width: 1024px) {
+                .expanding-cards {
+                    height: 400px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .expanding-cards {
+                    flex-direction: column;
+                    height: auto;
                 }
 
-                .rillet-card:hover .rillet-split {
-                    grid-template-columns: 1fr;
+                .card-wrapper {
+                    height: 150px;
+                    flex: none !important;
                 }
 
-                .rillet-expand {
-                    opacity: 1;
-                    border-left: none;
-                    padding-left: 0;
-                    padding-top: 14px;
+                .card-wrapper:hover {
+                    height: 350px;
                 }
             }
         </style>
 
-        <div class="rillet-container">
-            <h2 class="rillet-title">Why teams switch to Rillet</h2>
-            <p class="rillet-subtitle">
-                Four tools compared — hover each card to reveal more details on the right side inside the card.
+        <div class="sudu-choose-container">
+            <h2 class="sudu-choose-title">Why Teams Choose SuDu AI</h2>
+            <p class="sudu-choose-subtitle">
+                The next generation of MES & ERP, designed for speed, intelligence, and seamless global operations.
             </p>
 
-            <div class="rillet-grid">
+            <div class="expanding-cards">
+                <div class="card-wrapper">
+                    <div class="card-number">01</div>
+                    <div class="card-bg"
+                        style="background-image: url('brain/deaba34b-5e1c-4d30-b3ae-7b355230f748/card_comparison_netsuite_png_1770689998770.png');">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-content">
+                            <div class="card-title-container">
+                                <div class="card-title-default">
+                                    <span class="card-category">SAP (Branded ERP)</span>
+                                    <ul class="card-problem-list">
+                                        <li class="problem-item"><span class="problem-bullet"></span>High licensing and
+                                            implementation cost</li>
+                                        <li class="problem-item"><span class="problem-bullet"></span>Long implementation
+                                            (common 6-18 months)</li>
 
-                <!-- CARD 1 -->
-                <div class="rillet-card">
-                    <div class="rillet-card-inner">
-                        <div class="rillet-split">
-                            <div class="rillet-main">
-                                <h3>NetSuite</h3>
-                                <ul>
-                                    <li>Long implementations</li>
-                                    <li>Custom scripts & workarounds</li>
-                                    <li>High consultant cost</li>
-                                </ul>
-                                <a href="#" class="rillet-btn">Compare →</a>
+                                    </ul>
+                                </div>
+                                <div class="card-title-hover">SuDu AI</div>
                             </div>
-                            <div class="rillet-expand">
-                                <ul>
-                                    <li>Heavy admin overhead</li>
-                                    <li>Slow change cycles</li>
-                                    <li>Complex maintenance</li>
-                                </ul>
-                            </div>
+
+                            <ul class="card-features">
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Lower total
+                                    cost of ownership</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Quick Go Live
+                                    period (averagely 3 months)</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Simple and
+                                    user-friendly for operations</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Minimal
+                                    customization needed</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Direct product
+                                    support</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- CARD 2 -->
-                <div class="rillet-card">
-                    <div class="rillet-card-inner">
-                        <div class="rillet-split">
-                            <div class="rillet-main">
-                                <h3>NetSuite</h3>
-                                <ul>
-                                    <li>Long implementations</li>
-                                    <li>Custom scripts & workarounds</li>
-                                    <li>High consultant cost</li>
-                                </ul>
-                                <a href="#" class="rillet-btn">Compare →</a>
+                <div class="card-wrapper">
+                    <div class="card-number">02</div>
+                    <div class="card-bg"
+                        style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-content">
+                            <div class="card-title-container">
+                                <div class="card-title-default">
+                                    <span class="card-category">Odoo (Mid Tier ERP)</span>
+                                    <ul class="card-problem-list">
+                                        <li class="problem-item"><span class="problem-bullet"></span>Heavy customization
+                                            for advanced WMS & MES</li>
+                                        <li class="problem-item"><span class="problem-bullet"></span>Quality depends on
+                                            partner implementation</li>
+                                    </ul>
+                                </div>
+                                <div class="card-title-hover">SuDu AI</div>
                             </div>
-                            <div class="rillet-expand">
-                                <ul>
-                                    <li>Heavy admin overhead</li>
-                                    <li>Slow change cycles</li>
-                                    <li>Complex maintenance</li>
-                                </ul>
-                            </div>
+
+                            <ul class="card-features">
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Ready made WMS
+                                    and MES comprehensive functionalities</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Stable system
+                                    can cater multiple scenarios</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Integrates with
+                                    existing ERP and accounting systems</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Minimal
+                                    disruption, no forced accounting system change</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
+                <div class="card-wrapper">
+                    <div class="card-number">03</div>
+                    <div class="card-bg"
+                        style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop');">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-content">
+                            <div class="card-title-container">
+                                <div class="card-title-default">
+                                    <span class="card-category">Accounting Systems</span>
+                                    <ul class="card-problem-list">
+                                        <li class="problem-item"><span class="problem-bullet"></span>Not scalable as
+                                            operations and transaction volume grow</li>
+                                        <li class="problem-item"><span class="problem-bullet"></span>Limited
+                                            functionality beyond finance</li>
+                                    </ul>
+                                </div>
+                                <div class="card-title-hover">SuDu AI</div>
+                            </div>
 
-                <!-- CARD 3 -->
-                <div class="rillet-card">
-                    <div class="rillet-card-inner">
-                        <div class="rillet-split">
-                            <div class="rillet-main">
-                                <h3>Sage Intacct</h3>
-                                <ul>
-                                    <li>Manual reconciliations</li>
-                                    <li>Rigid reporting</li>
-                                    <li>Data across tools</li>
-                                </ul>
-                                <a href="#" class="rillet-btn">Compare →</a>
-                            </div>
-                            <div class="rillet-expand">
-                                <ul>
-                                    <li>Extra reporting layers</li>
-                                    <li>Fragmented dashboards</li>
-                                    <li>More integrations needed</li>
-                                </ul>
-                            </div>
+                            <ul class="card-features">
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Scales with
+                                    growing warehouse and manufacturing operations</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Designed beyond
+                                    finance, covers inventory and production execution</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Handles complex
+                                    multiple operational scenarios</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Strong
+                                    operational control with clear workflows and rules</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Full stock
+                                    control with real-time visibility</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Live WIP and
+                                    production progress tracking</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>One source of
+                                    truth across warehouse, production and finance</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Built-in
+                                    controls to ensure data accuracy and discipline</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <!-- CARD 4 -->
-                <div class="rillet-card">
-                    <div class="rillet-card-inner">
-                        <div class="rillet-split">
-                            <div class="rillet-main">
-                                <h3>QuickBooks</h3>
-                                <ul>
-                                    <li>No multi-entity support</li>
-                                    <li>Spreadsheet metrics</li>
-                                    <li>Breaks at scale</li>
-                                </ul>
-                                <a href="#" class="rillet-btn">Compare →</a>
+                <div class="card-wrapper">
+                    <div class="card-number">04</div>
+                    <div class="card-bg"
+                        style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop');">
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card-content">
+                            <div class="card-title-container">
+                                <div class="card-title-default">
+                                    <span class="card-category">Custom Projects</span>
+                                    <ul class="card-problem-list">
+                                        <li class="problem-item"><span class="problem-bullet"></span>High developmetn
+                                            and ongoing maintenance cost</li>
+                                        <li class="problem-item"><span class="problem-bullet"></span>Long and uncertain
+                                            delivery timeline</li>
+                                    </ul>
+                                </div>
+                                <div class="card-title-hover">SuDu AI</div>
                             </div>
-                            <div class="rillet-expand">
-                                <ul>
-                                    <li>Manual consolidations</li>
-                                    <li>Audit friction</li>
-                                    <li>Metric tracking outside GL</li>
-                                </ul>
-                            </div>
+
+                            <ul class="card-features">
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Proven
+                                    ready-to-use product</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Predictable
+                                    cost with faster ROI</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Continuous
+                                    feature updates and maintenance by product team</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Lower long-term
+                                    operational and technical risk</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>Standardized
+                                    and stable accounting integration</li>
+                                <li class="feature-item"><i data-lucide="check" class="feature-icon"></i>New features
+                                    added without disrupting existing workflows</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
