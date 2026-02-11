@@ -49,7 +49,7 @@
     </script>
     <style>
         body {
-            background-color: #011916;
+            background-color: white;
             color: #b4bcd0;
         }
 
@@ -226,13 +226,55 @@
         /* Reveal Animation Styles */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-up {
+            transform: translateY(40px);
+        }
+
+        .reveal-down {
+            transform: translateY(-40px);
+        }
+
+        .reveal-left {
+            transform: translateX(-40px);
+        }
+
+        .reveal-right {
+            transform: translateX(40px);
+        }
+
+        .reveal-scale {
+            transform: scale(0.95);
+            opacity: 0;
         }
 
         .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 1 !important;
+            transform: translate(0, 0) scale(1) !important;
+        }
+
+        /* Stagger delays */
+        .reveal.delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal.delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal.delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        .reveal.delay-400 {
+            transition-delay: 0.4s;
+        }
+
+        .reveal.delay-500 {
+            transition-delay: 0.5s;
         }
     </style>
 </head>
@@ -293,18 +335,20 @@
         <!-- Desktop Menu Wrap (62%) -->
         <div class="w-[62%] hidden md:flex items-center justify-center gap-8 text-[14px] font-medium text-[#003406]">
             <div class="relative py-2 flex flex-col items-center">
-                <a href="product.html" class="hover:text-[#35E5A2] transition-colors">Product</a>
+                <a href="" class="hover:text-[#35E5A2] transition-colors">Product</a>
                 <div class="absolute -bottom-1 w-[110%] h-[2px] bg-[#003406] rounded-full"></div>
             </div>
-            <a href="careers.html" class="hover:text-[#35E5A2] transition-colors">Career</a>
+            <a href="" class="hover:text-[#35E5A2] transition-colors">Career</a>
             <a href="contact.html" class="hover:text-[#35E5A2] transition-colors">Contact Us</a>
         </div>
 
         <!-- Button Wrap (20%) -->
         <div class="w-[20%] flex items-center justify-center gap-4">
-            <a href="waitlist.html"
+            <a href=""
                 class="hidden md:block text-[14px] text-white font-normal bg-[#003406] hover:bg-black px-[30px] py-[8px] rounded-[5px] transition-all shadow-[0_0_10px_rgba(0,0,0,0.3)]">Request
                 Demo</a>
+
+
 
             <!-- Mobile Hamburger Button -->
             <button id="mobile-menu-btn" class="md:hidden text-[#003406] p-2 hover:opacity-70 transition-opacity">
@@ -375,7 +419,7 @@
     <div class="noise-bg"></div>
 
     <!-- Hero Section -->
-    <section class="relative pt-40 pb-10 lg:pt-52 lg:pb-32 px-6 overflow-hidden">
+    <section class="relative pt-40 pb-10 lg:pt-52 lg:pb-32 px-6 overflow-hidden reveal reveal-up">
         <!-- Video Background -->
         <div class="absolute inset-0 -z-30 pointer-events-none">
             <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-100">
@@ -417,19 +461,19 @@
                 AI Sales Automation
             </div>
             <h1
-                class="animate-fade-in-up delay-100 text-5xl md:text-6xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#35E5A2] to-[#33DDFF] mb-8 leading-[1.1]">
+                class="text-5xl md:text-6xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[#35E5A2] to-[#33DDFF] mb-8 leading-[1.1]">
                 1st AI Agent System<br>
                 <span class="text-white animate-gradient-x bg-[length:200%_auto]">for
                     Inventory and Production</span>
             </h1>
             <p
-                class="animate-fade-in-up delay-200 text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light tracking-wide">
+                class="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light tracking-wide reveal reveal-up delay-200">
                 An all-in-one system for warehouse and manufacturing
                 operations to work less, produce more, keep everything automatically in sync. <br> <br>AI Made
                 Simple. Make
-                Life Easier.</p>
+                Life Easier.
             </p>
-            <div class="animate-fade-in-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-up delay-300">
                 <a href="waitlist.html"
                     class="w-full sm:w-auto sm:min-w-[180px] px-8 py-4 bg-gradient-to-r from-[#35E5A2] to-[#33DDFF] text-[#011916] font-semibold rounded-full transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(53,229,162,0.3)] text-sm tracking-tight flex items-center justify-center">
                     Request a Demo →
@@ -502,9 +546,14 @@
     </section>
 
     <!-- Combined Products Section -->
-    <section id="products-dual" class="py-24 bg-white relative overflow-hidden reveal">
+    <section id="products-dual" class="py-24 bg-white relative overflow-hidden reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[12px] text-gray-500 mb-4 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sudu-sec animate-pulse"></span>
+                    Products
+                </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-[#06390C] tracking-tight leading-tight">
                     Two separate products <br> that are better together.
                 </h2>
@@ -736,8 +785,13 @@
     </section>
 
     <!-- Better Together Transition Section -->
-    <section class="py-24 bg-white relative overflow-hidden">
+    <section class="py-24 bg-white relative overflow-hidden reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[12px] text-gray-500 mb-4 shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-sudu-sec animate-pulse"></span>
+                Features
+            </div>
             <h2 class="text-4xl md:text-5xl font-bold text-[#06390C] tracking-tighter mb-4">
                 Better Together
             </h2>
@@ -748,12 +802,12 @@
     </section>
 
     <!-- Capabilities Grid Section -->
-    <section id="capabilities-grid" class="py-0 bg-white">
+    <section id="capabilities-grid" class="py-0 bg-white reveal reveal-up">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-gray-200">
                 <!-- Cap 1 -->
                 <div
-                    class="relative h-80 border-b border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden">
+                    class="relative h-80 border-b border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-100">
                     <!-- Background Number -->
                     <span
                         class="absolute -bottom-4 -right-2 text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">01</span>
@@ -813,7 +867,7 @@
 
                 <!-- Cap 2 -->
                 <div
-                    class="relative h-80 border-b border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden">
+                    class="relative h-80 border-b border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-200">
                     <!-- Background Number -->
                     <span
                         class="absolute -bottom-4 -right-2 text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">02</span>
@@ -872,7 +926,7 @@
 
                 <!-- Cap 3 -->
                 <div
-                    class="relative h-80 border-b lg:border-r-0 border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden">
+                    class="relative h-80 border-b lg:border-r-0 border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-300">
                     <!-- Background Number -->
                     <span
                         class="absolute -bottom-4 -right-2 text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">03</span>
@@ -927,7 +981,7 @@
 
                 <!-- Cap 4 -->
                 <div
-                    class="relative h-80 border-b border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden">
+                    class="relative h-80 border-b border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-100">
                     <!-- Background Number -->
                     <span
                         class="absolute -bottom-4 -right-2 text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">04</span>
@@ -987,7 +1041,7 @@
 
                 <!-- Cap 5 -->
                 <div
-                    class="relative h-80 border-b border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden">
+                    class="relative h-80 border-b border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-200">
                     <!-- Background Number -->
                     <span
                         class="absolute -bottom-4 -right-2 text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">05</span>
@@ -1042,7 +1096,7 @@
 
                 <!-- Cap 6 -->
                 <div
-                    class="relative h-80 border-b lg:border-r-0 border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden">
+                    class="relative h-80 border-b lg:border-r-0 border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-300">
                     <!-- Background Number -->
                     <span
                         class="absolute -bottom-4 -right-2 text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">06</span>
@@ -1099,7 +1153,7 @@
         </div>
     </section>
     <!-- Scrolling AI Assistant Section -->
-    <section class="py-20 bg-white overflow-hidden select-none border-t border-b border-white">
+    <section class="py-20 bg-white overflow-hidden select-none border-t border-b border-white reveal reveal-scale">
         <div class="flex flex-col gap-4">
             <div class="relative flex overflow-x-hidden">
                 <div class="animate-marquee whitespace-nowrap flex items-center">
@@ -1405,7 +1459,7 @@
     </script>
 
     <!-- Benefits Section (Features) -->
-    <section id="features" class="py-24 relative bg-[#FFFBF5] hidden">
+    <section id="features" class="py-24 relative bg-[#FFFBF5] hidden reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
                 <div
@@ -1519,7 +1573,7 @@
         </div>
     </section>
 
-    <section class="bg-white py-16">
+    <section class="bg-white py-16 reveal reveal-up">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
@@ -1596,11 +1650,11 @@
     </section>
 
 
-    <section class="py-20 bg-[#FFFBF5]">
+    <section class="py-20 bg-[#FFFBF5] reveal reveal-up">
         <div class="max-w-6xl mx-auto px-4 text-center">
 
             <!-- Title -->
-            <h2 class="ttext-4xl md:text-5xl font-bold text-[#06390C] mb-14 ">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#06390C] mb-14 reveal reveal-up">
                 Measurable Impact, in Weeks
             </h2>
 
@@ -1608,7 +1662,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                 <!-- Card 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <div class="bg-white rounded-2xl p-8 shadow-sm reveal reveal-up delay-100">
                     <p class="text-sm text-[#06390C] font-bold mb-4">
                         Inventory Accuracy
                     </p>
@@ -1621,7 +1675,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <div class="bg-white rounded-2xl p-8 shadow-sm reveal reveal-up delay-200">
                     <p class="text-sm text-[#06390C] font-bold mb-4">
                         Operational Efficiency
                     </p>
@@ -1634,7 +1688,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <div class="bg-white rounded-2xl p-8 shadow-sm reveal reveal-up delay-300">
                     <p class="text-sm text-[#06390C] mb-4">
                         Production Performance
                     </p>
@@ -1647,7 +1701,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <div class="bg-white rounded-2xl p-8 shadow-sm reveal reveal-up delay-100">
                     <p class="text-sm text-[#06390C] mb-4">
                         Order Fulfillment
                     </p>
@@ -1660,7 +1714,7 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <div class="bg-white rounded-2xl p-8 shadow-sm reveal reveal-up delay-200">
                     <p class="text-sm text-[#06390C] mb-4">
                         Issue Resolution
                     </p>
@@ -1673,7 +1727,7 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <div class="bg-white rounded-2xl p-8 shadow-sm reveal reveal-up delay-300">
                     <p class="text-sm text-[#06390C] mb-4">
                         Cost Reduction
                     </p>
@@ -2327,12 +2381,12 @@
 
 
     <section
-        class="relative bg-white py-20 px-6 border-y border-gray-100 overflow-hidden bg-gray-50 bg-gradient-to-b from-white to-emerald-50">
+        class="relative bg-white py-20 px-6 border-y border-gray-100 overflow-hidden bg-gray-50 bg-gradient-to-b from-white to-emerald-50 reveal reveal-up">
 
         <div class="max-w-6xl w-full mx-auto relative z-10">
 
             <!-- Header -->
-            <div class="text-center mb-16 space-y-4">
+            <div class="text-center mb-16 space-y-4 reveal reveal-up">
                 <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-[#06390C]">
                     Why Teams Choose SuDu AI
                 </h2>
@@ -2349,7 +2403,7 @@
                 <!-- Left Card: The "Old Way" (SQL Accounting) -->
                 <!-- Diminishes on hover -->
                 <div
-                    class="relative p-8 md:p-12 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:blur-[2px] lg:group-hover/compare:scale-95 origin-right z-0">
+                    class="relative p-8 md:p-12 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:blur-[2px] lg:group-hover/compare:scale-95 origin-right z-0 reveal reveal-up">
 
                     <div class="flex items-center gap-3 mb-8">
                         <div class="p-2.5 rounded-lg bg-white border border-gray-200 text-gray-400">
@@ -2382,7 +2436,7 @@
                 <!-- Highlights, scales up, and glows on hover -->
                 <div
                     class="relative p-8 md:p-12 rounded-2xl border border-gray-100 bg-white transition-all duration-500 ease-out shadow-xl lg:-ml-px z-10 
-                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-2xl lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white">
+                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-2xl lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white reveal reveal-up">
 
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                         <div class="flex items-center gap-3">
@@ -2444,6 +2498,10 @@
 
 
 
+
+
+
+
         </div>
 
     </section>
@@ -2465,7 +2523,7 @@
 
 
     <!-- How It Works Section (Vertical Timeline) -->
-    <section id="how-it-works" class="py-32 relative border-y border-white/5 bg-white/[0.02]">
+    <section id="how-it-works" class="py-32 relative border-y border-white/5 bg-[#011916] reveal reveal-up">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-24">
                 <div
@@ -2751,13 +2809,13 @@
     </section>
 
     <!-- Accounting Integration Section -->
-    <section class="py-32 bg-[#FFFBF5] relative overflow-hidden">
+    <section class="py-32 bg-[#FFFBF5] relative overflow-hidden reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-20 text-[#06390C]">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tighter">
                     Ready to Integrate with Your Accounting System
                 </h2>
-                <p class="text-gray-600 text-lg leading-relaxed">
+                <p class="text-gray-600 text-lg leading-relaxed reveal reveal-up delay-100">
                     Bring your <strong>existing accounting system data</strong> into our WMS and MES, no re-keying, no
                     disruption.
                     SuDu AI integrates directly with leading accounting platforms in Southeast Asia, keeping operations
@@ -2767,7 +2825,7 @@
 
             <div class="integration-grid">
                 <!-- SQL Account -->
-                <div class="logo-card">
+                <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.1s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
                         <div class="logo-img">
@@ -2778,7 +2836,7 @@
                 </div>
 
                 <!-- AutoCount -->
-                <div class="logo-card">
+                <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.2s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
                         <div class="logo-img">
@@ -2789,7 +2847,7 @@
                 </div>
 
                 <!-- FlowAccount -->
-                <div class="logo-card">
+                <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.3s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
                         <div class="logo-img">
@@ -2800,7 +2858,7 @@
                 </div>
 
                 <!-- Peak -->
-                <div class="logo-card">
+                <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.4s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
                         <div class="logo-img">
@@ -2921,7 +2979,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-32 relative overflow-hidden bg-white">
+    <section id="faq" class="py-32 relative overflow-hidden bg-white reveal reveal-up">
         <div class="max-w-3xl mx-auto px-6">
             <!-- Header -->
             <div class="text-center mb-12 flex flex-col items-center">
@@ -3027,7 +3085,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-32 relative overflow-hidden bg-[#F8FFFE]">
+    <section class="py-32 relative overflow-hidden bg-[#F8FFFE] reveal reveal-up">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             <h2 class="text-5xl md:text-5xl font-semibold text-gray-900 mb-6 tracking-tighter leading-[1.1]">Get Started
             </h2>
@@ -3155,7 +3213,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
-                threshold: 0.15,
+                threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             };
 
@@ -3167,7 +3225,8 @@
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.reveal').forEach((el) => {
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach((el) => {
                 observer.observe(el);
             });
         });
