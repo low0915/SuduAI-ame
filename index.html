@@ -323,32 +323,31 @@
 
     <!-- Navbar -->
     <nav
-        class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[1080px] z-50 transition-all duration-300 bg-[#CCCCCC80] rounded-[10px] px-0 h-14 flex items-center shadow-sm">
+        class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1200px] z-50 transition-all duration-300 bg-white/60 rounded-[12px] px-6 h-16 flex items-center justify-between shadow-sm">
 
-        <!-- Logo Wrap (18%) -->
-        <div class="w-[18%] flex items-center justify-center">
-            <a href="index.html" class="flex items-center justify-center">
-                <img src="assets/images/logo.png" alt="SuDu AI" class="w-[107px] h-auto">
-            </a>
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+            <img src="assets/images/logo.png" alt="SuDu AI" class="h-6 w-auto">
+
+        </a>
+
+        <!-- Centered Links -->
+        <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+            <a href="" class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Product</a>
+            <a href="" class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Career</a>
+            <a href="" class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Contact Us</a>
         </div>
 
-        <!-- Desktop Menu Wrap (62%) -->
-        <div class="w-[62%] hidden md:flex items-center justify-center gap-8 text-[14px] font-medium text-[#003406]">
-            <div class="relative py-2 flex flex-col items-center">
-                <a href="" class="hover:text-[#35E5A2] transition-colors">Product</a>
-                <div class="absolute -bottom-1 w-[110%] h-[2px] bg-[#003406] rounded-full"></div>
-            </div>
-            <a href="" class="hover:text-[#35E5A2] transition-colors">Career</a>
-            <a href="contact.html" class="hover:text-[#35E5A2] transition-colors">Contact Us</a>
-        </div>
-
-        <!-- Button Wrap (20%) -->
-        <div class="w-[20%] flex items-center justify-center gap-4">
+        <!-- Buttons -->
+        <div class="flex items-center gap-4 flex-shrink-0">
+            <button
+                class="hidden md:block px-5 py-2 rounded-[6px] border border-[#003406] text-[#003406] text-sm font-medium hover:bg-[#003406] hover:text-white transition-all">
+                See It in Action
+            </button>
             <a href=""
-                class="hidden md:block text-[14px] text-white font-normal bg-[#003406] hover:bg-black px-[30px] py-[8px] rounded-[5px] transition-all shadow-[0_0_10px_rgba(0,0,0,0.3)]">Request
-                Demo</a>
-
-
+                class="hidden md:block px-5 py-2 rounded-[6px] bg-[#003406] text-white text-sm font-medium hover:bg-black transition-all shadow-md">
+                Request a Demo
+            </a>
 
             <!-- Mobile Hamburger Button -->
             <button id="mobile-menu-btn" class="md:hidden text-[#003406] p-2 hover:opacity-70 transition-opacity">
@@ -359,7 +358,7 @@
 
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu"
-        class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-40 bg-[#CCCCCC]/98 backdrop-blur-xl rounded-[10px] border border-white/20 shadow-2xl overflow-hidden transition-all duration-300 opacity-0 pointer-events-none scale-95">
+        class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-40 bg-[#E5E5E5] rounded-[12px] border border-white/20 shadow-2xl overflow-hidden transition-all duration-300 opacity-0 pointer-events-none scale-95">
         <div class="flex flex-col p-6 space-y-4">
             <a href="product.html"
                 class="text-base font-medium text-[#003406] py-2 border-l-4 border-[#003406] pl-4">Product</a>
@@ -367,10 +366,14 @@
                 class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Career</a>
             <a href="contact.html" class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Contact
                 Us</a>
-            <div class="pt-6 border-t border-[#003406]/10">
+            <div class="pt-6 border-t border-[#003406]/10 space-y-3">
+                <button
+                    class="w-full block text-center text-base text-[#003406] font-medium border border-[#003406] px-4 py-3 rounded-lg hover:bg-[#003406] hover:text-white transition-all">
+                    See It in Action
+                </button>
                 <a href="waitlist.html"
-                    class="block text-center text-base text-white font-normal bg-[#003406] hover:bg-black px-4 py-3 rounded-lg transition-all shadow-lg">Request
-                    Demo</a>
+                    class="block text-center text-base text-white font-medium bg-[#003406] hover:bg-black px-4 py-3 rounded-lg transition-all shadow-lg">Request
+                    a Demo</a>
             </div>
         </div>
     </div>
@@ -419,12 +422,14 @@
     <div class="noise-bg"></div>
 
     <!-- Hero Section -->
-    <section class="relative pt-40 pb-10 lg:pt-52 lg:pb-32 px-6 overflow-hidden reveal reveal-up">
+    <section class="relative pt-40 pb-10 lg:pt-52 lg:pb-52 px-6 overflow-hidden reveal reveal-up">
         <!-- Video Background -->
+
         <div class="absolute inset-0 -z-30 pointer-events-none">
             <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-100">
-                <source src="assets/videos/hero.mp4" type="video/mp4">
+                <source src="assets/videos/hero2.mp4" type="video/mp4">
             </video>
+
             <!-- Dark Overlay for Contrast -->
             <div class="absolute inset-0 bg-gradient-to-b from-[#011916]/80 via-[#011916]/50 to-[#011916]"></div>
         </div>
@@ -467,9 +472,14 @@
                     Inventory and Production</span>
             </h1>
             <p
-                class="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light tracking-wide reveal reveal-up delay-200">
+                class="text-lg md:text-l text-white mb-12 max-w-3xl mx-auto leading-relaxed font-light tracking-wide reveal reveal-up delay-200">
                 An all-in-one system for warehouse and manufacturing
-                operations to work less, produce more, keep everything automatically in sync. <br> <br>AI Made
+                operations to work less, produce more, keep everything automatically in sync.
+            </p>
+
+            <p
+                class="text-lg md:text-xl text-white font-semibold mb-12 max-w-3xl mx-auto leading-relaxed font-light tracking-wide reveal reveal-up delay-200">
+                AI Made
                 Simple. Make
                 Life Easier.
             </p>
@@ -521,7 +531,8 @@
                                 class="bg-sudu-sec/10 text-emerald-100 px-5 py-3 rounded-2xl rounded-tl-sm text-sm border border-sudu-sec/20">
                                 <p>Processing... <span class="text-sudu-sec font-semibold">Matched TechCorp
                                         (CUST-009).</span></p>
-                                <p class="mt-2">I've created <strong>Sales Order SO-2026-880</strong> in SQL Accounting.
+                                <p class="mt-2">I've created <strong>Sales Order SO-2026-880</strong> in SQL
+                                    Accounting.
                                 </p>
                                 <div
                                     class="mt-3 bg-black/40 p-3 rounded-lg border border-sudu-sec/10 text-xs font-mono text-gray-300">
@@ -536,7 +547,8 @@
                                         <span>Total</span> <span>$620.00</span>
                                     </div>
                                 </div>
-                                <p class="mt-2 text-[10px] text-gray-400">Synced to SQL Acc v4.28 • Warehouse Main</p>
+                                <p class="mt-2 text-[10px] text-gray-400">Synced to SQL Acc v4.28 • Warehouse Main
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1012,27 +1024,32 @@
                         <div class="space-y-3">
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">Production plans aligned
+                                <p class="text-white text-[11px] font-medium leading-tight">Production plans
+                                    aligned
                                     with real stock availability</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">Shortage alerts before
+                                <p class="text-white text-[11px] font-medium leading-tight">Shortage alerts
+                                    before
                                     production starts</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">Automatic adjustment when
+                                <p class="text-white text-[11px] font-medium leading-tight">Automatic
+                                    adjustment when
                                     materials or machines are unavailable</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">Support for make-to-stock
+                                <p class="text-white text-[11px] font-medium leading-tight">Support for
+                                    make-to-stock
                                     and make-to-order scenarios</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">Rush order and priority job
+                                <p class="text-white text-[11px] font-medium leading-tight">Rush order and
+                                    priority job
                                     handling</p>
                             </div>
                         </div>
@@ -1072,22 +1089,26 @@
                         <div class="space-y-3">
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">Multi organisation, Multi
+                                <p class="text-white text-[11px] font-medium leading-tight">Multi
+                                    organisation, Multi
                                     plants and Multi-site operations</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">Cater for Process & Discrete
+                                <p class="text-white text-[11px] font-medium leading-tight">Cater for
+                                    Process & Discrete
                                     Manufacturing</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">Manual, semi-automated, or
+                                <p class="text-white text-[11px] font-medium leading-tight">Manual,
+                                    semi-automated, or
                                     fully automated factories</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">Small batch, hihg-mix, or
+                                <p class="text-white text-[11px] font-medium leading-tight">Small batch,
+                                    hihg-mix, or
                                     mass production environments</p>
                             </div>
                         </div>
@@ -1128,22 +1149,26 @@
                         <div class="space-y-3">
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">AI predicts material
+                                <p class="text-white text-[11px] font-medium leading-tight">AI predicts
+                                    material
                                     shortages before they happen</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">AI balances production load
+                                <p class="text-white text-[11px] font-medium leading-tight">AI balances
+                                    production load
                                     based on capacity and demand</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">AI recommends rescheduling
+                                <p class="text-white text-[11px] font-medium leading-tight">AI recommends
+                                    rescheduling
                                     when delays occur</p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-white mt-0.5 flex-shrink-0"></i>
-                                <p class="text-white text-[11px] font-medium leading-tight">AI reduces manual planning
+                                <p class="text-white text-[11px] font-medium leading-tight">AI reduces
+                                    manual planning
                                     and data entry</p>
                             </div>
                         </div>
