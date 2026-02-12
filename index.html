@@ -338,6 +338,59 @@
                 opacity: 0;
             }
         }
+
+        /* Subtle Animations for Other Sections */
+        @keyframes gentle-float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes gentle-pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes gentle-shake {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(-5deg);
+            }
+
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+
+        @keyframes slow-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -2200,7 +2253,7 @@
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
-                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec group-hover:scale-110 transition-transform">
+                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3s_ease-in-out_infinite]">
                         <i data-lucide="keyboard" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">No Manual Key-In Required</h3>
@@ -2212,7 +2265,7 @@
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
-                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec group-hover:scale-110 transition-transform">
+                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.2s_ease-in-out_infinite]">
                         <i data-lucide="database" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Posted Directly into SQL</h3>
@@ -2224,7 +2277,7 @@
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
-                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec group-hover:scale-110 transition-transform">
+                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.5s_ease-in-out_infinite]">
                         <i data-lucide="scan-text" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Smart Matching</h3>
@@ -2236,7 +2289,7 @@
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
-                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec group-hover:scale-110 transition-transform">
+                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_2.8s_ease-in-out_infinite]">
                         <i data-lucide="check-circle-2" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Reduces Errors</h3>
@@ -2248,7 +2301,7 @@
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
-                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec group-hover:scale-110 transition-transform">
+                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.1s_ease-in-out_infinite]">
                         <i data-lucide="zap" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Processed in Seconds</h3>
@@ -2260,7 +2313,7 @@
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
-                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec group-hover:scale-110 transition-transform">
+                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.4s_ease-in-out_infinite]">
                         <i data-lucide="users" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Frees Up Sales Team</h3>
@@ -2272,7 +2325,7 @@
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
-                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec group-hover:scale-110 transition-transform">
+                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_2.9s_ease-in-out_infinite]">
                         <i data-lucide="send" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Auto Order Confirmations</h3>
@@ -2284,7 +2337,7 @@
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
-                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec group-hover:scale-110 transition-transform">
+                        class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.6s_ease-in-out_infinite]">
                         <i data-lucide="languages" class="w-5 h-5"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Multi-Language (7)</h3>
@@ -2301,7 +2354,8 @@
 
                 <!-- Card 1 -->
                 <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 mb-6">
+                    <div
+                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 mb-6 animate-[gentle-pulse_4s_ease-in-out_infinite]">
                         <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2"
                             viewBox="0 0 24 24">
                             <rect x="7" y="7" width="10" height="10" rx="2"></rect>
@@ -2324,7 +2378,8 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 mb-6">
+                    <div
+                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 mb-6 animate-[gentle-shake_3s_ease-in-out_infinite]">
                         <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2"
                             viewBox="0 0 24 24">
                             <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"></path>
@@ -2346,7 +2401,8 @@
 
                 <!-- Card 3 -->
                 <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 mb-6">
+                    <div
+                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 mb-6 animate-[slow-spin_12s_linear_infinite]">
                         <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2"
                             viewBox="0 0 24 24">
                             <path d="M12 11c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
@@ -2388,7 +2444,8 @@
                     <p class="text-sm text-[#06390C] font-bold mb-4">
                         Inventory Accuracy
                     </p>
-                    <p class="text-5xl font-semibold text-[#06390C] mb-4">
+                    <p
+                        class="text-5xl font-semibold text-[#06390C] mb-4 animate-[gentle-pulse_4s_ease-in-out_infinite]">
                         +<span class="counter" data-target="80">0</span>%
                     </p>
                     <p class="text-sm text-gray-400 mb-4">
@@ -2401,7 +2458,8 @@
                     <p class="text-sm text-[#06390C] font-bold mb-4">
                         Operational Efficiency
                     </p>
-                    <p class="text-5xl font-semibold text-[#06390C] mb-4">
+                    <p
+                        class="text-5xl font-semibold text-[#06390C] mb-4 animate-[gentle-pulse_4s_ease-in-out_infinite]">
                         -<span class="counter" data-target="50">0</span>%
                     </p>
                     <p class="text-sm text-gray-400 mb-4">
@@ -2414,7 +2472,8 @@
                     <p class="text-sm text-[#06390C] mb-4">
                         Production Performance
                     </p>
-                    <p class="text-5xl font-semibold text-[#06390C] mb-4">
+                    <p
+                        class="text-5xl font-semibold text-[#06390C] mb-4 animate-[gentle-pulse_4s_ease-in-out_infinite]">
                         +<span class="counter" data-target="20">0</span>%
                     </p>
                     <p class="text-sm text-gray-400 mb-4">
@@ -2427,7 +2486,8 @@
                     <p class="text-sm text-[#06390C] mb-4">
                         Order Fulfillment
                     </p>
-                    <p class="text-5xl font-semibold text-[#06390C] mb-4">
+                    <p
+                        class="text-5xl font-semibold text-[#06390C] mb-4 animate-[gentle-pulse_4s_ease-in-out_infinite]">
                         +<span class="counter" data-target="20">0</span>%
                     </p>
                     <p class="text-sm text-gray-400 mb-4">
@@ -2440,7 +2500,8 @@
                     <p class="text-sm text-[#06390C] mb-4">
                         Issue Resolution
                     </p>
-                    <p class="text-5xl font-semibold text-[#06390C] mb-4">
+                    <p
+                        class="text-5xl font-semibold text-[#06390C] mb-4 animate-[gentle-pulse_4s_ease-in-out_infinite]">
                         <span class="counter" data-target="4">0</span>X
                     </p>
                     <p class="text-sm text-gray-400 mb-4">
@@ -2453,7 +2514,8 @@
                     <p class="text-sm text-[#06390C] mb-4">
                         Cost Reduction
                     </p>
-                    <p class="text-5xl font-semibold text-[#06390C] mb-4">
+                    <p
+                        class="text-5xl font-semibold text-[#06390C] mb-4 animate-[gentle-pulse_4s_ease-in-out_infinite]">
                         -<span class="counter" data-target="20">30</span>%
                     </p>
                     <p class="text-sm text-gray-400 mb-4">
