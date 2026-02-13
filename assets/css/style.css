@@ -513,3 +513,29 @@ body {
     background-color: #ecfdf5;
     color: #35E5A2;
 }
+
+/* Demo Screen Component Styling */
+@keyframes demo-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(53, 229, 162, 0.4);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 0 15px rgba(53, 229, 162, 0);
+        transform: scale(1.05);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(53, 229, 162, 0);
+        transform: scale(1);
+    }
+}
+
+.animate-demo-pulse {
+    animation: demo-pulse 2s infinite;
+}
+
+.group\/demo:hover .animate-demo-pulse {
+    animation-duration: 1s;
+}
