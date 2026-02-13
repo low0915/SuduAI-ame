@@ -639,9 +639,21 @@
 
         <!-- Centered Links -->
         <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-            <a href="#" class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Product</a>
-            <a href="#" class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Career</a>
-            <a href="#" class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Contact Us</a>
+            <div class="dropdown-container">
+                <a href="#"
+                    class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors flex items-center gap-1">
+                    Product
+                    <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="warehouse.html" class="dropdown-item">Warehouse</a>
+                    <a href="manufacturing.html" class="dropdown-item">Manufacturing</a>
+                </div>
+            </div>
+            <a href="careers.html"
+                class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Career</a>
+            <a href="contact.html"
+                class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Contact Us</a>
         </div>
 
         <!-- Buttons -->
@@ -650,7 +662,7 @@
                 class="hidden md:block px-5 py-2 rounded-[6px] border border-[#003406] text-[#003406] text-sm font-medium hover:bg-[#003406] hover:text-white transition-all">
                 See It in Action
             </button>
-            <a href="#"
+            <a href="waitlist.html"
                 class="hidden md:block px-5 py-2 rounded-[6px] bg-[#003406] text-white text-sm font-medium hover:bg-black transition-all shadow-md">
                 Request a Demo
             </a>
@@ -666,9 +678,18 @@
     <div id="mobile-menu"
         class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-40 bg-[#E5E5E5] rounded-[12px] border border-white/20 shadow-2xl overflow-hidden transition-all duration-300 opacity-0 pointer-events-none scale-95">
         <div class="flex flex-col p-6 space-y-4">
-            <a href="#" class="text-base font-medium text-[#003406] py-2 border-l-4 border-[#003406] pl-4">Product</a>
-            <a href="#" class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Career</a>
-            <a href="#" class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Contact
+            <div class="space-y-2">
+                <div class="text-base font-medium text-[#003406] py-2 border-l-4 border-[#003406] pl-4">Product</div>
+                <div class="pl-9 space-y-2">
+                    <a href="warehouse.html"
+                        class="block text-sm font-medium text-[#003406]/70 hover:text-[#35E5A2]">Warehouse</a>
+                    <a href="manufacturing.html"
+                        class="block text-sm font-medium text-[#003406]/70 hover:text-[#35E5A2]">Manufacturing</a>
+                </div>
+            </div>
+            <a href="careers.html"
+                class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Career</a>
+            <a href="contact.html" class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Contact
                 Us</a>
             <div class="pt-6 border-t border-[#003406]/10 space-y-3">
                 <button
@@ -2006,7 +2027,7 @@
             <p class="text-lg text-gray-600 mb-12 max-w-xl mx-auto">Integrate SuDu AI in your business, makes life
                 easier.</p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="waitlist.html"
+                <a href="#"
                     class="w-full sm:w-auto sm:min-w-[180px] px-6 py-3  border-2 border-gradient-to-r from-[#35E5A2] to-[#33DDFF] bg-gradient-to-r from-[#35E5A2] to-[#33DDFF] border-10 text-sm text-white font-semibold rounded-full hover:shadow-[0_0_40px_rgba(53,229,162,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center">
                     Book a Demo →
                 </a>
