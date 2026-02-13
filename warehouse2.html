@@ -10,149 +10,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'sudu-main': '#011916',
-                        'sudu-sec': '#35E5A2',
-                        brand: {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            200: '#a7f3d0',
-                            300: '#6ee7b7',
-                            400: '#35E5A2', // Updated to secondary
-                            500: '#2ec28b', // Slightly darker variant
-                            600: '#059669',
-                            700: '#047857',
-                            800: '#065f46',
-                            900: '#011916', // Updated to main
-                            950: '#002104',
-                        },
-                        dark: {
-                            bg: '#011916', // Updated to main
-                            surface: '#004708',
-                            border: '#35E5A2'
-                        }
-                    },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                        'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #35E5A233 0deg, #01191600 360deg)',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #FFFBF5;
-            color: #b4bcd0;
-        }
-
-        /* Stars Effect */
-        .stars-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: twinkle var(--duration) ease-in-out infinite;
-            animation-delay: var(--delay);
-        }
-
-        @keyframes twinkle {
-            0% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-
-            50% {
-                opacity: var(--opacity);
-                transform: scale(1);
-            }
-
-            100% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-        }
-
-        /* Linear Design Utilities */
-        .glass-panel {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            /* Top shine */
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
-        }
-
-        .glass-panel:hover {
-            border-top-color: rgba(53, 229, 162, 0.4);
-            /* Green top shine on hover */
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%);
-        }
-
-        .text-glow {
-            text-shadow: 0 0 40px rgba(53, 229, 162, 0.4);
-        }
-
-        .mask-linear-fade {
-            mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
-        }
-
-        /* Animation Classes */
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .delay-100 {
-            animation-delay: 0.1s;
-        }
-
-        .delay-200 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-300 {
-            animation-delay: 0.3s;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Reveal Animation Styles */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <script src="assets/js/script.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body
@@ -161,33 +20,6 @@
     <!-- Stars Background -->
     <div class="stars-container" id="stars"></div>
 
-    <!-- Generate Stars Script -->
-    <script>
-        const starsContainer = document.getElementById('stars');
-        const starCount = 50;
-
-        for (let i = 0; i < starCount; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const size = Math.random() * 2 + 1; // 1px to 3px
-            const duration = Math.random() * 3 + 2; // 2s to 5s
-            const delay = Math.random() * 5;
-            const opacity = Math.random() * 0.5 + 0.3;
-
-            star.style.left = `${x}%`;
-            star.style.top = `${y}%`;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.setProperty('--duration', `${duration}s`);
-            star.style.setProperty('--delay', `${delay}s`);
-            star.style.setProperty('--opacity', opacity);
-
-            starsContainer.appendChild(star);
-        }
-    </script>
 
     <!-- Navbar -->
     <nav
@@ -245,45 +77,6 @@
         </div>
     </div>
 
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            let isMenuOpen = false;
-
-            mobileMenuBtn.addEventListener('click', () => {
-                isMenuOpen = !isMenuOpen;
-
-                if (isMenuOpen) {
-                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
-                } else {
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                }
-            });
-
-            // Close menu when clicking on a link
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    isMenuOpen = false;
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                    isMenuOpen = false;
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                }
-            });
-        });
-    </script>
 
     <!-- Hero Section -->
     <section class="relative pt-40 pb-10 lg:pt-52 lg:pb-32 px-6">
@@ -359,3 +152,7 @@
             </div>
 
         </section>
+        </main>
+</body>
+
+</html>

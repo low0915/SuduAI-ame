@@ -10,6 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/script.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -47,351 +48,7 @@
             }
         }
     </script>
-    <style>
-        body {
-            background-color: white;
-            color: #b4bcd0;
-        }
-
-        /* Stars Effect */
-        .stars-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: twinkle var(--duration) ease-in-out infinite;
-            animation-delay: var(--delay);
-        }
-
-        @keyframes twinkle {
-            0% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-
-            50% {
-                opacity: var(--opacity);
-                transform: scale(1);
-            }
-
-            100% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-        }
-
-        /* Linear Design Utilities */
-        .glass-panel {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            /* Top shine */
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
-        }
-
-        .glass-panel:hover {
-            border-top-color: rgba(53, 229, 162, 0.4);
-            /* Green top shine on hover */
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%);
-        }
-
-        .text-glow {
-            text-shadow: 0 0 40px rgba(53, 229, 162, 0.4);
-        }
-
-        .mask-linear-fade {
-            mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
-        }
-
-        /* Animation Classes */
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .delay-100 {
-            animation-delay: 0.1s;
-        }
-
-        .delay-200 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-300 {
-            animation-delay: 0.3s;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Organic Mesh Drift */
-        @keyframes mesh-drift {
-            0% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
-
-            33% {
-                transform: translate(10vw, 5vh) rotate(5deg) scale(1.1);
-            }
-
-            66% {
-                transform: translate(-5vw, 15vh) rotate(-5deg) scale(0.9);
-            }
-
-            100% {
-                transform: translate(0, 0) rotate(0deg) scale(1);
-            }
-        }
-
-        .animate-mesh-1 {
-            animation: mesh-drift 20s ease-in-out infinite;
-        }
-
-        .animate-mesh-2 {
-            animation: mesh-drift 25s ease-in-out infinite reverse;
-        }
-
-        .animate-mesh-3 {
-            animation: mesh-drift 30s ease-in-out infinite;
-            animation-delay: -5s;
-        }
-
-        /* Noise Texture */
-        .noise-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.04;
-            pointer-events: none;
-            z-index: -2;
-            mix-blend-mode: overlay;
-        }
-
-        /* Floating Animation */
-        @keyframes float-slow {
-
-            0%,
-            100% {
-                transform: translate(-50%, 0) scale(1);
-            }
-
-            33% {
-                transform: translate(-48%, 2%) scale(1.05);
-            }
-
-            66% {
-                transform: translate(-52%, -2%) scale(0.95);
-            }
-        }
-
-        .animate-float-slow {
-            animation: float-slow 15s ease-in-out infinite;
-        }
-
-        /* Drift Animation for Stars */
-        @keyframes drift {
-            from {
-                transform: translateX(0) translateY(0);
-            }
-
-            to {
-                transform: translateX(var(--drift-x)) translateY(var(--drift-y));
-            }
-        }
-
-        .animate-drift {
-            animation: drift var(--drift-duration) linear infinite alternate;
-        }
-
-        /* Reveal Animation Styles */
-        .reveal {
-            opacity: 0;
-            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-            will-change: transform, opacity;
-        }
-
-        .reveal-up {
-            transform: translateY(40px);
-        }
-
-        .reveal-down {
-            transform: translateY(-40px);
-        }
-
-        .reveal-left {
-            transform: translateX(-40px);
-        }
-
-        .reveal-right {
-            transform: translateX(40px);
-        }
-
-        .reveal-scale {
-            transform: scale(0.95);
-            opacity: 0;
-        }
-
-        .reveal.active {
-            opacity: 1 !important;
-            transform: translate(0, 0) scale(1) !important;
-        }
-
-        /* Stagger delays */
-        .reveal.delay-100 {
-            transition-delay: 0.1s;
-        }
-
-        .reveal.delay-200 {
-            transition-delay: 0.2s;
-        }
-
-        .reveal.delay-300 {
-            transition-delay: 0.3s;
-        }
-
-        .reveal.delay-400 {
-            transition-delay: 0.4s;
-        }
-
-        .reveal.delay-500 {
-            transition-delay: 0.5s;
-        }
-
-        /* Custom Animations for Cards */
-        @keyframes scanner-sweep {
-
-            0%,
-            100% {
-                transform: translate(-50%, -50%) rotate(45deg) translateY(-20px);
-                opacity: 0;
-            }
-
-            10%,
-            90% {
-                opacity: 1;
-            }
-
-            50% {
-                transform: translate(-50%, -50%) rotate(45deg) translateY(20px);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slide-truck {
-            0% {
-                transform: translateX(-10px);
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            80% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(20px);
-                opacity: 0;
-            }
-        }
-
-        @keyframes packet-travel {
-            0% {
-                offset-distance: 0%;
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            90% {
-                opacity: 1;
-            }
-
-            100% {
-                offset-distance: 100%;
-                opacity: 0;
-            }
-        }
-
-        /* Subtle Animations for Other Sections */
-        @keyframes gentle-float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @keyframes gentle-pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: scale(1.05);
-                opacity: 0.9;
-            }
-        }
-
-        @keyframes gentle-shake {
-
-            0%,
-            100% {
-                transform: rotate(0deg);
-            }
-
-            25% {
-                transform: rotate(-5deg);
-            }
-
-            75% {
-                transform: rotate(5deg);
-            }
-        }
-
-        @keyframes slow-spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body
@@ -401,40 +58,6 @@
     <div class="stars-container" id="stars"></div>
 
     <!-- Generate Stars Script -->
-    <script>
-        const starsContainer = document.getElementById('stars');
-        const starCount = 50;
-
-        for (let i = 0; i < starCount; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star', 'animate-drift');
-
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const size = Math.random() * 2 + 1; // 1px to 3px
-            const duration = Math.random() * 3 + 2; // 2s to 5s
-            const delay = Math.random() * 5;
-            const opacity = Math.random() * 0.5 + 0.3;
-
-            // Drift properties
-            const driftX = (Math.random() - 0.5) * 40; // -20px to 20px
-            const driftY = (Math.random() - 0.5) * 40;
-            const driftDuration = Math.random() * 20 + 10; // 10s to 30s
-
-            star.style.left = `${x}%`;
-            star.style.top = `${y}%`;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.setProperty('--duration', `${duration}s`);
-            star.style.setProperty('--delay', `${delay}s`);
-            star.style.setProperty('--opacity', opacity);
-            star.style.setProperty('--drift-x', `${driftX}px`);
-            star.style.setProperty('--drift-y', `${driftY}px`);
-            star.style.setProperty('--drift-duration', `${driftDuration}s`);
-
-            starsContainer.appendChild(star);
-        }
-    </script>
 
     <!-- Navbar -->
     <nav
@@ -492,44 +115,7 @@
     </div>
 
     <!-- Mobile Menu Toggle Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            let isMenuOpen = false;
 
-            mobileMenuBtn.addEventListener('click', () => {
-                isMenuOpen = !isMenuOpen;
-
-                if (isMenuOpen) {
-                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
-                } else {
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                }
-            });
-
-            // Close menu when clicking on a link
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    isMenuOpen = false;
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                    isMenuOpen = false;
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                }
-            });
-        });
-    </script>
 
     <!-- Noise Texture -->
     <div class="noise-bg"></div>
@@ -1128,10 +714,10 @@
 
                 <!-- Card 3: Scale -->
                 <div
-                    class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl overflow-hidden flex flex-col">
-                    <div class="p-8 flex flex-col h-full">
+                    class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
+                    <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
-                        <div class="mb-6">
+                        <div class="mb-2">
                             <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">Order & Delivery Synchronization
                             </h3>
                             <div
@@ -1168,7 +754,7 @@
 
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-2xl border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="w-full max-w-[240px] flex flex-col gap-4">
                                 <!-- Step 1: Order -->
                                 <div
@@ -1232,10 +818,10 @@
 
                 <!-- Card 4: Connect -->
                 <div
-                    class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl overflow-hidden flex flex-col">
-                    <div class="p-8 flex flex-col h-full">
+                    class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
+                    <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
-                        <div class="mb-6">
+                        <div class="mb-2">
                             <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">Production Planning & Execution
                             </h3>
                             <div
@@ -1277,7 +863,7 @@
 
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-2xl border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="flex flex-col gap-3 w-full max-w-[240px]">
                                 <!-- Header -->
                                 <div class="flex justify-between items-center mb-1 px-1">
@@ -1332,10 +918,10 @@
 
                 <!-- Card 5: Automate -->
                 <div
-                    class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl overflow-hidden flex flex-col">
-                    <div class="p-8 flex flex-col h-full">
+                    class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
+                    <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
-                        <div class="mb-6">
+                        <div class="mb-2">
                             <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">Multi-Scenario Ready</h3>
                             <div
                                 class="max-h-0 opacity-0 group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden">
@@ -1371,7 +957,7 @@
 
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-2xl border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="relative w-full h-32 flex items-center justify-center">
                                 <!-- Lines -->
                                 <div class="absolute inset-0 flex items-center justify-center">
@@ -1477,10 +1063,10 @@
 
                 <!-- Card 6: Scale -->
                 <div
-                    class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-xl overflow-hidden flex flex-col">
-                    <div class="p-8 flex flex-col h-full">
+                    class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
+                    <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
-                        <div class="mb-6">
+                        <div class="mb-2">
                             <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">AI Automation</h3>
                             <div
                                 class="max-h-0 opacity-0 group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden">
@@ -1511,7 +1097,7 @@
 
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-2xl border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div
                                 class="w-full max-w-[220px] bg-white rounded-xl shadow-lg border border-sudu-sec/10 p-4 relative overflow-hidden group-hover:-translate-y-1 transition-transform duration-500">
                                 <!-- Gradient Background -->
@@ -1958,21 +1544,6 @@
     </section>
 
     <!-- Custom Style for Marquee -->
-    <style>
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .animate-marquee {
-            animation: marquee 40s linear infinite;
-        }
-    </style>
 
     <!-- Agent Capabilities Section -->
 
@@ -2104,134 +1675,7 @@
         </div>
     </section>
 
-    <style>
-        .active-agent {
-            background-color: white !important;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            color: #06390C !important;
-        }
 
-        .active-agent .dot {
-            background-color: #35E5A2;
-            box-shadow: 0 0 8px #35E5A2;
-        }
-
-        .agent-tab {
-            transition: all 0.3s ease;
-        }
-
-        .agent-tab:hover:not(.active-agent) {
-            background-color: #f9fafb;
-            color: #6b7280;
-        }
-    </style>
-
-    <script>
-        const agents = [
-            {
-                id: "text",
-                name: "Text",
-                description: "Communicate with the AI Agent using natural language to search records, generate reports, and perform ERP actions quickly and accurately.",
-                consoleTask: "Natural Language Interaction",
-                consoleStatus: "Processing data stream...",
-                cpu: "12%",
-                mem: "450MB",
-                net: "1.2GB/s"
-            },
-            {
-                id: "voice",
-                name: "Voice",
-                description: "Seamlessly integrate voice commands to manage production status, update inventory, or query financial data through AI voice synthesis.",
-                consoleTask: "Voice Synthesis Loop",
-                consoleStatus: "Listening for input...",
-                cpu: "18%",
-                mem: "620MB",
-                net: "2.4GB/s"
-            },
-            {
-                id: "upload",
-                name: "Upload",
-                description: "Advanced document processing automatically extracts metadata from invoices, POs, and shipping manifests to populate your ERP system.",
-                consoleTask: "Document OCR Engine",
-                consoleStatus: "Extracting metadata...",
-                cpu: "25%",
-                mem: "890MB",
-                net: "0.8GB/s"
-            },
-            {
-                id: "capture",
-                name: "Capture",
-                description: "Intelligent camera integration allows you to capture physical documents or inventory tags directly into the production workflow.",
-                consoleTask: "Vision Stream Analysis",
-                consoleStatus: "Scanning barcodes...",
-                cpu: "32%",
-                mem: "1.2GB",
-                net: "4.5GB/s"
-            }
-        ];
-
-        let currentAgentIndex = 0;
-        let autoSlideInterval;
-
-        function switchAgent(index, resetTimer = true) {
-            currentAgentIndex = index;
-            const tabs = document.querySelectorAll('.agent-tab');
-            const descArea = document.getElementById('agent-description');
-
-            // Console elements
-            const termModule = document.getElementById('term-module');
-            const termTask = document.getElementById('term-task');
-            const termStatus = document.getElementById('term-status');
-            const termCpu = document.getElementById('term-cpu');
-            const termMem = document.getElementById('term-mem');
-            const termNet = document.getElementById('term-net');
-
-            tabs.forEach((tab, i) => {
-                if (i === index) {
-                    tab.classList.add('active-agent');
-                    tab.classList.remove('text-gray-400');
-                } else {
-                    tab.classList.remove('active-agent');
-                    tab.classList.add('text-gray-400');
-                }
-            });
-
-            // Update content with fade effect
-            descArea.style.opacity = 0;
-            setTimeout(() => {
-                descArea.querySelector('p').innerText = agents[index].description;
-
-                // Update Console
-                termModule.innerText = agents[index].id + "_module";
-                termTask.innerText = agents[index].consoleTask;
-                termStatus.innerText = agents[index].consoleStatus;
-                termCpu.innerText = agents[index].cpu;
-                termMem.innerText = agents[index].mem;
-                termNet.innerText = agents[index].net;
-
-                descArea.style.opacity = 1;
-            }, 200);
-
-            // Reset auto-slide timer when user manually clicks
-            if (resetTimer) {
-                clearInterval(autoSlideInterval);
-                startAutoSlide();
-            }
-        }
-
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                currentAgentIndex = (currentAgentIndex + 1) % agents.length;
-                switchAgent(currentAgentIndex, false);
-            }, 4000); // Change slide every 4 seconds
-        }
-
-        // Initialize: Start from index 0 (Text) and begin auto-slide
-        document.addEventListener('DOMContentLoaded', () => {
-            switchAgent(0, false);
-            startAutoSlide();
-        });
-    </script>
 
     <!-- Benefits Section (Features) -->
     <section id="features" class="py-24 relative bg-[#FFFBF5] hidden reveal reveal-up">
@@ -4334,48 +3778,7 @@
     </footer>
 
     <!-- Icons Init -->
-    <script>
-        lucide.createIcons();
-
-        function togglePricing(type) {
-            const perBtn = document.getElementById('toggle-per');
-            const fullBtn = document.getElementById('toggle-full');
-
-            if (type === 'per') {
-                perBtn.classList.add('bg-[#003406]', 'text-white');
-                perBtn.classList.remove('text-[#003406]', 'hover:bg-gray-50');
-                fullBtn.classList.remove('bg-[#003406]', 'text-white');
-                fullBtn.classList.add('text-[#003406]', 'hover:bg-gray-50');
-            } else {
-                fullBtn.classList.add('bg-[#003406]', 'text-white');
-                fullBtn.classList.remove('text-[#003406]', 'hover:bg-gray-50');
-                perBtn.classList.remove('bg-[#003406]', 'text-white');
-                perBtn.classList.add('text-[#003406]', 'hover:bg-gray-50');
-            }
-        }
-    </script>
     <!-- Scroll Reveal Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, observerOptions);
-
-            const revealElements = document.querySelectorAll('.reveal');
-            revealElements.forEach((el) => {
-                observer.observe(el);
-            });
-        });
-    </script>
 </body>
 
 

@@ -10,57 +10,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'sudu-main': '#011916',
-                        'sudu-sec': '#35E5A2',
-                        'brand': {
-                            50: '#ecfdf5',
-                            100: '#d1fae5',
-                            200: '#a7f3d0',
-                            300: '#6ee7b7',
-                            400: '#35E5A2',
-                            500: '#2ec28b',
-                            600: '#059669',
-                            900: '#011916',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #FFFBF5;
-            color: #4b5563;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            border: 1px solid #e5e7eb;
-            background-color: #ffffff;
-            font-size: 0.875rem;
-            outline: none;
-            transition: all 0.2s;
-        }
-
-        .form-input:focus {
-            border-color: #35E5A2;
-            box-shadow: 0 0 0 2px rgba(53, 229, 162, 0.2);
-        }
-
-        .checkbox-custom {
-            accent-color: #35E5A2;
-        }
-    </style>
+    <script src="assets/js/script.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body
@@ -477,25 +428,6 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isMenuOpen = false;
-
-        mobileMenuBtn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
-                mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
-            } else {
-                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-            }
-        });
-    </script>
 </body>
 
 </html>

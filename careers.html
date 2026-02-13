@@ -10,6 +10,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/script.js" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -33,62 +35,6 @@
             }
         }
     </script>
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #4b5563;
-        }
-
-        .dark-section {
-            background-color: #011916;
-            color: #ffffff;
-        }
-
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .text-glow {
-            text-shadow: 0 0 30px rgba(53, 229, 162, 0.3);
-        }
-
-        /* Animation Classes */
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .delay-100 {
-            animation-delay: 0.1s;
-        }
-
-        .delay-200 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-300 {
-            animation-delay: 0.3s;
-        }
-
-        .delay-400 {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
 </head>
 
 <body
@@ -154,45 +100,6 @@
         </div>
     </div>
 
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            let isMenuOpen = false;
-
-            mobileMenuBtn.addEventListener('click', () => {
-                isMenuOpen = !isMenuOpen;
-
-                if (isMenuOpen) {
-                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
-                } else {
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                }
-            });
-
-            // Close menu when clicking on a link
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    isMenuOpen = false;
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                    isMenuOpen = false;
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                }
-            });
-        });
-    </script>
 
     <!-- Hero Section -->
     <section class="relative pt-40 pb-20 px-6 bg-[#FFFBF5] overflow-hidden">
@@ -781,46 +688,6 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isMenuOpen = false;
-
-        mobileMenuBtn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
-                mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
-            } else {
-                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-            }
-        });
-
-        // Scroll Animation Observer
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fade-in-up');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
 </body>
 
 </html>

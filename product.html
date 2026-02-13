@@ -10,6 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/js/script.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -51,74 +52,7 @@
             }
         }
     </script>
-    <style>
-        body {
-            background-color: #011916;
-            color: #b4bcd0;
-        }
-
-        /* Stars Effect from Homepage */
-        .stars-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: twinkle var(--duration) ease-in-out infinite;
-            animation-delay: var(--delay);
-        }
-
-        @keyframes twinkle {
-            0% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-
-            50% {
-                opacity: var(--opacity);
-                transform: scale(1);
-            }
-
-            100% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-        }
-
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        .dark-section {
-            background-color: #011916;
-            color: #ffffff;
-        }
-
-        /* Scroll Animation Utility */
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .reveal-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body
@@ -128,32 +62,6 @@
     <div class="stars-container" id="stars"></div>
 
     <!-- Generate Stars Script -->
-    <script>
-        const starsContainer = document.getElementById('stars');
-        const starCount = 50;
-
-        for (let i = 0; i < starCount; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const size = Math.random() * 2 + 1; // 1px to 3px
-            const duration = Math.random() * 3 + 2; // 2s to 5s
-            const delay = Math.random() * 5;
-            const opacity = Math.random() * 0.5 + 0.3;
-
-            star.style.left = `${x}%`;
-            star.style.top = `${y}%`;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            star.style.setProperty('--duration', `${duration}s`);
-            star.style.setProperty('--delay', `${delay}s`);
-            star.style.setProperty('--opacity', opacity);
-
-            starsContainer.appendChild(star);
-        }
-    </script>
 
     <!-- Navbar -->
     <nav
@@ -603,66 +511,7 @@
     <script>
         lucide.createIcons();
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let isMenuOpen = false;
 
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                isMenuOpen = !isMenuOpen;
-                if (isMenuOpen) {
-                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
-                } else {
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                }
-            });
-
-            // Close menu when clicking on a link
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    isMenuOpen = false;
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                });
-            });
-
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                    isMenuOpen = false;
-                    mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-                }
-            });
-        }
-
-        // Scroll Reveal Animation Information
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('reveal-visible');
-                        observer.unobserve(entry.target); // Only animate once
-                    }
-                });
-            }, observerOptions);
-
-            const scrollElements = document.querySelectorAll('.reveal-on-scroll');
-            scrollElements.forEach((el) => {
-                observer.observe(el);
-            });
-        });
     </script>
 </body>
 

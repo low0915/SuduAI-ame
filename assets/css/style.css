@@ -1,0 +1,471 @@
+/* SuDu AI - Main Stylesheet */
+
+body {
+    background-color: white;
+    color: #b4bcd0;
+}
+
+/* Stars Effect */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle var(--duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: var(--opacity);
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Linear Design Utilities */
+.glass-panel {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    /* Top shine */
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel:hover {
+    border-top-color: rgba(53, 229, 162, 0.4);
+    /* Green top shine on hover */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 100%);
+}
+
+.text-glow {
+    text-shadow: 0 0 40px rgba(53, 229, 162, 0.4);
+}
+
+.mask-linear-fade {
+    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 100%);
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Organic Mesh Drift */
+@keyframes mesh-drift {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    33% {
+        transform: translate(10vw, 5vh) rotate(5deg) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-5vw, 15vh) rotate(-5deg) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+.animate-mesh-1 {
+    animation: mesh-drift 20s ease-in-out infinite;
+}
+
+.animate-mesh-2 {
+    animation: mesh-drift 25s ease-in-out infinite reverse;
+}
+
+.animate-mesh-3 {
+    animation: mesh-drift 30s ease-in-out infinite;
+    animation-delay: -5s;
+}
+
+/* Noise Texture */
+.noise-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: -2;
+    mix-blend-mode: overlay;
+}
+
+/* Floating Animation */
+@keyframes float-slow {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(-48%, 2%) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-52%, -2%) scale(0.95);
+    }
+}
+
+.animate-float-slow {
+    animation: float-slow 15s ease-in-out infinite;
+}
+
+/* Drift Animation for Stars */
+@keyframes drift {
+    from {
+        transform: translateX(0) translateY(0);
+    }
+
+    to {
+        transform: translateX(var(--drift-x)) translateY(var(--drift-y));
+    }
+}
+
+.animate-drift {
+    animation: drift var(--drift-duration) linear infinite alternate;
+}
+
+/* Reveal Animation Styles */
+.reveal {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-up {
+    transform: translateY(40px);
+}
+
+.reveal-down {
+    transform: translateY(-40px);
+}
+
+.reveal-left {
+    transform: translateX(-40px);
+}
+
+.reveal-right {
+    transform: translateX(40px);
+}
+
+.reveal-scale {
+    transform: scale(0.95);
+    opacity: 0;
+}
+
+.reveal.active {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+}
+
+/* Stagger delays */
+.reveal.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.reveal.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.reveal.delay-300 {
+    transition-delay: 0.3s;
+}
+
+.reveal.delay-400 {
+    transition-delay: 0.4s;
+}
+
+.reveal.delay-500 {
+    transition-delay: 0.5s;
+}
+
+/* Custom Animations for Cards */
+@keyframes scanner-sweep {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) translateY(-20px);
+        opacity: 0;
+    }
+
+    10%,
+    90% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(45deg) translateY(20px);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-truck {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+}
+
+@keyframes packet-travel {
+    0% {
+        offset-distance: 0%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        offset-distance: 100%;
+        opacity: 0;
+    }
+}
+
+/* Scroll Reveal Animation Utility */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Subtle Animations for Other Sections */
+@keyframes gentle-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes gentle-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+@keyframes gentle-shake {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes slow-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 40s linear infinite;
+}
+
+/* Agent Capabilities Tabs */
+.active-agent {
+    background-color: white !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    color: #06390C !important;
+}
+
+.active-agent .dot {
+    background-color: #35E5A2;
+    box-shadow: 0 0 8px #35E5A2;
+}
+
+.agent-tab {
+    transition: all 0.3s ease;
+}
+
+.agent-tab:hover:not(.active-agent) {
+    background-color: #f9fafb;
+    color: #6b7280;
+}
+
+/* Onboarding Flow Styles (Partner Page) */
+.onboarding-path-bg {
+    stroke: rgba(53, 229, 162, 0.1);
+}
+
+.onboarding-path-main {
+    stroke: #35E5A2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 0.1s linear;
+    -webkit-filter: drop-shadow(0 0 8px rgba(53, 229, 162, 0.5));
+    filter: drop-shadow(0 0 8px rgba(53, 229, 162, 0.5));
+}
+
+.step-active .step-circle {
+    background: linear-gradient(135deg, #35E5A2 0%, #209670 100%);
+    border-color: rgba(53, 229, 162, 0.4);
+    box-shadow: 0 0 30px rgba(53, 229, 162, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.step-active .step-circle::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 1px solid rgba(53, 229, 162, 0.3);
+    border-radius: 50%;
+}
+
+.step-active .step-title {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.onboarding-bg-waves {
+    opacity: 0.15;
+}
+
+.step-number {
+    background: linear-gradient(135deg, #35E5A2 0%, #2ec28b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* FAQ Styles */
+.faq-item[open] summary {
+    color: #35E5A2;
+}
+
+/* Form Styles (Waitlist & Contact) */
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    font-size: 0.875rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.form-input:focus {
+    border-color: #35E5A2;
+    box-shadow: 0 0 0 2px rgba(53, 229, 162, 0.2);
+}
+
+.checkbox-custom {
+    accent-color: #35E5A2;
+}
+
+/* Dark Section Helper */
+.dark-section {
+    background-color: #011916;
+    color: #ffffff;
+}
