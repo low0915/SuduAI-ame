@@ -141,7 +141,8 @@ const agents = [
         consoleStatus: "Processing data stream...",
         cpu: "12%",
         mem: "450MB",
-        net: "1.2GB/s"
+        net: "1.2GB/s",
+        video: "assets/videos/Ai_Text.mp4"
     },
     {
         id: "voice",
@@ -151,7 +152,8 @@ const agents = [
         consoleStatus: "Listening for input...",
         cpu: "18%",
         mem: "620MB",
-        net: "2.4GB/s"
+        net: "2.4GB/s",
+        video: "assets/videos/AI_voice.mp4"
     },
     {
         id: "upload",
@@ -161,17 +163,19 @@ const agents = [
         consoleStatus: "Extracting metadata...",
         cpu: "25%",
         mem: "890MB",
-        net: "0.8GB/s"
+        net: "0.8GB/s",
+        video: "assets/videos/Ai_Capture.mp4"
     },
     {
         id: "capture",
         name: "Capture",
-        description: "Intelligent camera integration allows you to capture physical documents or inventory tags directly into the production workflow.",
+        description: "Use Email and WhatsApp to create sales and purchase orders, check inventory, retrieve reports, and execute ERP tasks seamlessly through familiar messaging channels.",
         consoleTask: "Vision Stream Analysis",
         consoleStatus: "Scanning barcodes...",
         cpu: "32%",
         mem: "1.2GB",
-        net: "4.5GB/s"
+        net: "4.5GB/s",
+        video: "assets/videos/Ai_Email Whatsapp.mp4"
     }
 ];
 
@@ -190,6 +194,7 @@ function switchAgent(index, resetTimer = true) {
     const termCpu = document.getElementById('term-cpu');
     const termMem = document.getElementById('term-mem');
     const termNet = document.getElementById('term-net');
+    const agentVideo = document.getElementById('agent-video');
 
     if (!tabs.length || !descArea) return;
 
@@ -217,6 +222,13 @@ function switchAgent(index, resetTimer = true) {
         if (termMem) termMem.innerText = agents[index].mem;
         if (termNet) termNet.innerText = agents[index].net;
 
+        // Update Video
+        if (agentVideo && agents[index].video) {
+            agentVideo.src = agents[index].video;
+            agentVideo.load(); // Ensure the video reloads with the new source
+            agentVideo.play(); // Auto-play the new video
+        }
+
         descArea.style.opacity = 1;
     }, 200);
 
@@ -228,10 +240,27 @@ function switchAgent(index, resetTimer = true) {
 }
 
 function startAutoSlide() {
-    autoSlideInterval = setInterval(() => {
+    const agentVideo = document.getElementById('agent-video');
+    if (!agentVideo) return;
+
+    // Remove any existing interval to prevent duplicates
+    clearInterval(autoSlideInterval);
+
+    // Technique 1: Wait for video to end
+    agentVideo.onended = () => {
         currentAgentIndex = (currentAgentIndex + 1) % agents.length;
         switchAgent(currentAgentIndex, false);
-    }, 4000); // Change slide every 4 seconds
+    };
+
+    // Technique 2: Safety fallback (if video fails to play or is extremely long)
+    // We'll reset a 15-second timer every time we switch, just in case.
+    autoSlideInterval = setInterval(() => {
+        // Only trigger if video is paused/stopped (safeguard)
+        if (agentVideo.paused || agentVideo.ended) {
+            currentAgentIndex = (currentAgentIndex + 1) % agents.length;
+            switchAgent(currentAgentIndex, false);
+        }
+    }, 15000);
 }
 
 // Reveal Animations (Intersection Observer)

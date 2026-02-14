@@ -205,8 +205,8 @@ body {
 }
 
 .reveal.active {
-    opacity: 1 !important;
-    transform: translate(0, 0) scale(1) !important;
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
 }
 
 /* Stagger delays */

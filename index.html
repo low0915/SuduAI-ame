@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuDu AI - AI-Driven MES ERP & Chat Agent</title>
+    <title>SuDu AI - AI-Driven ERP System</title>
     <meta name="description"
-        content="SuDu AI is an AI-driven MES ERP capable of creating sales and purchase orders via an advanced chat agent.">
+        content="Next generation A.I. Integrated ERP Solution, we maximize efficiency, minimize your business costs, automate repetitive tasks and predict demand.">
+
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/components.js" defer></script>
     <script src="https://script.supademo.com/supademo.js"></script>
 
     <script>
@@ -63,77 +66,8 @@
     <!-- Generate Stars Script -->
 
     <!-- Navbar -->
-    <nav
-        class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1200px] z-50 transition-all duration-300 bg-white/60 rounded-[12px] px-6 h-16 flex items-center justify-between shadow-sm">
+    <div id="navbar-container"></div>
 
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
-            <img src="assets/images/logo.png" alt="SuDu AI" class="h-6 w-auto">
-
-        </a>
-
-        <!-- Centered Links -->
-        <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-            <div class="dropdown-container">
-                <a href="#"
-                    class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors flex items-center gap-1">
-                    Product
-                    <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
-                </a>
-                <div class="dropdown-menu">
-                    <a href="warehouse.html" class="dropdown-item">Warehouse</a>
-                    <a href="manufacturing.html" class="dropdown-item">Manufacturing</a>
-                </div>
-            </div>
-            <a href="#" class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Career</a>
-            <a href="#" class="text-sm font-medium text-[#003406] hover:text-[#35E5A2] transition-colors">Contact Us</a>
-        </div>
-
-        <!-- Buttons -->
-        <div class="flex items-center gap-4 flex-shrink-0">
-            <button
-                class="hidden md:block px-5 py-2 rounded-[6px] border border-[#003406] text-[#003406] text-sm font-medium hover:bg-[#003406] hover:text-white transition-all">
-                See It in Action
-            </button>
-            <a href="#"
-                class="hidden md:block px-5 py-2 rounded-[6px] bg-[#003406] text-white text-sm font-medium hover:bg-black transition-all shadow-md">
-                Request a Demo
-            </a>
-
-            <!-- Mobile Hamburger Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-[#003406] p-2 hover:opacity-70 transition-opacity">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Dropdown -->
-    <div id="mobile-menu"
-        class="fixed top-24 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-40 bg-[#E5E5E5] rounded-[12px] border border-white/20 shadow-2xl overflow-hidden transition-all duration-300 opacity-0 pointer-events-none scale-95">
-        <div class="flex flex-col p-6 space-y-4">
-            <div class="space-y-2">
-                <div class="text-base font-medium text-[#003406] py-2 border-l-4 border-[#003406] pl-4">Product</div>
-                <div class="pl-9 space-y-2">
-                    <a href="warehouse.html"
-                        class="block text-sm font-medium text-[#003406]/70 hover:text-[#35E5A2]">Warehouse</a>
-                    <a href="manufacturing.html"
-                        class="block text-sm font-medium text-[#003406]/70 hover:text-[#35E5A2]">Manufacturing</a>
-                </div>
-            </div>
-            <a href="" class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Career</a>
-            <a href="" class="text-base font-medium text-[#003406] py-2 pl-5 hover:text-[#35E5A2]">Contact
-                Us</a>
-            <div class="pt-6 border-t border-[#003406]/10 space-y-3">
-                <button
-                    class="w-full block text-center text-base text-[#003406] font-medium border border-[#003406] px-4 py-3 rounded-lg hover:bg-[#003406] hover:text-white transition-all">
-                    See It in Action
-                </button>
-                <a href="#"
-                    class="block text-center text-base text-white font-medium bg-[#003406] hover:bg-black px-4 py-3 rounded-lg transition-all shadow-lg">Request
-                    a Demo</a>
-            </div>
-        </div>
-    </div>
 
     <!-- Mobile Menu Toggle Script -->
 
@@ -192,13 +126,13 @@
                     Inventory and Production</span>
             </h1>
             <p
-                class="text-lg md:text-l text-white mb-12 max-w-3xl mx-auto leading-relaxed font-light tracking-wide reveal reveal-up delay-200">
+                class="text-base md:text-base text-white mb-12 max-w-3xl mx-auto leading-relaxed font-light tracking-wide reveal reveal-up delay-200">
                 An all-in-one system for warehouse and manufacturing
                 operations to work less, produce more, keep everything automatically in sync.
             </p>
 
             <p
-                class="text-lg md:text-xl text-white font-semibold mb-12 max-w-3xl mx-auto leading-relaxed font-light tracking-wide reveal reveal-up delay-200">
+                class="text-base md:text-xl text-white font-semibold mb-12 max-w-3xl mx-auto leading-relaxed font-light tracking-wide reveal reveal-up delay-200">
                 AI Made
                 Simple. Make
                 Life Easier.
@@ -291,7 +225,7 @@
                 </h2>
 
                 <!-- Tab Switcher -->
-                <div class="mt-8 flex justify-center items-end relative">
+                <div class="my-8 flex justify-center items-end relative">
                     <!-- Underline decoration -->
                     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gray-200"></div>
 
@@ -307,7 +241,7 @@
             </div>
 
             <!-- Core Accounting Tab Content -->
-            <div id="tab-content-core" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div id="tab-content-core" class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
                 <!-- Left: Info -->
                 <div class="space-y-8">
                     <div
@@ -333,190 +267,250 @@
                 </div>
 
                 <!-- Right: Visual -->
-                <div class="relative min-h-[500px] flex items-center justify-center">
-                    <!-- Background Label -->
-                    <div
-                        class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden">
-                        <span id="bg-label-text"
-                            class="text-[10rem] md:text-[10rem] font-bold text-sudu-main whitespace-nowrap uppercase tracking-widest">Warehouse</span>
-                    </div>
-
-                    <!-- Stacked Cards (Example Visuals) -->
-                    <div class="relative z-10 w-full max-w-sm space-y-4">
-                        <!-- Card 1: Stock Summary -->
-                        <div
-                            class="bg-white border border-gray-100 rounded-xl p-5 shadow-xl relative group hover:-translate-y-1 transition-all">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-xs font-bold text-gray-400 uppercase">Stock Summary</span>
-                                <span
-                                    class="px-2 py-0.5 bg-sudu-sec/10 text-sudu-sec text-[10px] rounded-full font-bold">LIVE</span>
+                <div class="lg:col-span-2 flex flex-col items-end group">
+                    <!-- Embed Container -->
+                    <div id="warehouse-embed-container" class="w-full">
+                        <!-- Slide 1 -->
+                        <div id="warehouse-slide-1" class="warehouse-slide w-full transition-opacity duration-500">
+                            <div
+                                style="position: relative; box-sizing: content-box; max-height: 80vh; max-height: 80svh; width: 100%; aspect-ratio: 1.94;">
+                                <iframe
+                                    src="https://app.supademo.com/embed/cmhvo2sun12i317y06ujsvd0f?embed_v=2&utm_source=embed"
+                                    loading="lazy" title="Create and Process Stock Adjustments in Sudu"
+                                    allow="clipboard-write" frameborder="0" webkitallowfullscreen="true"
+                                    mozallowfullscreen="true" allowfullscreen
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
                             </div>
-                            <div class="space-y-3">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-2 h-2 rounded-full bg-sudu-sec"></div>
-                                        <span class="text-xs text-gray-600">Aluminum Sheets</span>
-                                    </div>
-                                    <span class="text-xs font-bold text-gray-900">4,280 units</span>
-                                </div>
-                                <div class="w-full bg-gray-50 rounded-full h-1.5 overflow-hidden">
-                                    <div class="bg-sudu-sec h-full rounded-full" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="absolute -right-6 top-1/2 w-6 h-[2px] bg-sudu-sec/20"></div>
                         </div>
-
-                        <!-- Card 2: Recent Activity -->
-                        <div
-                            class="bg-white border border-gray-100 rounded-xl p-5 shadow-lg relative group hover:-translate-y-1 transition-all">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
-                                    <i data-lucide="truck" class="w-4 h-4 text-blue-500"></i>
-                                </div>
-                                <div class="flex-1">
-                                    <div class="text-[10px] text-gray-400">Incoming Shipment</div>
-                                    <div class="text-xs font-bold text-gray-900">PO #2026-WM88</div>
-                                </div>
-                                <div class="text-[10px] font-bold text-sudu-sec">In Transit</div>
+                        <!-- Slide 2 -->
+                        <div id="warehouse-slide-2"
+                            class="warehouse-slide w-full transition-opacity duration-500 hidden opacity-0">
+                            <div
+                                style="position: relative; box-sizing: content-box; max-height: 80vh; max-height: 80svh; width: 100%; aspect-ratio: 1.94;">
+                                <iframe
+                                    src="https://app.supademo.com/embed/cmi2n9tpk1b31qnb9jtvizvc3?embed_v=2&utm_source=embed"
+                                    loading="lazy" title="Create and Process Stock Adjustments in Sudu"
+                                    allow="clipboard-write" frameborder="0" webkitallowfullscreen="true"
+                                    mozallowfullscreen="true" allowfullscreen
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
                             </div>
-                            <div class="absolute -right-6 top-1/2 w-6 h-[2px] bg-sudu-sec/20"></div>
                         </div>
-
-                        <!-- Card 3: Alert -->
-                        <div
-                            class="bg-white border border-gray-100 rounded-xl p-5 shadow-md relative group hover:-translate-y-1 transition-all">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center">
-                                    <i data-lucide="alert-circle" class="w-4 h-4 text-amber-500"></i>
-                                </div>
-                                <div>
-                                    <div class="text-[10px] text-gray-400 font-bold uppercase">Low Stock Alert</div>
-                                    <div class="text-xs text-gray-600">Steel Rods < 500 pcs</div>
-                                    </div>
-                                </div>
-                                <div class="absolute -right-6 top-1/2 w-6 h-[2px] bg-sudu-sec/20"></div>
-                            </div>
-
-
-                            <!-- Side Connecting Line -->
-                            <div class="absolute -right-6 top-[15%] bottom-[15%] w-[2px] bg-sudu-sec/20"></div>
-                            <div class="absolute -right-12 top-1/2 -translate-y-1/2 w-6 h-[2px] bg-sudu-sec/20">
+                        <!-- Slide 3 -->
+                        <div id="warehouse-slide-3"
+                            class="warehouse-slide w-full transition-opacity duration-500 hidden opacity-0">
+                            <div
+                                style="position: relative; box-sizing: content-box; max-height: 80vh; max-height: 80svh; width: 100%; aspect-ratio: 1.94;">
+                                <iframe
+                                    src="https://app.supademo.com/embed/cmhlt7clx0udlla10on3x823c?embed_v=2&utm_source=embed"
+                                    loading="lazy" title="Sudu AI Demo" allow="clipboard-write" frameborder="0"
+                                    webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Manufacturing Tab Content -->
-                <div id="tab-content-revenue" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <!-- Left: Info -->
-                    <div class="space-y-8">
-                        <div
-                            class="w-16 h-16 bg-sudu-sec/10 rounded-2xl flex items-center justify-center border border-sudu-sec/20">
-                            <i data-lucide="factory" class="w-8 h-8 text-sudu-sec"></i>
-                        </div>
-                        <div class="space-y-6">
-                            <p class="text-gray-600 text-1rem leading-relaxed">
-                                Automate your complex production workflows, from work orders to capacity planning.
-                                Scale
-                                your factory without adding overhead by letting AI handle the heavy lifting of
-                                production management and tracking.
-                            </p>
-                            <div class="p-6 bg-[#f0fdf4] rounded-2xl border border-[#dcfce7] border-dashed">
-                                <p class="text-sm text-[#166534] italic">
-                                    Ideal for: Manufacturers looking to streamline production stages, track WIP, and
-                                    optimize resource allocation.
-                                </p>
-                            </div>
-                            <a href="manufacturing.html"
-                                class="inline-flex items-center gap-2 px-6 py-3 bg-sudu-main hover:bg-[#004708] text-sm text-white font-semibold rounded-full transition-all shadow-lg shadow-sudu-main/30">
-                                Explore More
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right: Visual -->
-                    <div class="relative min-h-[500px] flex items-center justify-center">
-                        <!-- Background Label -->
-                        <div
-                            class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden text-center">
-                            <span id="bg-label-text-mfg"
-                                class="text-[8rem] md:text-[8rem] font-bold text-sudu-main whitespace-normal uppercase tracking-widest leading-none">Manufacturing
-                            </span>
-                        </div>
-
-                        <!-- Manufacturing Example Visuals -->
-                        <div class="relative z-10 w-full max-w-sm">
-                            <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-2xl space-y-6">
-                                <div class="flex items-center justify-between">
-                                    <h4 class="text-sm font-bold text-gray-900">Production Line A-1</h4>
-                                    <div
-                                        class="flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-sudu-sec text-[10px] rounded-md font-bold">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-sudu-sec animate-pulse"></span>
-                                        ACTIVE
-                                    </div>
-                                </div>
-
-                                <div class="space-y-4">
-                                    <div class="p-3 bg-gray-50 rounded-lg border border-gray-100">
-                                        <div class="flex justify-between text-[10px] text-gray-400 mb-1">
-                                            <span>Capacity Utilization</span>
-                                            <span>94%</span>
-                                        </div>
-                                        <div class="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                                            <div class="h-full bg-sudu-sec rounded-full" style="width: 94%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="grid grid-cols-2 gap-3">
-                                        <div class="p-3 bg-gray-50 rounded-lg border border-gray-100">
-                                            <div class="text-[10px] text-gray-400 mb-1 font-bold">OEE Score</div>
-                                            <div class="text-lg font-bold text-gray-900 italic">88.5%</div>
-                                        </div>
-                                        <div class="p-3 bg-gray-50 rounded-lg border border-gray-100">
-                                            <div class="text-[10px] text-gray-400 mb-1 font-bold">Work Orders</div>
-                                            <div class="text-lg font-bold text-gray-900 italic">12/15</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button
-                                    class="w-full py-2 bg-sudu-main text-white text-[10px] font-bold rounded-lg uppercase tracking-widest hover:bg-sudu-sec hover:text-sudu-main transition-colors">
-                                    View Line Roadmap
-                                </button>
-                            </div>
-                        </div>
+                    <!-- Navigation Buttons (Below & Right-Aligned) -->
+                    <div class="flex gap-2 mt-2 z-30">
+                        <button onclick="switchEmbed('warehouse', 'prev')"
+                            class="p-2 rounded-full bg-white shadow-md border border-gray-100 text-sudu-main hover:bg-sudu-main hover:text-white transition-all transform hover:scale-105 active:scale-95">
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="switchEmbed('warehouse', 'next')"
+                            class="p-2 rounded-full bg-white shadow-md border border-gray-100 text-sudu-main hover:bg-sudu-main hover:text-white transition-all transform hover:scale-105 active:scale-95">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <script>
-                function showProductTab(tabId) {
-                    const btnCore = document.getElementById('btn-core');
-                    const btnRevenue = document.getElementById('btn-revenue');
-                    const contentCore = document.getElementById('tab-content-core');
-                    const contentRevenue = document.getElementById('tab-content-revenue');
+            <!-- Manufacturing Tab Content -->
+            <div id="tab-content-revenue" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
+                <!-- Left: Info -->
+                <div class="space-y-8">
+                    <div
+                        class="w-16 h-16 bg-sudu-sec/10 rounded-2xl flex items-center justify-center border border-sudu-sec/20">
+                        <i data-lucide="factory" class="w-8 h-8 text-sudu-sec"></i>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="text-gray-600 text-1rem leading-relaxed">
+                            Automate your complex production workflows, from work orders to capacity planning.
+                            Scale
+                            your factory without adding overhead by letting AI handle the heavy lifting of
+                            production management and tracking.
+                        </p>
+                        <div class="p-6 bg-[#f0fdf4] rounded-2xl border border-[#dcfce7] border-dashed">
+                            <p class="text-sm text-[#166534] italic">
+                                Ideal for: Manufacturers looking to streamline production stages, track WIP, and
+                                optimize resource allocation.
+                            </p>
+                        </div>
+                        <a href="manufacturing.html"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-sudu-main hover:bg-[#004708] text-sm text-white font-semibold rounded-full transition-all shadow-lg shadow-sudu-main/30">
+                            Explore More
+                        </a>
+                    </div>
+                </div>
 
-                    if (tabId === 'core') {
-                        btnCore.classList.add('border-sudu-sec', 'text-gray-900');
-                        btnCore.classList.remove('border-transparent', 'text-gray-400');
-                        btnRevenue.classList.add('border-transparent', 'text-gray-400');
-                        btnRevenue.classList.remove('border-sudu-sec', 'text-gray-900');
+                <!-- Right: Visual -->
+                <div class="relative lg:col-span-2 group flex flex-col items-end">
+                    <!-- Background Label -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden text-center">
+                        <span id="bg-label-text-mfg"
+                            class="text-[8rem] md:text-[8rem] font-bold text-sudu-main whitespace-normal uppercase tracking-widest leading-none">Manufacturing
+                        </span>
+                    </div>
 
-                        contentCore.classList.remove('hidden');
-                        contentRevenue.classList.add('hidden');
-                    } else {
-                        btnRevenue.classList.add('border-sudu-sec', 'text-gray-900');
-                        btnRevenue.classList.remove('border-transparent', 'text-gray-400');
-                        btnCore.classList.add('border-transparent', 'text-gray-400');
-                        btnCore.classList.remove('border-sudu-sec', 'text-gray-900');
+                    <!-- Slide Container -->
+                    <div id="manufacturing-embed-container"
+                        class="w-full flex items-center justify-center min-h-[400px]">
+                        <!-- Slide 1: Cards -->
+                        <div id="manufacturing-slide-1"
+                            class="manufacturing-slide w-full transition-opacity duration-500 flex items-center justify-center py-4">
+                            <div class="relative z-10 w-full max-w-sm">
+                                <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-2xl space-y-6">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="text-sm font-bold text-gray-900">Production Line A-1</h4>
+                                        <div
+                                            class="flex items-center gap-1.5 px-2 py-1 bg-emerald-50 text-sudu-sec text-[10px] rounded-md font-bold">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-sudu-sec animate-pulse"></span>
+                                            ACTIVE
+                                        </div>
+                                    </div>
 
-                        contentRevenue.classList.remove('hidden');
-                        contentCore.classList.add('hidden');
-                    }
-                    // Refresh icons for new content
-                    lucide.createIcons();
+                                    <div class="space-y-4">
+                                        <div class="p-3 bg-gray-50 rounded-lg border border-gray-100">
+                                            <div class="flex justify-between text-[10px] text-gray-400 mb-1">
+                                                <span>Capacity Utilization</span>
+                                                <span>94%</span>
+                                            </div>
+                                            <div class="w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                                                <div class="h-full bg-sudu-sec rounded-full" style="width: 94%"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="p-3 bg-gray-50 rounded-lg border border-gray-100">
+                                                <div class="text-[10px] text-gray-400 mb-1 font-bold">OEE Score</div>
+                                                <div class="text-base font-bold text-gray-900 italic">88.5%</div>
+                                            </div>
+                                            <div class="p-3 bg-gray-50 rounded-lg border border-gray-100">
+                                                <div class="text-[10px] text-gray-400 mb-1 font-bold">Work Orders</div>
+                                                <div class="text-base font-bold text-gray-900 italic">12/15</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button
+                                        class="w-full py-2 bg-sudu-main text-white text-[10px] font-bold rounded-lg uppercase tracking-widest hover:bg-sudu-sec hover:text-sudu-main transition-colors">
+                                        View Line Roadmap
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Potential Embed Placeholder -->
+                        <div id="manufacturing-slide-2"
+                            class="manufacturing-slide w-full transition-opacity duration-500 hidden opacity-0 flex items-center justify-center py-4">
+                            <div
+                                class="relative z-10 w-full max-w-2xl bg-white border border-gray-100 rounded-2xl p-4 shadow-2xl h-[400px] flex items-center justify-center">
+                                <div class="text-center p-8">
+                                    <i data-lucide="monitor" class="w-12 h-12 text-gray-300 mx-auto mb-4"></i>
+                                    <p class="text-gray-500 font-medium">Production Analytics Dashboard</p>
+                                    <p class="text-xs text-gray-400 mt-2">Coming Soon: Interactive Production Planning
+                                        Demo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons (Below Content & Right Aligned) -->
+                    <div class="flex gap-2 mt-2 z-30">
+                        <button onclick="switchEmbed('manufacturing', 'prev')"
+                            class="p-2 rounded-full bg-white shadow-md border border-gray-100 text-sudu-main hover:bg-sudu-main hover:text-white transition-all transform hover:scale-105 active:scale-95">
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="switchEmbed('manufacturing', 'next')"
+                            class="p-2 rounded-full bg-white shadow-md border border-gray-100 text-sudu-main hover:bg-sudu-main hover:text-white transition-all transform hover:scale-105 active:scale-95">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showProductTab(tabId) {
+                const btnCore = document.getElementById('btn-core');
+                const btnRevenue = document.getElementById('btn-revenue');
+                const contentCore = document.getElementById('tab-content-core');
+                const contentRevenue = document.getElementById('tab-content-revenue');
+
+                if (tabId === 'core') {
+                    btnCore.classList.add('border-sudu-sec', 'text-gray-900');
+                    btnCore.classList.remove('border-transparent', 'text-gray-400');
+                    btnRevenue.classList.add('border-transparent', 'text-gray-400');
+                    btnRevenue.classList.remove('border-sudu-sec', 'text-gray-900');
+
+                    contentCore.classList.remove('hidden');
+                    contentRevenue.classList.add('hidden');
+                } else {
+                    btnRevenue.classList.add('border-sudu-sec', 'text-gray-900');
+                    btnRevenue.classList.remove('border-transparent', 'text-gray-400');
+                    btnCore.classList.add('border-transparent', 'text-gray-400');
+                    btnCore.classList.remove('border-sudu-sec', 'text-gray-900');
+
+                    contentRevenue.classList.remove('hidden');
+                    contentCore.classList.add('hidden');
                 }
-            </script>
+                // Refresh icons for new content
+                lucide.createIcons();
+            }
+
+            // Track active slides for each category
+            const activeSlides = {
+                warehouse: 1,
+                manufacturing: 1
+            };
+
+            function switchEmbed(type, direction) {
+                const container = document.getElementById(`${type}-embed-container`);
+                const slides = container.querySelectorAll(`.${type}-slide`);
+                const totalSlides = slides.length;
+                const currentSlide = activeSlides[type];
+                let nextSlide;
+
+                if (direction === 'next') {
+                    nextSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+                } else {
+                    nextSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
+                }
+
+                // Update UI
+                const currentSlideEl = document.getElementById(`${type}-slide-${currentSlide}`);
+                const nextSlideEl = document.getElementById(`${type}-slide-${nextSlide}`);
+
+                if (currentSlideEl && nextSlideEl) {
+                    // Start fade out
+                    currentSlideEl.classList.add('opacity-0');
+                    setTimeout(() => {
+                        currentSlideEl.classList.add('hidden');
+
+                        // Prepare next slide
+                        nextSlideEl.classList.remove('hidden');
+                        // Small timeout to ensure display:block is applied before opacity change
+                        setTimeout(() => {
+                            nextSlideEl.classList.remove('opacity-0');
+                            activeSlides[type] = nextSlide;
+                            // Re-init icons for the new slide
+                            if (window.lucide) {
+                                lucide.createIcons();
+                            }
+                        }, 50);
+                    }, 500);
+                }
+            }
+        </script>
     </section>
 
     <!-- Better Together Transition Section -->
@@ -539,7 +533,7 @@
     <!-- Expanding Cards Section -->
     <section class="bg-[#FFFBF5] reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row gap-6 h-[500px] w-full">
+            <div class="flex flex-col md:flex-row gap-6 h-[420px] w-full">
 
                 <!-- Card 1: Connect -->
                 <div
@@ -547,7 +541,7 @@
                     <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
                         <div class="mb-2">
-                            <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">Inventory ↔ Production
+                            <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Inventory ↔ Production
                                 Automation</h3>
                             <div
                                 class="max-h-0 opacity-0 group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden">
@@ -589,7 +583,7 @@
                         <!-- Visual Area (Diagram) -->
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="flex items-center gap-6 relative">
                                 <!-- Inventory Node -->
                                 <div class="flex flex-col items-center gap-2 group/node">
@@ -656,7 +650,8 @@
                     <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
                         <div class="mb-2">
-                            <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">Warehouse Operation Supports</h3>
+                            <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Warehouse Operation Supports
+                            </h3>
                             <div
                                 class="max-h-0 opacity-0 group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden">
                                 <div class="pt-4 space-y-3">
@@ -696,7 +691,7 @@
 
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="relative w-32 h-32 flex items-center justify-center">
                                 <!-- Rack SVG -->
                                 <div
@@ -742,7 +737,8 @@
                     <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
                         <div class="mb-2">
-                            <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">Order & Delivery Synchronization
+                            <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Order & Delivery
+                                Synchronization
                             </h3>
                             <div
                                 class="max-h-0 opacity-0 group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden">
@@ -778,7 +774,7 @@
 
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="w-full max-w-[240px] flex flex-col gap-4">
                                 <!-- Step 1: Order -->
                                 <div
@@ -838,7 +834,7 @@
     <!-- Expanding Cards Section -->
     <section class="pb-20 pt-8 bg-[#FFFBF5] reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row gap-6 h-[500px] w-full">
+            <div class="flex flex-col md:flex-row gap-6 h-[420px] w-full">
 
                 <!-- Card 4: Connect -->
                 <div
@@ -846,7 +842,7 @@
                     <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
                         <div class="mb-2">
-                            <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">Production Planning & Execution
+                            <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Production Planning & Execution
                             </h3>
                             <div
                                 class="max-h-0 opacity-0 group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden">
@@ -887,7 +883,7 @@
 
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="flex flex-col gap-3 w-full max-w-[240px]">
                                 <!-- Header -->
                                 <div class="flex justify-between items-center mb-1 px-1">
@@ -946,7 +942,7 @@
                     <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
                         <div class="mb-2">
-                            <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">Multi-Scenario Ready</h3>
+                            <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Multi-Scenario Ready</h3>
                             <div
                                 class="max-h-0 opacity-0 group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden">
                                 <div class="pt-4 space-y-3">
@@ -981,7 +977,7 @@
 
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="relative w-full h-32 flex items-center justify-center">
                                 <!-- Lines -->
                                 <div class="absolute inset-0 flex items-center justify-center">
@@ -1091,7 +1087,7 @@
                     <div class="p-4 flex flex-col h-full">
                         <!-- Header -->
                         <div class="mb-2">
-                            <h3 class="text-lg font-bold text-[#06390C] mb-2 truncate">AI Automation</h3>
+                            <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">AI Automation</h3>
                             <div
                                 class="max-h-0 opacity-0 group-hover:max-h-[300px] group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-hidden">
                                 <div class="pt-4 space-y-3">
@@ -1121,7 +1117,7 @@
 
                         <!-- Visual Area (Diagram) -->
                         <div
-                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
+                            class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div
                                 class="w-full max-w-[220px] bg-white rounded-xl shadow-lg border border-sudu-sec/10 p-4 relative overflow-hidden group-hover:-translate-y-1 transition-transform duration-500">
                                 <!-- Gradient Background -->
@@ -1572,7 +1568,8 @@
     <!-- Agent Capabilities Section -->
 
 
-    <section class="pt-20 pb-10 bg-white relative overflow-hidden">
+    <section
+        class="py-20 relative overflow-hidden border-b border-gray-100 bg-gray-50 bg-gradient-to-b from-white to-emerald-50">
 
         <div class="max-w-7xl mx-auto px-6">
 
@@ -1593,8 +1590,8 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <!-- Left Column: Tabs & Description (Col 4) -->
-                <div class="lg:col-span-4 space-y-12">
+                <!-- Left Column: Tabs & Description (Col 5) -->
+                <div class="lg:col-span-5 space-y-12">
                     <!-- Agent List Tabs -->
                     <div class="space-y-4">
                         <div class="agent-tab cursor-pointer flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-400"
@@ -1610,20 +1607,20 @@
                         <div class="agent-tab cursor-pointer flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-400"
                             onclick="switchAgent(2)">
                             <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dot"></span>
-                            <span class="text-sm font-semibold">Upload</span>
+                            <span class="text-sm font-semibold">Upload & Capture</span>
                         </div>
                         <div class="agent-tab cursor-pointer flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-400"
                             onclick="switchAgent(3)">
                             <span class="w-1.5 h-1.5 rounded-full bg-gray-300 dot"></span>
-                            <span class="text-sm font-semibold">Capture</span>
+                            <span class="text-sm font-semibold">Email & WhatsApp</span>
                         </div>
                     </div>
 
                     <!-- Dynamic Description Area -->
                     <div id="agent-description" class="transition-opacity duration-300 pt-4">
                         <p class="text-gray-600 text-[15px] leading-relaxed">
-                            Communicate with the AI Agent using natural language to search records, generate reports,
-                            and perform ERP actions quickly and accurately.
+                            Use Email and WhatsApp to create sales and purchase orders, check inventory, retrieve
+                            reports, and execute ERP tasks seamlessly through familiar messaging channels.
                         </p>
                     </div>
 
@@ -1635,64 +1632,108 @@
                     </a>
                 </div>
 
-                <!-- Right Column: Terminal Visual (Col 8) -->
-                <div class="lg:col-span-8">
+                <!-- Right Column: Video Visual (Col 7) -->
+                <div class="lg:col-span-7">
                     <div
-                        class="terminal-window bg-[#0B0F14] rounded-2xl border border-gray-800 shadow-2xl overflow-hidden aspect-[16/10] flex flex-col">
-                        <!-- Terminal Header -->
-                        <div class="h-10 border-b border-white/5 bg-white/5 flex items-center px-4 gap-2">
-                            <div class="flex gap-1.5">
-                                <div class="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></div>
-                                <div class="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></div>
-                            </div>
-                            <div class="ml-4 text-[10px] text-gray-500 font-mono">sudu_agent_v2.0.exe</div>
+                        class="flex items-center justify-center p-8 bg-gray-50/50 rounded-3xl border border-gray-100 h-full min-h-[600px] relative overflow-hidden">
+                        <!-- Background decoration -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-gray-50 via-white to-gray-50 opacity-50">
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-sudu-sec/5 rounded-full blur-[100px]">
                         </div>
 
-                        <!-- Terminal Body -->
-                        <div class="p-8 font-mono flex-1 flex flex-col">
-                            <div class="flex items-center gap-2 mb-1">
-                                <span class="text-[#8B949E]">$</span>
-                                <span class="text-[#E6EDF3] text-sm">initializing <span
-                                        id="term-module">text_module</span>...</span>
-                            </div>
-                            <div class="text-[#238636] text-sm mb-8 animate-pulse">
-                                &gt; Access granted. Agent online.
-                            </div>
-
-                            <!-- Task Display -->
-                            <div class="bg-white/5 rounded-lg p-6 border border-white/5 mb-6">
-                                <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-2">Task</div>
-                                <div id="term-task" class="text-lg text-white font-medium">Natural Language Interaction
-                                </div>
-                            </div>
-
-                            <!-- Status Display -->
-                            <div class="bg-white/5 rounded-lg p-6 border border-white/5 flex-1 max-h-32 mb-8">
-                                <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-2">Status</div>
-                                <div class="flex items-center gap-2 text-[#238636]">
-                                    <div class="w-2 h-2 rounded-full bg-[#238636] animate-pulse"></div>
-                                    <span id="term-status" class="text-sm">Processing data stream...</span>
-                                </div>
-                            </div>
-
-                            <!-- Metrics -->
-                            <div class="grid grid-cols-3 gap-8 pt-6 border-t border-white/5">
-                                <div>
-                                    <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-1">CPU</div>
-                                    <div id="term-cpu" class="text-xs text-[#E6EDF3]">12%</div>
-                                </div>
-                                <div>
-                                    <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-1">MEM</div>
-                                    <div id="term-mem" class="text-xs text-[#E6EDF3]">450MB</div>
-                                </div>
-                                <div>
-                                    <div class="text-[10px] text-[#8B949E] uppercase tracking-wider mb-1">NET</div>
-                                    <div id="term-net" class="text-xs text-[#E6EDF3]">1.2GB/s</div>
-                                </div>
-                            </div>
+                        <!-- Simple Video Player -->
+                        <div
+                            class="relative z-10 w-[280px] md:w-[320px] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 bg-black">
+                            <video id="agent-video" src="assets/videos/Ai_Text.mp4" class="w-full h-auto object-contain"
+                                autoplay loop muted playsinline controls>
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="max-w-6xl mx-auto px-4 pt-16 reveal reveal-up">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-white border border-gray-100 animate-[gentle-pulse_4s_ease-in-out_infinite]">
+                                <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <rect x="7" y="7" width="10" height="10" rx="2"></rect>
+                                    <path d="M4 9h2M4 15h2M18 9h2M18 15h2M9 4v2M15 4v2M9 18v2M15 18v2"></path>
+                                </svg>
+                            </div>
+
+                            <h3 class="text-xl font-semibold">AI Analyst</h3>
+                        </div>
+
+                        <p class="text-gray-600 leading-relaxed mb-3">
+                            Auto-generate reports without fixed templates.
+                        </p>
+
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li><span class="font-medium">PDF</span></li>
+                            <li><span class="font-medium">CSV</span></li>
+                        </ul>
+
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-white border border-gray-100 animate-[gentle-shake_3s_ease-in-out_infinite]">
+                                <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"></path>
+                                    <path d="M9 12l2 2 4-4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">AI Schedular</h3>
+                        </div>
+
+                        <p class="text-gray-600 leading-relaxed mb-3">
+                            Automatically triggers actions, no manual follow ups needed.
+                        </p>
+
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li><span class="font-medium">Email</span></li>
+                            <li><span class="font-medium">Whatsapp</span></li>
+                        </ul>
+
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-white border border-gray-100 animate-[slow-spin_12s_linear_infinite]">
+                                <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path d="M12 11c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
+                                    <path d="M12 2C6.5 2 2 6.5 2 12"></path>
+                                    <path d="M22 12c0 5.5-4.5 10-10 10"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">AI Integration</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-3">
+                            Auto-post Quotations, Sales Orders, and Invoices
+                        </p>
+
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li><span class="font-medium">POST Quotation</span></li>
+                            <li><span class="font-medium">Sales Order</span></li>
+                            <li><span class="font-medium">Invoice</span></li>
+                        </ul>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -1712,7 +1753,7 @@
                 </div>
                 <h2 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tighter">Smarter Sales,
                     Faster Order Fulfilment</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg">SuDu AI acts as your sales assistant — reading,
+                <p class="text-gray-600 max-w-2xl mx-auto text-base">SuDu AI acts as your sales assistant — reading,
                     understanding and processing orders with AI accuracy.</p>
             </div>
 
@@ -1724,7 +1765,7 @@
                         class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3s_ease-in-out_infinite]">
                         <i data-lucide="keyboard" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">No Manual Key-In Required</h3>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2">No Manual Key-In Required</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">AI captures order details from text messages, voice
                         notes, PDF/Excel, and handwritten orders.</p>
                 </div>
@@ -1736,7 +1777,7 @@
                         class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.2s_ease-in-out_infinite]">
                         <i data-lucide="database" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Posted Directly into SQL</h3>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2">Posted Directly into SQL</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">All sales orders are automatically generated and
                         synced with your SQL Accounting system.</p>
                 </div>
@@ -1748,7 +1789,7 @@
                         class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.5s_ease-in-out_infinite]">
                         <i data-lucide="scan-text" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Smart Matching</h3>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2">Smart Matching</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">AI correctly matches customer, product, quantity,
                         and price without manual intervention.</p>
                 </div>
@@ -1760,7 +1801,7 @@
                         class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_2.8s_ease-in-out_infinite]">
                         <i data-lucide="check-circle-2" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Reduces Errors</h3>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2">Reduces Errors</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">Cut down validation time and avoid human mistakes
                         in data entry.</p>
                 </div>
@@ -1772,7 +1813,7 @@
                         class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.1s_ease-in-out_infinite]">
                         <i data-lucide="zap" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Processed in Seconds</h3>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2">Processed in Seconds</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">Tasks that took hours or minutes are now completed
                         in just seconds.</p>
                 </div>
@@ -1784,7 +1825,7 @@
                         class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.4s_ease-in-out_infinite]">
                         <i data-lucide="users" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Frees Up Sales Team</h3>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2">Frees Up Sales Team</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">Your team spends less time on admin and more time
                         on selling and business growth.</p>
                 </div>
@@ -1796,7 +1837,7 @@
                         class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_2.9s_ease-in-out_infinite]">
                         <i data-lucide="send" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Auto Order Confirmations</h3>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2">Auto Order Confirmations</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">SuDu AI can send Sales Orders via Email or WhatsApp
                         to customers automatically.</p>
                 </div>
@@ -1808,7 +1849,7 @@
                         class="w-10 h-10 rounded-lg bg-sudu-sec/10 border border-sudu-sec/20 flex items-center justify-center mb-4 text-sudu-sec animate-[gentle-float_3.6s_ease-in-out_infinite]">
                         <i data-lucide="languages" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Multi-Language (7)</h3>
+                    <h3 class="text-base font-semibold text-gray-900 mb-2">Multi-Language (7)</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">AI accurately processes orders in multiple
                         languages without manual clarification.</p>
                 </div>
@@ -1816,84 +1857,7 @@
         </div>
     </section>
 
-    <section class="bg-white py-16 reveal reveal-up">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                <!-- Card 1 -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div
-                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 mb-6 animate-[gentle-pulse_4s_ease-in-out_infinite]">
-                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <rect x="7" y="7" width="10" height="10" rx="2"></rect>
-                            <path d="M4 9h2M4 15h2M18 9h2M18 15h2M9 4v2M15 4v2M9 18v2M15 18v2"></path>
-                        </svg>
-                    </div>
-
-                    <h3 class="text-xl font-semibold mb-3">AI Analyst</h3>
-
-                    <p class="text-gray-600 leading-relaxed mb-3">
-                        Auto-generate reports without fixed templates.
-                    </p>
-
-                    <ul class="list-disc list-inside text-gray-600 space-y-1">
-                        <li><span class="font-medium">PDF</span></li>
-                        <li><span class="font-medium">CSV</span></li>
-                    </ul>
-
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div
-                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 mb-6 animate-[gentle-shake_3s_ease-in-out_infinite]">
-                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z"></path>
-                            <path d="M9 12l2 2 4-4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">AI Schedular</h3>
-
-                    <p class="text-gray-600 leading-relaxed">
-                        Automatically triggers actions, no manual follow ups needed.
-                    </p>
-
-                    <ul class="list-disc list-inside text-gray-600 space-y-1">
-                        <li><span class="font-medium">Email</span></li>
-                        <li><span class="font-medium">Whatsapp</span></li>
-                    </ul>
-
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div
-                        class="w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-50 mb-6 animate-[slow-spin_12s_linear_infinite]">
-                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path d="M12 11c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path>
-                            <path d="M12 2C6.5 2 2 6.5 2 12"></path>
-                            <path d="M22 12c0 5.5-4.5 10-10 10"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">AI Integration</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Auto-post Quotations, Sales Orders, and Invoices
-                    </p>
-
-                    <ul class="list-disc list-inside text-gray-600 space-y-1">
-                        <li><span class="font-medium">POST Quotation</span></li>
-                        <li><span class="font-medium">Sales Order</span></li>
-                        <li><span class="font-medium">Invoice</span></li>
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
 
 
     <section class="py-20 bg-[#FFFBF5] reveal reveal-up">
@@ -2660,16 +2624,16 @@
                 <!-- Left Card: The "Old Way" (SQL Accounting) -->
                 <!-- Diminishes on hover -->
                 <div
-                    class="relative p-8 md:p-12 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:blur-[2px] lg:group-hover/compare:scale-95 origin-right z-0 reveal reveal-up">
+                    class="relative p-5 md:p-6 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:scale-95 origin-right z-0">
 
-                    <div class="flex items-center gap-3 mb-8">
+                    <div class="flex items-center gap-3 mb-4">
                         <div class="p-2.5 rounded-lg bg-white border border-gray-200 text-gray-400">
                             <i data-lucide="calculator" class="w-6 h-6 stroke-[1.5]"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-400 tracking-tight">SAP</h3>
                     </div>
 
-                    <ul class="space-y-6">
+                    <ul class="space-y-3">
                         <li class="flex items-start gap-4 text-gray-400">
                             <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
                             <span class="text-base leading-snug">High licensing and implementation cost</span>
@@ -2686,10 +2650,7 @@
                             <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
                             <span class="text-base leading-snug">Heavy reliance on consultants</span>
                         </li>
-                        <li class="flex items-start gap-4 text-gray-400">
-                            <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
-                            <span class="text-base leading-snug">Costly and risky customizations</span>
-                        </li>
+
                     </ul>
                 </div>
 
@@ -2700,10 +2661,10 @@
                 <!-- Right Card: The "New Way" (SuDu AI) -->
                 <!-- Highlights, scales up, and glows on hover -->
                 <div
-                    class="relative p-8 md:p-12 rounded-2xl border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 lg:-ml-px z-10 
-                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white reveal reveal-up">
+                    class="relative p-5 md:p-6 rounded-2xl border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 lg:-ml-px z-10 
+                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white">
 
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                         <div class="flex items-center gap-3">
                             <div class="p-2.5 rounded-lg bg-[#35E5A2]/10 border border-[#35E5A2]/20 text-sudu-sec">
                                 <i data-lucide="layers" class="w-6 h-6 stroke-[1.5]"></i>
@@ -2716,7 +2677,7 @@
                         </span>
                     </div>
 
-                    <ul class="space-y-6">
+                    <ul class="space-y-3">
                         <li class="flex items-start gap-4 text-gray-700">
                             <div
                                 class="mt-1 flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 shrink-0">
@@ -2746,15 +2707,6 @@
                             <span class="text-base leading-snug">Minimal customization needed</span>
                         </li>
                     </ul>
-
-                    <div class="mt-10 pt-8 border-t border-gray-100">
-                        <button
-                            class="group flex items-center gap-2 text-lg text-[#06390C] font-bold hover:text-sudu-sec transition-colors">
-                            Compare features
-                            <i data-lucide="arrow-right"
-                                class="w-5 h-5 stroke-[1.5] transition-transform group-hover:translate-x-1"></i>
-                        </button>
-                    </div>
                 </div>
 
             </div>
@@ -2768,16 +2720,16 @@
                 <!-- Left Card: The "Old Way" (SQL Accounting) -->
                 <!-- Diminishes on hover -->
                 <div
-                    class="relative p-8 md:p-12 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:blur-[2px] lg:group-hover/compare:scale-95 origin-right z-0 reveal reveal-up">
+                    class="relative p-5 md:p-6 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:scale-95 origin-right z-0">
 
-                    <div class="flex items-center gap-3 mb-8">
+                    <div class="flex items-center gap-3 mb-4">
                         <div class="p-2.5 rounded-lg bg-white border border-gray-200 text-gray-400">
                             <i data-lucide="calculator" class="w-6 h-6 stroke-[1.5]"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-400 tracking-tight">Odoo</h3>
                     </div>
 
-                    <ul class="space-y-6">
+                    <ul class="space-y-3">
                         <li class="flex items-start gap-4 text-gray-400">
                             <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
                             <span class="text-base leading-snug">Heavy customization for advanced WMS & MES</span>
@@ -2810,10 +2762,10 @@
                 <!-- Right Card: The "New Way" (SuDu AI) -->
                 <!-- Highlights, scales up, and glows on hover -->
                 <div
-                    class="relative p-8 md:p-12 rounded-2xl border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 lg:-ml-px z-10 
-                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white reveal reveal-up">
+                    class="relative p-5 md:p-6 rounded-2xl border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 lg:-ml-px z-10 
+                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white">
 
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                         <div class="flex items-center gap-3">
                             <div class="p-2.5 rounded-lg bg-[#35E5A2]/10 border border-[#35E5A2]/20 text-sudu-sec">
                                 <i data-lucide="layers" class="w-6 h-6 stroke-[1.5]"></i>
@@ -2826,7 +2778,7 @@
                         </span>
                     </div>
 
-                    <ul class="space-y-6">
+                    <ul class="space-y-3">
                         <li class="flex items-start gap-4 text-gray-700">
                             <div
                                 class="mt-1 flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 shrink-0">
@@ -2860,14 +2812,7 @@
                         </li>
                     </ul>
 
-                    <div class="mt-10 pt-8 border-t border-gray-100">
-                        <button
-                            class="group flex items-center gap-2 text-lg text-[#06390C] font-bold hover:text-sudu-sec transition-colors">
-                            Compare features
-                            <i data-lucide="arrow-right"
-                                class="w-5 h-5 stroke-[1.5] transition-transform group-hover:translate-x-1"></i>
-                        </button>
-                    </div>
+
                 </div>
 
             </div>
@@ -2881,16 +2826,16 @@
                 <!-- Left Card: The "Old Way" (SQL Accounting) -->
                 <!-- Diminishes on hover -->
                 <div
-                    class="relative p-8 md:p-12 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:blur-[2px] lg:group-hover/compare:scale-95 origin-right z-0 reveal reveal-up">
+                    class="relative p-5 md:p-6 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:scale-95 origin-right z-0">
 
-                    <div class="flex items-center gap-3 mb-8">
+                    <div class="flex items-center gap-3 mb-4">
                         <div class="p-2.5 rounded-lg bg-white border border-gray-200 text-gray-400">
                             <i data-lucide="calculator" class="w-6 h-6 stroke-[1.5]"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-400 tracking-tight">Accounting Systems</h3>
                     </div>
 
-                    <ul class="space-y-6">
+                    <ul class="space-y-3">
                         <li class="flex items-start gap-4 text-gray-400">
                             <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
                             <span class="text-base leading-snug">Not scalable as operations and transaction volume
@@ -2909,10 +2854,6 @@
                             <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
                             <span class="text-base leading-snug">Strong in finance, weak in operations</span>
                         </li>
-                        <li class="flex items-start gap-4 text-gray-400">
-                            <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
-                            <span class="text-base leading-snug">Limited or no stock control</span>
-                        </li>
                     </ul>
                 </div>
 
@@ -2923,10 +2864,10 @@
                 <!-- Right Card: The "New Way" (SuDu AI) -->
                 <!-- Highlights, scales up, and glows on hover -->
                 <div
-                    class="relative p-8 md:p-12 rounded-2xl border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 lg:-ml-px z-10 
-                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white reveal reveal-up">
+                    class="relative p-5 md:p-6 rounded-2xl border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 lg:-ml-px z-10 
+                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white">
 
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                         <div class="flex items-center gap-3">
                             <div class="p-2.5 rounded-lg bg-[#35E5A2]/10 border border-[#35E5A2]/20 text-sudu-sec">
                                 <i data-lucide="layers" class="w-6 h-6 stroke-[1.5]"></i>
@@ -2939,7 +2880,7 @@
                         </span>
                     </div>
 
-                    <ul class="space-y-6">
+                    <ul class="space-y-3">
                         <li class="flex items-start gap-4 text-gray-700">
                             <div
                                 class="mt-1 flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 shrink-0">
@@ -2973,14 +2914,7 @@
                         </li>
                     </ul>
 
-                    <div class="mt-10 pt-8 border-t border-gray-100">
-                        <button
-                            class="group flex items-center gap-2 text-lg text-[#06390C] font-bold hover:text-sudu-sec transition-colors">
-                            Compare features
-                            <i data-lucide="arrow-right"
-                                class="w-5 h-5 stroke-[1.5] transition-transform group-hover:translate-x-1"></i>
-                        </button>
-                    </div>
+
                 </div>
 
             </div>
@@ -2996,23 +2930,19 @@
                 <!-- Left Card: The "Old Way" (SQL Accounting) -->
                 <!-- Diminishes on hover -->
                 <div
-                    class="relative p-8 md:p-12 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:blur-[2px] lg:group-hover/compare:scale-95 origin-right z-0 reveal reveal-up">
+                    class="relative p-5 md:p-6 rounded-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:scale-95 origin-right z-0">
 
-                    <div class="flex items-center gap-3 mb-8">
+                    <div class="flex items-center gap-3 mb-4">
                         <div class="p-2.5 rounded-lg bg-white border border-gray-200 text-gray-400">
                             <i data-lucide="calculator" class="w-6 h-6 stroke-[1.5]"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-400 tracking-tight">Custom Projects</h3>
                     </div>
 
-                    <ul class="space-y-6">
+                    <ul class="space-y-3">
                         <li class="flex items-start gap-4 text-gray-400">
                             <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
                             <span class="text-base leading-snug">High development and ongoing maintenance cost</span>
-                        </li>
-                        <li class="flex items-start gap-4 text-gray-400">
-                            <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
-                            <span class="text-base leading-snug">Long and uncertain delivery timeline</span>
                         </li>
                         <li class="flex items-start gap-4 text-gray-400">
                             <i data-lucide="x" class="w-5 h-5 text-red-500/70 mt-1 shrink-0 stroke-[1.5]"></i>
@@ -3037,10 +2967,10 @@
                 <!-- Right Card: The "New Way" (SuDu AI) -->
                 <!-- Highlights, scales up, and glows on hover -->
                 <div
-                    class="relative p-8 md:p-12 rounded-2xl border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 lg:-ml-px z-10 
-                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white reveal reveal-up">
+                    class="relative p-5 md:p-6 rounded-2xl border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 lg:-ml-px z-10 
+                            lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white">
 
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                         <div class="flex items-center gap-3">
                             <div class="p-2.5 rounded-lg bg-[#35E5A2]/10 border border-[#35E5A2]/20 text-sudu-sec">
                                 <i data-lucide="layers" class="w-6 h-6 stroke-[1.5]"></i>
@@ -3053,7 +2983,7 @@
                         </span>
                     </div>
 
-                    <ul class="space-y-6">
+                    <ul class="space-y-3">
                         <li class="flex items-start gap-4 text-gray-700">
                             <div
                                 class="mt-1 flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 shrink-0">
@@ -3085,14 +3015,7 @@
                         </li>
                     </ul>
 
-                    <div class="mt-10 pt-8 border-t border-gray-100">
-                        <button
-                            class="group flex items-center gap-2 text-lg text-[#06390C] font-bold hover:text-sudu-sec transition-colors">
-                            Compare features
-                            <i data-lucide="arrow-right"
-                                class="w-5 h-5 stroke-[1.5] transition-transform group-hover:translate-x-1"></i>
-                        </button>
-                    </div>
+
                 </div>
 
             </div>
@@ -3167,7 +3090,7 @@
                         <div class="md:w-1/2 text-left md:text-right order-2 md:order-1 pl-20 md:pl-0 md:pr-16">
                             <div class="text-sudu-sec font-bold mb-2">Step 01</div>
                             <h3 class="text-3xl font-bold text-white mb-4">Receive Order</h3>
-                            <p class="text-gray-400 text-lg leading-relaxed">Customer sends orders via message, voice,
+                            <p class="text-gray-400 text-base leading-relaxed">Customer sends orders via message, voice,
                                 PDF/Excel or even hand written image.</p>
                         </div>
                         <div
@@ -3229,7 +3152,8 @@
                         <div class="md:w-1/2 text-left order-2 pl-20 md:pl-16">
                             <div class="text-sudu-sec font-bold mb-2">Step 02</div>
                             <h3 class="text-3xl font-bold text-white mb-4">AI Interpretation</h3>
-                            <p class="text-gray-400 text-lg leading-relaxed">SuDu AI reads and understands order details
+                            <p class="text-gray-400 text-base leading-relaxed">SuDu AI reads and understands order
+                                details
                                 using advanced AI models.</p>
                         </div>
                     </div>
@@ -3240,7 +3164,7 @@
                         <div class="md:w-1/2 text-left md:text-right order-2 md:order-1 pl-20 md:pl-0 md:pr-16">
                             <div class="text-sudu-sec font-bold mb-2">Step 03</div>
                             <h3 class="text-3xl font-bold text-white mb-4">Smart Validation</h3>
-                            <p class="text-gray-400 text-lg leading-relaxed">Customer, item, price and quantity are
+                            <p class="text-gray-400 text-base leading-relaxed">Customer, item, price and quantity are
                                 automatically verified.</p>
                         </div>
                         <div
@@ -3297,7 +3221,8 @@
                         <div class="md:w-1/2 text-left order-2 pl-20 md:pl-16">
                             <div class="text-sudu-sec font-bold mb-2">Step 04</div>
                             <h3 class="text-3xl font-bold text-white mb-4">Sync with Accounting Software</h3>
-                            <p class="text-gray-400 text-lg leading-relaxed">Sales Orders are instantly posted into your
+                            <p class="text-gray-400 text-base leading-relaxed">Sales Orders are instantly posted into
+                                your
                                 Accounting Software system.</p>
                         </div>
                     </div>
@@ -3308,7 +3233,7 @@
                         <div class="md:w-1/2 text-left md:text-right order-2 md:order-1 pl-20 md:pl-0 md:pr-16">
                             <div class="text-sudu-sec font-bold mb-2">Step 05</div>
                             <h3 class="text-3xl font-bold text-white mb-4">Auto Distribution</h3>
-                            <p class="text-gray-400 text-lg leading-relaxed">Customers receive confirmations via
+                            <p class="text-gray-400 text-base leading-relaxed">Customers receive confirmations via
                                 WhatsApp or Email without human involvement.</p>
                         </div>
                         <div
@@ -3425,11 +3350,11 @@
     <!-- Accounting Integration Section -->
     <section class="py-32 bg-[#FFFBF5] relative overflow-hidden reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-20 text-[#06390C]">
+            <div class="text-center max-w-3xl mx-auto mb-12 text-[#06390C]">
                 <h2 class="text-4xl md:text-5xl font-semibold mb-6 tracking-tighter">
                     Ready to Integrate with Your Accounting System
                 </h2>
-                <p class="text-gray-600 text-lg leading-relaxed reveal reveal-up delay-100">
+                <p class="text-gray-600 text-base leading-relaxed reveal reveal-up delay-100">
                     Bring your <strong>existing accounting system data</strong> into our WMS and MES, no re-keying, no
                     disruption.
                     SuDu AI integrates directly with leading accounting platforms in Southeast Asia, keeping operations
@@ -3528,7 +3453,7 @@
                 <h2 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tighter">Simple, Transparent
                     Pricing
                 </h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg mb-8">Choose the plan that fits yours</p>
+                <p class="text-gray-600 max-w-2xl mx-auto text-base mb-8">Choose the plan that fits yours</p>
 
                 <!-- Pricing Toggle -->
                 <div class="flex justify-center">
@@ -3553,7 +3478,7 @@
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Starter</h3>
                     <p class="text-sm text-gray-400 mb-6">For small businesses getting started with AI.</p>
                     <div class="text-4xl font-bold text-gray-900 mb-6">$199<span
-                            class="text-lg text-gray-500 font-normal">/mo</span></div>
+                            class="text-base text-gray-500 font-normal">/mo</span></div>
                     <ul class="space-y-4 mb-8 text-sm text-gray-600 flex-1">
                         <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-sudu-sec"></i>
                             1 AI Sales Agent</li>
@@ -3578,7 +3503,7 @@
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Growth</h3>
                     <p class="text-sm text-gray-400 mb-6">For growing teams needing more power.</p>
                     <div class="text-4xl font-bold text-gray-900 mb-6">$499<span
-                            class="text-lg text-gray-500 font-normal">/mo</span></div>
+                            class="text-base text-gray-500 font-normal">/mo</span></div>
                     <ul class="space-y-4 mb-8 text-sm text-gray-300 flex-1">
                         <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-sudu-sec"></i>
                             3 AI Sales Agents</li>
@@ -3619,207 +3544,30 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-32 relative overflow-hidden bg-white reveal reveal-up">
-        <div class="max-w-3xl mx-auto px-6">
-            <!-- Header -->
-            <div class="text-center mb-12 flex flex-col items-center">
-                <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[12px] text-gray-500 mb-4 shadow-sm">
-                    <span class="w-1.5 h-1.5 rounded-full bg-sudu-sec animate-pulse"></span>
-                    Had Some Questions?
-                </div>
-                <h2 class="text-4xl md:text-5xl font-semibold text-[#06390C] tracking-tight">Frequently Asked Questions
-                </h2>
-            </div>
-
-            <!-- FAQ Items -->
-            <div class="space-y-3">
-
-                <!-- FAQ Item 1 -->
-                <details
-                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
-                    <summary
-                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
-                        <span>What is the right plan for me?</span>
-                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
-                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
-                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
-                        </span>
-                    </summary>
-                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
-                        Find all the tools you'll need to create advanced websites in one place. Stop waisting time
-                        searching for solutions.
-                    </div>
-                </details>
-
-                <!-- FAQ Item 2 -->
-                <details
-                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
-                    <summary
-                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
-                        <span>What does the free plan include?</span>
-                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
-                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
-                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
-                        </span>
-                    </summary>
-                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
-                        Absolutely. Role-based access control (RBAC) allows you to define exactly what each user—and the
-                        AI agent—can authorize. For example, shift supervisors might approve POs up to $500, while the
-                        AI can auto-approve routine reorders under $100.
-                    </div>
-                </details>
-
-                <!-- FAQ Item 3 -->
-                <details
-                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
-                    <summary
-                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
-                        <span>What is a credit?</span>
-                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
-                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
-                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
-                        </span>
-                    </summary>
-                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
-                        We prioritize security with SOC2 Type II compliance, end-to-end encryption for all data transit,
-                        and dedicated private cloud deployment options for enterprise clients.
-                    </div>
-                </details>
-
-                <!-- FAQ Item 4 -->
-                <details
-                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
-                    <summary
-                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
-                        <span>How does usage-based pricing work?</span>
-                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
-                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
-                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
-                        </span>
-                    </summary>
-                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
-                        Typical deployment for a mid-sized facility takes 2-4 weeks. Our "Digital Twin" setup
-                        accelerates the process by pre-configuring the MES based on your existing CAD and layout data.
-                    </div>
-                </details>
-
-                <!-- FAQ Item 5 -->
-                <details
-                    class="group bg-[#FFF9F3] rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300 border border-[#F0E6D8]/50">
-                    <summary
-                        class="flex items-center justify-between p-5 cursor-pointer text-base font-medium text-gray-900 hover:text-sudu-sec transition-colors">
-                        <span>Where can I ask more questions?</span>
-                        <span class="transition group-open:rotate-180 flex-shrink-0 ml-4">
-                            <i data-lucide="plus" class="w-5 h-5 text-gray-900 group-open:hidden"></i>
-                            <i data-lucide="minus" class="w-5 h-5 text-gray-900 hidden group-open:block"></i>
-                        </span>
-                    </summary>
-                    <div class="px-5 pb-5 text-sm text-gray-600 leading-relaxed">
-                        Typical deployment for a mid-sized facility takes 2-4 weeks. Our "Digital Twin" setup
-                        accelerates the process by pre-configuring the MES based on your existing CAD and layout data.
-                    </div>
-                </details>
-
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="py-32 relative overflow-hidden bg-[#F8FFFE] reveal reveal-up">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 class="text-5xl md:text-5xl font-semibold text-gray-900 mb-6 tracking-tighter leading-[1.1]">Get Started
+            <h2 class="text-4xl md:text-5xl font-semibold text-[#06390C] mb-6 tracking-tighter leading-[1.1]">
+                Get Started
             </h2>
-            <p class="text-lg text-gray-600 mb-12 max-w-xl mx-auto">Integrate SuDu AI in your business, makes life
-                easier.</p>
+            <p class="text-base text-[#06390C]/80 mb-12 max-w-xl mx-auto">
+                Integrate SuDu AI in your business, makes life easier.
+            </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="waitlist.html"
-                    class="w-full sm:w-auto sm:min-w-[180px] px-6 py-3  border-2 border-gradient-to-r from-[#35E5A2] to-[#33DDFF] bg-gradient-to-r from-[#35E5A2] to-[#33DDFF] border-10 text-sm text-white font-semibold rounded-full hover:shadow-[0_0_40px_rgba(53,229,162,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                <a href="https://wa.me/60108760154" target="_blank"
+                    class="w-full sm:w-auto sm:min-w-[180px] px-8 py-3.5 bg-gradient-to-r from-[#35E5A2] to-[#33DDFF] text-white text-base font-bold rounded-full hover:shadow-[0_0_40px_rgba(53,229,162,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center">
                     Book a Demo →
                 </a>
-                <button
-                    class="w-full sm:w-auto sm:min-w-[180px] px-6 py-3 bg-transparent border-2 border-gray-900 text-gray-900 text-sm font-semibold rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300">
-                    Get Started for Free
-                </button>
+                <a href="contact.html"
+                    class="w-full sm:w-auto sm:min-w-[180px] px-8 py-3.5 bg-transparent border-2 border-[#06390C] text-[#06390C] text-base font-semibold rounded-full hover:bg-[#06390C] hover:text-white transition-all duration-300 flex items-center justify-center">
+                    Get Started Now
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-[#011916] pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16">
-            <!-- Left Side: Logo & Contact -->
-            <div class="col-span-1 sm:col-span-2 md:col-span-3 space-y-8 md:space-y-12 md:pl-8">
-                <div class="flex flex-col gap-1 items-center md:items-start">
-                    <a href="index.html" class="block">
-                        <img src="assets/images/logo-white.png" alt="SuDu AI" class="h-6 w-auto">
-                    </a>
-
-                </div>
-
-                <div class="flex flex-col gap-6 items-center md:items-start">
-                    <div class="flex items-center gap-4 text-gray-400">
-                        <div class="w-5 flex justify-center">
-                            <i data-lucide="phone" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-sm">+603 9055 9389</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-gray-400">
-                        <div class="w-5 flex justify-center">
-                            <i data-lucide="mail" class="w-5 h-5"></i>
-                        </div>
-                        <span class="text-sm">hi@aserious.co</span>
-                    </div>
-                    <div class="flex items-start gap-4 text-gray-400">
-                        <div class="w-5 pt-1 flex justify-center">
-                            <i data-lucide="map-pin" class="w-5 h-5"></i>
-                        </div>
-                        <div class="text-sm leading-relaxed">
-                            A Serious Sdn. Bhd.<br>
-                            6-1, Jalan Radin Bagus 1,<br>
-                            Sri Petaling, 57000 Kuala<br>
-                            Lumpur, Malaysia
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Side: Support Links -->
-            <div class="text-center md:text-left md:pl-24">
-                <h4 class="text-white font-semibold mb-6 md:mb-8 text-lg">Support</h4>
-                <ul class="flex flex-col gap-4 text-sm text-gray-400">
-                    <li><a href="product.html" class="hover:text-white transition-colors">Product</a></li>
-                    <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
-                    <li><a href="partner.html" class="hover:text-white transition-colors">Partner</a></li>
-                    <li><a href="index.html#user-guide" class="hover:text-white transition-colors">User Guide</a></li>
-                    <li><a href="careers.html" class="hover:text-white transition-colors">Career</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Bottom Bar -->
-        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5">
-            <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
-                <div class="text-[10px] text-white space-y-1 order-2 md:order-1 text-center md:text-left">
-                    <p>© A Serious AI Sdn. Bhd. [ 202301046091 ]</p>
-                    <p>All Rights Reserved 2024</p>
-                </div>
-
-                <div
-                    class="flex flex-wrap justify-center md:justify-end items-center gap-x-4 sm:gap-x-8 gap-y-4 text-[10px] text-white order-1 md:order-2 w-full md:w-auto">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Cancellation Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
-                    <a href="#"
-                        class="bg-white p-1 rounded-sm text-[#011916] hover:bg-gray-200 transition-colors md:ml-4">
-                        <i data-lucide="linkedin" class="w-3 h-3"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
 
     <!-- Icons Init -->
     <!-- Scroll Reveal Script -->
