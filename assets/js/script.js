@@ -181,7 +181,7 @@ const agents = [
     {
         id: "capture",
         name: "Capture",
-        description: "Use Email and WhatsApp to create sales and purchase orders, check inventory, retrieve reports, and execute ERP tasks seamlessly through familiar messaging channels.",
+        description: "Integrated with familiar messaging application such as WhatsApp and Email to send notify the customers.",
         consoleTask: "Vision Stream Analysis",
         consoleStatus: "Scanning barcodes...",
         cpu: "32%",
