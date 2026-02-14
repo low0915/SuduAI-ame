@@ -8,7 +8,6 @@
     <meta name="description"
         content="Next generation A.I. Integrated ERP Solution, we maximize efficiency, minimize your business costs, automate repetitive tasks and predict demand.">
 
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -32,16 +31,16 @@
                             100: '#d1fae5',
                             200: '#a7f3d0',
                             300: '#6ee7b7',
-                            400: '#35E5A2', // Updated to secondary
-                            500: '#2ec28b', // Slightly darker variant
+                            400: '#35E5A2', 
+                            500: '#2ec28b', 
                             600: '#059669',
                             700: '#047857',
                             800: '#065f46',
-                            900: '#011916', // Updated to main
+                            900: '#011916', 
                             950: '#002104',
                         },
                         dark: {
-                            bg: '#011916', // Updated to main
+                            bg: '#011916', 
                             surface: '#004708',
                             border: '#35E5A2'
                         }
@@ -60,54 +59,41 @@
 <body
     class="antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-sudu-sec/30 selection:text-sudu-sec">
 
-    <!-- Stars Background -->
     <div class="stars-container" id="stars"></div>
 
-    <!-- Generate Stars Script -->
-
-    <!-- Navbar -->
     <div id="navbar-container"></div>
 
-
-    <!-- Mobile Menu Toggle Script -->
-
-
-    <!-- Noise Texture -->
     <div class="noise-bg"></div>
 
-    <!-- Hero Section -->
     <section class="relative pt-40 pb-10 lg:pt-52 lg:pb-52 px-6 overflow-hidden reveal reveal-up">
-        <!-- Video Background -->
 
         <div class="absolute inset-0 -z-30 pointer-events-none">
             <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-100">
                 <source src="assets/videos/hero3.mp4" type="video/mp4">
             </video>
 
-            <!-- Dark Overlay for Contrast -->
             <div class="absolute inset-0 bg-gradient-to-b from-[#011916]/50 via-[#011916]/50 to-[#011916]"></div>
         </div>
-        <!-- Organic Mesh Blobs (askLio style) -->
+
         <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-            <!-- Blob 1 -->
+
             <div
                 class="absolute -top-1/4 -left-1/4 w-full h-full bg-gradient-to-br from-sudu-sec/10 to-transparent rounded-full blur-[150px] animate-mesh-1 mix-blend-screen opacity-60">
             </div>
-            <!-- Blob 2 -->
+
             <div
                 class="absolute -bottom-1/4 -right-1/4 w-full h-full bg-gradient-to-tl from-teal-500/10 to-transparent rounded-full blur-[150px] animate-mesh-2 mix-blend-screen opacity-40">
             </div>
-            <!-- Blob 3 (Accent) -->
+
             <div
                 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/2 bg-indigo-500/5 rounded-full blur-[120px] animate-mesh-3 mix-blend-overlay opacity-30">
             </div>
         </div>
 
-        <!-- Glow Effect Layer 1 -->
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-sudu-sec/10 rounded-full blur-[120px] -z-10 opacity-50 pointer-events-none mix-blend-screen animate-float-slow">
         </div>
-        <!-- Glow Effect Layer 2 (Faster Float) -->
+
         <div class="absolute top-[10%] left-[45%] -translate-x-1/2 w-[600px] h-[400px] bg-teal-500/5 rounded-full blur-[100px] -z-10 opacity-30 pointer-events-none mix-blend-screen animate-float-slow"
             style="animation-duration: 10s; animation-delay: -2s;">
         </div>
@@ -149,13 +135,12 @@
             </div>
         </div>
 
-        <!-- Chat UI Visual -->
         <div class="mt-20 max-w-5xl mx-auto relative group animate-fade-in-up delay-300 hidden">
             <div
                 class="absolute -inset-1 bg-gradient-to-r from-sudu-sec to-teal-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000">
             </div>
             <div class="relative glass-panel rounded-xl border border-white/10 overflow-hidden shadow-2xl">
-                <!-- Fake Chat Header -->
+
                 <div class="h-12 border-b border-white/5 bg-white/5 flex items-center px-4 gap-2">
                     <div class="flex gap-1.5">
                         <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
@@ -164,9 +149,9 @@
                     </div>
                     <div class="ml-4 text-xs text-gray-500 font-mono">SuDu Chat Agent - SQL Accounting Sync</div>
                 </div>
-                <!-- Chat Body -->
+
                 <div class="p-6 md:p-10 space-y-6 bg-sudu-main/80 min-h-[400px] flex flex-col justify-end">
-                    <!-- User Message -->
+
                     <div class="flex justify-end">
                         <div
                             class="bg-white/10 text-white px-5 py-3 rounded-2xl rounded-tr-sm max-w-md text-sm border border-white/5">
@@ -174,7 +159,7 @@
                             TechCorp.
                         </div>
                     </div>
-                    <!-- AI Response -->
+
                     <div class="flex justify-start gap-4">
                         <div
                             class="w-8 h-8 rounded-lg bg-emerald-900/50 border border-sudu-sec/30 flex items-center justify-center flex-shrink-0">
@@ -211,7 +196,6 @@
         </div>
     </section>
 
-    <!-- Combined Products Section -->
     <section id="products-dual" class="py-24 bg-[#F6FFFE] relative overflow-hidden reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center">
@@ -224,9 +208,8 @@
                     Two separate products <br> that are better together.
                 </h2>
 
-                <!-- Tab Switcher -->
                 <div class="my-8 flex justify-center items-end relative">
-                    <!-- Underline decoration -->
+
                     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gray-200"></div>
 
                     <button id="btn-core" onclick="showProductTab('core')"
@@ -240,9 +223,8 @@
                 </div>
             </div>
 
-            <!-- Core Accounting Tab Content -->
             <div id="tab-content-core" class="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
-                <!-- Left: Info -->
+
                 <div class="space-y-8">
                     <div
                         class="w-16 h-16 bg-sudu-sec/10 rounded-2xl flex items-center justify-center border border-sudu-sec/20">
@@ -266,11 +248,10 @@
                     </div>
                 </div>
 
-                <!-- Right: Visual -->
                 <div class="lg:col-span-2 flex flex-col items-end group">
-                    <!-- Embed Container -->
+
                     <div id="warehouse-embed-container" class="w-full">
-                        <!-- Slide 1 -->
+
                         <div id="warehouse-slide-1" class="warehouse-slide w-full transition-opacity duration-500">
                             <div
                                 style="position: relative; box-sizing: content-box; max-height: 80vh; max-height: 80svh; width: 100%; aspect-ratio: 1.94;">
@@ -282,7 +263,7 @@
                                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
                             </div>
                         </div>
-                        <!-- Slide 2 -->
+
                         <div id="warehouse-slide-2"
                             class="warehouse-slide w-full transition-opacity duration-500 hidden opacity-0">
                             <div
@@ -295,7 +276,7 @@
                                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
                             </div>
                         </div>
-                        <!-- Slide 3 -->
+
                         <div id="warehouse-slide-3"
                             class="warehouse-slide w-full transition-opacity duration-500 hidden opacity-0">
                             <div
@@ -309,7 +290,6 @@
                         </div>
                     </div>
 
-                    <!-- Navigation Buttons (Below & Right-Aligned) -->
                     <div class="flex gap-2 mt-2 z-30">
                         <button onclick="switchEmbed('warehouse', 'prev')"
                             class="p-2 rounded-full bg-white shadow-md border border-gray-100 text-sudu-main hover:bg-sudu-main hover:text-white transition-all transform hover:scale-105 active:scale-95">
@@ -323,9 +303,8 @@
                 </div>
             </div>
 
-            <!-- Manufacturing Tab Content -->
             <div id="tab-content-revenue" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
-                <!-- Left: Info -->
+
                 <div class="space-y-8">
                     <div
                         class="w-16 h-16 bg-sudu-sec/10 rounded-2xl flex items-center justify-center border border-sudu-sec/20">
@@ -351,9 +330,8 @@
                     </div>
                 </div>
 
-                <!-- Right: Visual -->
                 <div class="relative lg:col-span-2 group flex flex-col items-end">
-                    <!-- Background Label -->
+
                     <div
                         class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none overflow-hidden text-center">
                         <span id="bg-label-text-mfg"
@@ -361,10 +339,9 @@
                         </span>
                     </div>
 
-                    <!-- Slide Container -->
                     <div id="manufacturing-embed-container"
                         class="w-full flex items-center justify-center min-h-[400px]">
-                        <!-- Slide 1: Cards -->
+
                         <div id="manufacturing-slide-1"
                             class="manufacturing-slide w-full transition-opacity duration-500 flex items-center justify-center py-4">
                             <div class="relative z-10 w-full max-w-sm">
@@ -409,7 +386,6 @@
                             </div>
                         </div>
 
-                        <!-- Slide 2: Potential Embed Placeholder -->
                         <div id="manufacturing-slide-2"
                             class="manufacturing-slide w-full transition-opacity duration-500 hidden opacity-0 flex items-center justify-center py-4">
                             <div
@@ -424,7 +400,6 @@
                         </div>
                     </div>
 
-                    <!-- Navigation Buttons (Below Content & Right Aligned) -->
                     <div class="flex gap-2 mt-2 z-30">
                         <button onclick="switchEmbed('manufacturing', 'prev')"
                             class="p-2 rounded-full bg-white shadow-md border border-gray-100 text-sudu-main hover:bg-sudu-main hover:text-white transition-all transform hover:scale-105 active:scale-95">
@@ -463,11 +438,10 @@
                     contentRevenue.classList.remove('hidden');
                     contentCore.classList.add('hidden');
                 }
-                // Refresh icons for new content
+
                 lucide.createIcons();
             }
 
-            // Track active slides for each category
             const activeSlides = {
                 warehouse: 1,
                 manufacturing: 1
@@ -486,23 +460,21 @@
                     nextSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
                 }
 
-                // Update UI
                 const currentSlideEl = document.getElementById(`${type}-slide-${currentSlide}`);
                 const nextSlideEl = document.getElementById(`${type}-slide-${nextSlide}`);
 
                 if (currentSlideEl && nextSlideEl) {
-                    // Start fade out
+
                     currentSlideEl.classList.add('opacity-0');
                     setTimeout(() => {
                         currentSlideEl.classList.add('hidden');
 
-                        // Prepare next slide
                         nextSlideEl.classList.remove('hidden');
-                        // Small timeout to ensure display:block is applied before opacity change
+
                         setTimeout(() => {
                             nextSlideEl.classList.remove('opacity-0');
                             activeSlides[type] = nextSlide;
-                            // Re-init icons for the new slide
+
                             if (window.lucide) {
                                 lucide.createIcons();
                             }
@@ -513,7 +485,6 @@
         </script>
     </section>
 
-    <!-- Better Together Transition Section -->
     <section class="py-16 bg-[#FFFBF5] relative overflow-hidden reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div
@@ -530,16 +501,14 @@
         </div>
     </section>
 
-    <!-- Expanding Cards Section -->
     <section class="bg-[#FFFBF5] reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-6 h-[420px] w-full">
 
-                <!-- Card 1: Connect -->
                 <div
                     class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
                     <div class="p-4 flex flex-col h-full">
-                        <!-- Header -->
+
                         <div class="mb-2">
                             <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Inventory ↔ Production
                                 Automation</h3>
@@ -580,12 +549,10 @@
                             </div>
                         </div>
 
-                        <!-- Visual Area (Diagram) -->
-                        <!-- Visual Area (Diagram) -->
                         <div
                             class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="flex items-center gap-6 relative">
-                                <!-- Inventory Node -->
+
                                 <div class="flex flex-col items-center gap-2 group/node">
                                     <div
                                         class="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center relative z-10 group-hover:border-emerald-500/30 transition-colors group-hover:scale-110 duration-300">
@@ -595,10 +562,9 @@
                                         class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Stock</span>
                                 </div>
 
-                                <!-- Connecting Line & Animation -->
                                 <div class="relative w-16 h-8 flex items-center justify-center">
                                     <div class="absolute h-[1px] w-full bg-emerald-100"></div>
-                                    <!-- Moving Package -->
+
                                     <div
                                         class="absolute w-3 h-3 bg-emerald-500 rounded-sm shadow-sm opacity-0 animate-[move-x_1.5s_linear_infinite]">
                                     </div>
@@ -625,7 +591,6 @@
                                     </style>
                                 </div>
 
-                                <!-- Production Node -->
                                 <div class="flex flex-col items-center gap-2 group/node">
                                     <div
                                         class="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-200 flex items-center justify-center relative z-10 group-hover:border-emerald-500/30 transition-colors">
@@ -636,7 +601,7 @@
                                         class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Make</span>
                                 </div>
                             </div>
-                            <!-- Background Decoration -->
+
                             <div
                                 class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]">
                             </div>
@@ -644,11 +609,10 @@
                     </div>
                 </div>
 
-                <!-- Card 2: Automate -->
                 <div
                     class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
                     <div class="p-4 flex flex-col h-full">
-                        <!-- Header -->
+
                         <div class="mb-2">
                             <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Warehouse Operation Supports
                             </h3>
@@ -689,11 +653,10 @@
                             </div>
                         </div>
 
-                        <!-- Visual Area (Diagram) -->
                         <div
                             class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="relative w-32 h-32 flex items-center justify-center">
-                                <!-- Rack SVG -->
+
                                 <div
                                     class="absolute inset-0 border-2 border-gray-200 rounded-lg flex flex-col justify-between p-1 bg-white">
                                     <div class="h-1/3 border-b border-gray-100 flex gap-1 items-center px-1">
@@ -717,13 +680,12 @@
                                         <div class="w-6 h-4 bg-gray-100 rounded-sm"></div>
                                     </div>
                                 </div>
-                                <!-- Scanner Beam -->
-                                <!-- Scanner Beam -->
+
                                 <div
                                     class="absolute top-1/2 left-1/2 w-40 h-[2px] bg-red-500/30 -translate-x-1/2 animate-[scanner-sweep_2s_ease-in-out_infinite] shadow-[0_0_10px_rgba(239,68,68,0.5)]">
                                 </div>
                             </div>
-                            <!-- Background Decoration -->
+
                             <div
                                 class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]">
                             </div>
@@ -731,11 +693,10 @@
                     </div>
                 </div>
 
-                <!-- Card 3: Scale -->
                 <div
                     class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
                     <div class="p-4 flex flex-col h-full">
-                        <!-- Header -->
+
                         <div class="mb-2">
                             <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Order & Delivery
                                 Synchronization
@@ -772,11 +733,10 @@
                             </div>
                         </div>
 
-                        <!-- Visual Area (Diagram) -->
                         <div
                             class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="w-full max-w-[240px] flex flex-col gap-4">
-                                <!-- Step 1: Order -->
+
                                 <div
                                     class="flex items-center gap-3 opacity-100 transition-opacity duration-500 delay-0">
                                     <div
@@ -790,7 +750,6 @@
                                     <span class="text-[9px] font-bold text-emerald-600">Order</span>
                                 </div>
 
-                                <!-- Step 2: Prod -->
                                 <div
                                     class="flex items-center gap-3 opacity-100 transition-opacity duration-500 delay-100">
                                     <div
@@ -805,7 +764,6 @@
                                     <span class="text-[9px] font-bold text-emerald-600 transition-colors">Prod</span>
                                 </div>
 
-                                <!-- Step 3: Delivery -->
                                 <div
                                     class="flex items-center gap-3 opacity-100 transition-opacity duration-500 delay-200">
                                     <div
@@ -816,7 +774,7 @@
                                     <span class="text-[9px] font-bold text-gray-400">Ship</span>
                                 </div>
                             </div>
-                            <!-- Background Decoration -->
+
                             <div
                                 class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]">
                             </div>
@@ -828,19 +786,14 @@
         </div>
     </section>
 
-
-
-
-    <!-- Expanding Cards Section -->
     <section class="pb-20 pt-8 bg-[#FFFBF5] reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-6 h-[420px] w-full">
 
-                <!-- Card 4: Connect -->
                 <div
                     class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
                     <div class="p-4 flex flex-col h-full">
-                        <!-- Header -->
+
                         <div class="mb-2">
                             <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Production Planning & Execution
                             </h3>
@@ -881,11 +834,10 @@
                             </div>
                         </div>
 
-                        <!-- Visual Area (Diagram) -->
                         <div
                             class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="flex flex-col gap-3 w-full max-w-[240px]">
-                                <!-- Header -->
+
                                 <div class="flex justify-between items-center mb-1 px-1">
                                     <span
                                         class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Production
@@ -895,7 +847,7 @@
                                         <span class="text-[9px] font-bold text-emerald-600">Live</span>
                                     </div>
                                 </div>
-                                <!-- Job 1 -->
+
                                 <div
                                     class="bg-white p-3 rounded-xl border border-gray-200 shadow-sm relative overflow-hidden group-hover:shadow-md transition-all">
                                     <div class="flex justify-between text-[10px] mb-2">
@@ -910,7 +862,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Job 2 -->
+
                                 <div
                                     class="bg-white p-3 rounded-xl border border-gray-200 shadow-sm relative overflow-hidden group-hover:shadow-md transition-all">
                                     <div class="flex justify-between text-[10px] mb-2">
@@ -928,7 +880,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Background Decoration -->
+
                             <div
                                 class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]">
                             </div>
@@ -936,11 +888,10 @@
                     </div>
                 </div>
 
-                <!-- Card 5: Automate -->
                 <div
                     class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
                     <div class="p-4 flex flex-col h-full">
-                        <!-- Header -->
+
                         <div class="mb-2">
                             <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">Multi-Scenario Ready</h3>
                             <div
@@ -975,18 +926,17 @@
                             </div>
                         </div>
 
-                        <!-- Visual Area (Diagram) -->
                         <div
                             class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div class="relative w-full h-32 flex items-center justify-center">
-                                <!-- Lines -->
+
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <div class="w-[80%] h-[1px] bg-gray-200 relative">
-                                        <!-- Packet to Left -->
+
                                         <div
                                             class="absolute right-1/2 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-sudu-sec rounded-full shadow-sm opacity-0 animate-[move-left_1.5s_linear_infinite]">
                                         </div>
-                                        <!-- Packet to Right -->
+
                                         <div
                                             class="absolute left-1/2 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-sudu-sec rounded-full shadow-sm opacity-0 animate-[move-right_1.5s_linear_infinite_0.5s]">
                                         </div>
@@ -1042,7 +992,6 @@
                                     </style>
                                 </div>
 
-                                <!-- Center Node (HQ) -->
                                 <div class="relative z-10 flex flex-col items-center gap-1 group/node">
                                     <div
                                         class="w-10 h-10 bg-white rounded-lg shadow-sm border border-sudu-sec/30 flex items-center justify-center relative">
@@ -1053,7 +1002,6 @@
                                         class="text-[9px] font-bold text-gray-600 bg-white px-1 relative z-20">HQ</span>
                                 </div>
 
-                                <!-- Node 1 (Plant A) -->
                                 <div class="absolute top-2 left-4 flex flex-col items-center gap-1">
                                     <div
                                         class="w-8 h-8 bg-white rounded-md shadow-sm border border-gray-200 flex items-center justify-center group-hover:border-sudu-sec/20 transition-colors">
@@ -1063,7 +1011,6 @@
                                     <span class="text-[8px] font-medium text-gray-400">Plant A</span>
                                 </div>
 
-                                <!-- Node 2 (Plant B) -->
                                 <div class="absolute bottom-2 right-4 flex flex-col items-center gap-1">
                                     <div
                                         class="w-8 h-8 bg-white rounded-md shadow-sm border border-gray-200 flex items-center justify-center group-hover:border-sudu-sec/20 transition-colors">
@@ -1073,7 +1020,7 @@
                                     <span class="text-[8px] font-medium text-gray-400">Plant B</span>
                                 </div>
                             </div>
-                            <!-- Background Decoration -->
+
                             <div
                                 class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]">
                             </div>
@@ -1081,11 +1028,10 @@
                     </div>
                 </div>
 
-                <!-- Card 6: Scale -->
                 <div
                     class="relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-in-out group bg-white border border-gray-100 rounded-0.75rem shadow-sm hover:shadow-0.15 overflow-hidden flex flex-col">
                     <div class="p-4 flex flex-col h-full">
-                        <!-- Header -->
+
                         <div class="mb-2">
                             <h3 class="text-base font-bold text-[#06390C] mb-2 truncate">AI Automation</h3>
                             <div
@@ -1110,17 +1056,15 @@
                                             planning and data entry</p>
                                     </div>
 
-
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Visual Area (Diagram) -->
                         <div
                             class="flex-1 bg-gray-50 rounded-0.5rem border border-gray-100 p-4 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-50/50 transition-colors">
                             <div
                                 class="w-full max-w-[220px] bg-white rounded-xl shadow-lg border border-sudu-sec/10 p-4 relative overflow-hidden group-hover:-translate-y-1 transition-transform duration-500">
-                                <!-- Gradient Background -->
+
                                 <div
                                     class="absolute inset-0 bg-gradient-to-br from-sudu-sec/5 to-transparent opacity-50">
                                 </div>
@@ -1147,7 +1091,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Background Decoration -->
+
                             <div
                                 class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]">
                             </div>
@@ -1155,27 +1099,20 @@
                     </div>
                 </div>
 
-
-
-
-
-
             </div>
         </div>
     </section>
 
-    <!-- Capabilities Grid Section -->
     <section id="capabilities-grid" class="py-0 bg-white reveal reveal-up hidden">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-gray-200">
-                <!-- Cap 1 -->
+
                 <div
                     class="relative h-[400px] sm:h-80 border-b md:border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-100">
-                    <!-- Background Number -->
+
                     <span
                         class="absolute -bottom-4 -right-2 text-7xl sm:text-8xl md:text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">01</span>
 
-                    <!-- Default State -->
                     <div
                         class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10 transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
                         <div class="flex justify-between items-start">
@@ -1195,7 +1132,6 @@
                         </div>
                     </div>
 
-                    <!-- Hover Content Overlay -->
                     <div
                         class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 z-20">
                         <div class="space-y-3">
@@ -1228,14 +1164,12 @@
                     </div>
                 </div>
 
-                <!-- Cap 2 -->
                 <div
                     class="relative h-[400px] sm:h-80 border-b md:border-r-0 lg:border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-200">
-                    <!-- Background Number -->
+
                     <span
                         class="absolute -bottom-4 -right-2 text-7xl sm:text-8xl md:text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">02</span>
 
-                    <!-- Default State -->
                     <div
                         class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10 transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
                         <div class="flex justify-between items-start">
@@ -1255,7 +1189,6 @@
                         </div>
                     </div>
 
-                    <!-- Hover Content Overlay -->
                     <div
                         class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 z-20">
                         <div class="space-y-3">
@@ -1287,14 +1220,12 @@
                     </div>
                 </div>
 
-                <!-- Cap 3 -->
                 <div
                     class="relative h-[400px] sm:h-80 border-b md:border-r lg:border-r-0 border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-300">
-                    <!-- Background Number -->
+
                     <span
                         class="absolute -bottom-4 -right-2 text-7xl sm:text-8xl md:text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">03</span>
 
-                    <!-- Default State -->
                     <div
                         class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10 transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
                         <div class="flex justify-between items-start">
@@ -1314,7 +1245,6 @@
                         </div>
                     </div>
 
-                    <!-- Hover Content Overlay -->
                     <div
                         class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 z-20">
                         <div class="space-y-3">
@@ -1342,14 +1272,12 @@
                     </div>
                 </div>
 
-                <!-- Cap 4 -->
                 <div
                     class="relative h-[400px] sm:h-80 border-b md:border-r-0 lg:border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-100">
-                    <!-- Background Number -->
+
                     <span
                         class="absolute -bottom-4 -right-2 text-7xl sm:text-8xl md:text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">04</span>
 
-                    <!-- Default State -->
                     <div
                         class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10 transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
                         <div class="flex justify-between items-start">
@@ -1369,7 +1297,6 @@
                         </div>
                     </div>
 
-                    <!-- Hover Content Overlay -->
                     <div
                         class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 z-20">
                         <div class="space-y-3">
@@ -1407,14 +1334,12 @@
                     </div>
                 </div>
 
-                <!-- Cap 5 -->
                 <div
                     class="relative h-[400px] sm:h-80 border-b md:border-r border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-200">
-                    <!-- Background Number -->
+
                     <span
                         class="absolute -bottom-4 -right-2 text-7xl sm:text-8xl md:text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">05</span>
 
-                    <!-- Default State -->
                     <div
                         class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10 transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
                         <div class="flex justify-between items-start">
@@ -1434,7 +1359,6 @@
                         </div>
                     </div>
 
-                    <!-- Hover Content Overlay -->
                     <div
                         class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 z-20">
                         <div class="space-y-3">
@@ -1466,14 +1390,12 @@
                     </div>
                 </div>
 
-                <!-- Cap 6 -->
                 <div
                     class="relative h-[400px] sm:h-80 border-b md:border-r-0 lg:border-r-0 border-gray-200 group bg-white hover:bg-gradient-to-br hover:from-[#093A31] hover:to-[#011916] transition-all duration-500 overflow-hidden reveal reveal-up delay-300">
-                    <!-- Background Number -->
+
                     <span
                         class="absolute -bottom-4 -right-2 text-7xl sm:text-8xl md:text-9xl font-bold text-gray-900/5 group-hover:text-white/10 transition-colors duration-500 select-none">06</span>
 
-                    <!-- Default State -->
                     <div
                         class="p-6 sm:p-8 h-full flex flex-col justify-between relative z-10 transition-all duration-500 group-hover:opacity-0 group-hover:scale-95">
                         <div class="flex justify-between items-start">
@@ -1494,7 +1416,6 @@
                         </div>
                     </div>
 
-                    <!-- Hover Content Overlay -->
                     <div
                         class="absolute inset-0 p-6 sm:p-8 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 z-20">
                         <div class="space-y-3">
@@ -1528,7 +1449,7 @@
             </div>
         </div>
     </section>
-    <!-- Scrolling AI Assistant Section -->
+
     <section class="pt-20 pb-8 bg-white overflow-hidden select-none border-t border-b border-white reveal reveal-scale">
         <div class="flex flex-col gap-4">
             <div class="relative flex overflow-x-hidden">
@@ -1545,7 +1466,7 @@
                         class="text-[60px] md:text-[100px] font-bold text-5xl md:text-6xl font-bold tracking-tighter text-gray-900/10 tracking-tighter mx-8 uppercase">
                         A New Era of System
                     </span>
-                    <!-- Repeat for continuous scroll -->
+
                     <span
                         class="text-[60px] md:text-[100px] font-bold text-gray-900/10 tracking-tighter mx-8 uppercase">
                         Your AI Assistant Behind the Screen
@@ -1563,17 +1484,11 @@
         </div>
     </section>
 
-    <!-- Custom Style for Marquee -->
-
-    <!-- Agent Capabilities Section -->
-
-
     <section id="services"
         class="py-16 md:py-20 relative overflow-hidden border-b border-gray-100 bg-gray-50 bg-gradient-to-b from-white to-emerald-50">
 
         <div class="max-w-7xl mx-auto px-6">
 
-            <!-- Top Center: Content -->
             <div class="space-y-6 text-center mb-10 md:mb-16">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[12px] text-gray-500 mb-4 shadow-sm">
@@ -1590,9 +1505,9 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                <!-- Left Column: Tabs & Description (Col 5) -->
+
                 <div class="lg:col-span-5 space-y-6 md:space-y-12">
-                    <!-- Agent List Tabs -->
+
                     <div
                         class="flex flex-row overflow-x-auto space-y-0 gap-0 pb-2 md:pb-0 md:flex-col md:space-y-4 md:overflow-visible no-scrollbar snap-x">
                         <div class="agent-tab cursor-pointer flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-400 flex-shrink-0 snap-center"
@@ -1617,7 +1532,6 @@
                         </div>
                     </div>
 
-                    <!-- Dynamic Description Area -->
                     <div id="agent-description" class="transition-opacity duration-300 pt-0 md:pt-4">
                         <p class="text-gray-600 text-[15px] leading-relaxed">
                             Integrated with familiar messaging application such as WhatsApp and Email to send the
@@ -1633,18 +1547,16 @@
                     </a>
                 </div>
 
-                <!-- Right Column: Video Visual (Col 7) -->
                 <div class="lg:col-span-7">
                     <div
                         class="flex items-center justify-center p-8 bg-gray-50/50 rounded-3xl border border-gray-100 h-full min-h-[400px] md:min-h-[600px] relative overflow-hidden">
-                        <!-- Background decoration -->
+
                         <div class="absolute inset-0 bg-gradient-to-tr from-gray-50 via-white to-gray-50 opacity-50">
                         </div>
                         <div
                             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-sudu-sec/5 rounded-full blur-[100px]">
                         </div>
 
-                        <!-- Simple Video Player -->
                         <div
                             class="relative z-10 w-[280px] md:w-[320px] rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 bg-black">
                             <video id="agent-video" src="assets/videos/Ai_Text.mp4" class="w-full h-auto object-contain"
@@ -1658,7 +1570,6 @@
             <div class="max-w-6xl mx-auto px-4 pt-16 reveal reveal-up">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                    <!-- Card 1 -->
                     <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
                         <div class="flex items-center gap-4 mb-4">
                             <div
@@ -1684,7 +1595,6 @@
 
                     </div>
 
-                    <!-- Card 2 -->
                     <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
                         <div class="flex items-center gap-4 mb-4">
                             <div
@@ -1709,7 +1619,6 @@
 
                     </div>
 
-                    <!-- Card 3 -->
                     <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
                         <div class="flex items-center gap-4 mb-4">
                             <div
@@ -1734,16 +1643,12 @@
                         </ul>
                     </div>
 
-
                 </div>
             </div>
         </div>
         </div>
     </section>
 
-
-
-    <!-- Benefits Section (Features) -->
     <section id="features" class="py-16 md:py-24 relative bg-[#FFFBF5] hidden reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-10 md:mb-20">
@@ -1759,7 +1664,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Benefit 1 -->
+
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
@@ -1771,7 +1676,6 @@
                         notes, PDF/Excel, and handwritten orders.</p>
                 </div>
 
-                <!-- Benefit 2 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
@@ -1783,7 +1687,6 @@
                         synced with your SQL Accounting system.</p>
                 </div>
 
-                <!-- Benefit 3 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
@@ -1795,7 +1698,6 @@
                         and price without manual intervention.</p>
                 </div>
 
-                <!-- Benefit 4 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
@@ -1807,7 +1709,6 @@
                         in data entry.</p>
                 </div>
 
-                <!-- Benefit 5 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
@@ -1819,7 +1720,6 @@
                         in just seconds.</p>
                 </div>
 
-                <!-- Benefit 6 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
@@ -1831,7 +1731,6 @@
                         on selling and business growth.</p>
                 </div>
 
-                <!-- Benefit 7 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
@@ -1843,7 +1742,6 @@
                         to customers automatically.</p>
                 </div>
 
-                <!-- Benefit 8 -->
                 <div
                     class="bg-white p-6 rounded-2xl border border-gray-100 hover:border-sudu-sec/30 hover:shadow-lg transition-all group">
                     <div
@@ -1858,18 +1756,13 @@
         </div>
     </section>
 
-
-
-
     <section class="py-16 md:py-20 bg-[#FFFBF5] reveal reveal-up">
         <div class="max-w-6xl mx-auto px-4 text-center">
 
-            <!-- Title -->
             <h2 class="text-3xl md:text-5xl font-semibold text-[#06390C] mb-8 md:mb-14 reveal reveal-up">
                 Measurable Impact, in Weeks
             </h2>
 
-            <!-- Stats -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
 
                 <div class="bg-white rounded-2xl p-4 md:p-8 shadow-sm reveal reveal-up delay-100">
@@ -1885,7 +1778,6 @@
                     </p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bg-white rounded-2xl p-4 md:p-8 shadow-sm reveal reveal-up delay-200">
                     <p class="text-xs md:text-sm text-[#06390C] font-bold mb-4">
                         Operational Efficiency
@@ -1899,7 +1791,6 @@
                     </p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bg-white rounded-2xl p-4 md:p-8 shadow-sm reveal reveal-up delay-300">
                     <p class="text-xs md:text-sm text-[#06390C] mb-4">
                         Production Performance
@@ -1913,7 +1804,6 @@
                     </p>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="bg-white rounded-2xl p-4 md:p-8 shadow-sm reveal reveal-up delay-100">
                     <p class="text-xs md:text-sm text-[#06390C] mb-4">
                         Order Fulfillment
@@ -1927,7 +1817,6 @@
                     </p>
                 </div>
 
-                <!-- Card 5 -->
                 <div class="bg-white rounded-2xl p-4 md:p-8 shadow-sm reveal reveal-up delay-200">
                     <p class="text-xs md:text-sm text-[#06390C] mb-4">
                         Issue Resolution
@@ -1941,7 +1830,6 @@
                     </p>
                 </div>
 
-                <!-- Card 6 -->
                 <div class="bg-white rounded-2xl p-4 md:p-8 shadow-sm reveal reveal-up delay-300">
                     <p class="text-xs md:text-sm text-[#06390C] mb-4">
                         Cost Reduction
@@ -1994,7 +1882,6 @@
         observer.observe(document.querySelector('.counter'));
     </script>
 
-
     <section class="rillet-section hidden">
         <style>
             .rillet-section {
@@ -2023,21 +1910,19 @@
                 color: #6b7280;
             }
 
-            /* ===== GRID — 2 PER ROW ===== */
             .rillet-grid {
                 display: grid;
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 22px;
             }
 
-            /* ===== CARD ===== */
             .rillet-card {
                 border-radius: 20px;
                 border: 1px solid #e5e7eb;
                 background: #f3f4f6;
                 transition: all .35s ease;
                 overflow: hidden;
-                /* keep expand inside */
+
             }
 
             .rillet-card.feature {
@@ -2056,11 +1941,10 @@
                 font-weight: 600;
             }
 
-            /* ===== SPLIT EXPAND INSIDE RIGHT SIDE ===== */
             .rillet-split {
                 display: grid;
                 grid-template-columns: 1fr 0fr;
-                /* collapsed */
+
                 transition: grid-template-columns .4s ease;
                 height: 100%;
                 gap: 0;
@@ -2321,7 +2205,6 @@
                 }
             }
 
-            /* ===== ACCOUNTING INTEGRATION SECTION ===== */
             .integration-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -2403,7 +2286,6 @@
                 color: #35E5A2;
             }
 
-            /* Pulse Animation for Logo Glow */
             @keyframes logoPulse {
                 0% {
                     transform: scale(1);
@@ -2595,13 +2477,11 @@
         </div>
     </section>
 
-
     <section
         class="relative bg-white py-16 md:py-20 px-6 border-y border-gray-100 overflow-hidden bg-gray-50 bg-gradient-to-b from-white to-emerald-50 reveal reveal-up">
 
         <div class="max-w-6xl w-full mx-auto relative z-10">
 
-            <!-- Header -->
             <div class="text-center mb-10 md:mb-16 space-y-4 reveal reveal-up">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-100 bg-white text-[12px] text-gray-500 mb-4 shadow-sm">
@@ -2617,12 +2497,8 @@
                 </p>
             </div>
 
-            <!-- Comparison Interactive Container -->
-            <!-- Group hover triggers the specific animations on child elements -->
             <div class="group/compare grid grid-cols-1 lg:grid-cols-2 gap-0 relative">
 
-                <!-- Left Card: The "Old Way" (SQL Accounting) -->
-                <!-- Diminishes on hover -->
                 <div
                     class="relative p-5 md:p-6 rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:scale-95 origin-right z-0">
 
@@ -2654,12 +2530,6 @@
                     </ul>
                 </div>
 
-
-
-
-
-                <!-- Right Card: The "New Way" (SuDu AI) -->
-                <!-- Highlights, scales up, and glows on hover -->
                 <div
                     class="relative p-5 md:p-6 rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 -mt-px lg:mt-0 lg:-ml-px z-10 
                             lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white">
@@ -2713,12 +2583,8 @@
 
             <br>
 
-            <!-- Comparison Interactive Container -->
-            <!-- Group hover triggers the specific animations on child elements -->
             <div class="group/compare grid grid-cols-1 lg:grid-cols-2 gap-0 relative">
 
-                <!-- Left Card: The "Old Way" (SQL Accounting) -->
-                <!-- Diminishes on hover -->
                 <div
                     class="relative p-5 md:p-6 rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:scale-95 origin-right z-0">
 
@@ -2755,12 +2621,6 @@
                     </ul>
                 </div>
 
-
-
-
-
-                <!-- Right Card: The "New Way" (SuDu AI) -->
-                <!-- Highlights, scales up, and glows on hover -->
                 <div
                     class="relative p-5 md:p-6 rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 -mt-px lg:mt-0 lg:-ml-px z-10 
                             lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white">
@@ -2812,19 +2672,14 @@
                         </li>
                     </ul>
 
-
                 </div>
 
             </div>
 
             <br>
 
-            <!-- Comparison Interactive Container -->
-            <!-- Group hover triggers the specific animations on child elements -->
             <div class="group/compare grid grid-cols-1 lg:grid-cols-2 gap-0 relative">
 
-                <!-- Left Card: The "Old Way" (SQL Accounting) -->
-                <!-- Diminishes on hover -->
                 <div
                     class="relative p-5 md:p-6 rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:scale-95 origin-right z-0">
 
@@ -2857,12 +2712,6 @@
                     </ul>
                 </div>
 
-
-
-
-
-                <!-- Right Card: The "New Way" (SuDu AI) -->
-                <!-- Highlights, scales up, and glows on hover -->
                 <div
                     class="relative p-5 md:p-6 rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 -mt-px lg:mt-0 lg:-ml-px z-10 
                             lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white">
@@ -2914,21 +2763,14 @@
                         </li>
                     </ul>
 
-
                 </div>
 
             </div>
 
-
-
             <br>
 
-            <!-- Comparison Interactive Container -->
-            <!-- Group hover triggers the specific animations on child elements -->
             <div class="group/compare grid grid-cols-1 lg:grid-cols-2 gap-0 relative">
 
-                <!-- Left Card: The "Old Way" (SQL Accounting) -->
-                <!-- Diminishes on hover -->
                 <div
                     class="relative p-5 md:p-6 rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none border border-gray-100 bg-gray-50/50 transition-all duration-500 ease-out lg:group-hover/compare:opacity-40 lg:group-hover/compare:scale-95 origin-right z-0">
 
@@ -2960,12 +2802,6 @@
                     </ul>
                 </div>
 
-
-
-
-
-                <!-- Right Card: The "New Way" (SuDu AI) -->
-                <!-- Highlights, scales up, and glows on hover -->
                 <div
                     class="relative p-5 md:p-6 rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none border border-gray-100 bg-white transition-all duration-500 ease-out shadow-0.15 -mt-px lg:mt-0 lg:-ml-px z-10 
                             lg:group-hover/compare:scale-[1.03] lg:group-hover/compare:shadow-0.5 lg:group-hover/compare:border-[#35E5A2]/30 lg:group-hover/compare:bg-white">
@@ -3015,50 +2851,14 @@
                         </li>
                     </ul>
 
-
                 </div>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
 
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- How It Works Section (Vertical Timeline) -->
     <section id="how-it-works" class="py-16 md:py-32 relative border-y border-white/5 bg-[#011916] reveal reveal-up">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-12 md:mb-24">
@@ -3073,18 +2873,16 @@
             </div>
 
             <div class="relative">
-                <!-- Vertical Timeline Line (Background) -->
+
                 <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10 -translate-x-1/2 h-full z-0">
                 </div>
 
-                <!-- Vertical Progress Line (Foreground - Animated) -->
                 <div id="timeline-progress"
                     class="absolute left-8 md:left-1/2 top-0 w-1 bg-sudu-sec -translate-x-1/2 z-0 transition-all duration-100 ease-linear shadow-[0_0_20px_rgba(53,229,162,0.5)]"
                     style="height: 0%;"></div>
 
                 <div class="space-y-24 relative z-10" id="timeline-steps">
 
-                    <!-- Step 1 -->
                     <div class="timeline-step relative flex flex-col md:flex-row items-center gap-8 md:gap-24 opacity-30 transition-all duration-500"
                         data-step="1">
                         <div class="md:w-1/2 text-left md:text-right order-2 md:order-1 pl-20 md:pl-0 md:pr-16">
@@ -3097,7 +2895,7 @@
                             class="absolute left-8 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#011916] border-4 border-white/10 z-10 step-icon shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-all duration-500">
                         </div>
                         <div class="md:w-1/2 order-1 md:order-2">
-                            <!-- Step 1 Card -->
+
                             <div
                                 class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl relative overflow-hidden group hover:scale-105 transition-transform duration-500">
                                 <div class="flex items-center gap-4 mb-6">
@@ -3124,11 +2922,10 @@
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
                     <div class="timeline-step relative flex flex-col md:flex-row items-center gap-8 md:gap-24 opacity-30 transition-all duration-500"
                         data-step="2">
                         <div class="md:w-1/2 order-1 md:order-1 flex justify-end">
-                            <!-- Step 2 Card -->
+
                             <div
                                 class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl relative overflow-hidden group hover:scale-105 transition-transform duration-500">
                                 <div class="flex items-center gap-4 mb-6">
@@ -3158,7 +2955,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
                     <div class="timeline-step relative flex flex-col md:flex-row items-center gap-8 md:gap-24 opacity-30 transition-all duration-500"
                         data-step="3">
                         <div class="md:w-1/2 text-left md:text-right order-2 md:order-1 pl-20 md:pl-0 md:pr-16">
@@ -3171,7 +2967,7 @@
                             class="absolute left-8 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#011916] border-4 border-white/10 z-10 step-icon shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-all duration-500">
                         </div>
                         <div class="md:w-1/2 order-1 md:order-2">
-                            <!-- Step 3 Card -->
+
                             <div
                                 class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl relative overflow-hidden group hover:scale-105 transition-transform duration-500">
                                 <div class="flex items-center gap-4 mb-6">
@@ -3196,11 +2992,10 @@
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
                     <div class="timeline-step relative flex flex-col md:flex-row items-center gap-8 md:gap-24 opacity-30 transition-all duration-500"
                         data-step="4">
                         <div class="md:w-1/2 order-1 md:order-1 flex justify-end">
-                            <!-- Step 4 Card -->
+
                             <div
                                 class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl relative overflow-hidden group hover:scale-105 transition-transform duration-500">
                                 <div class="flex items-center gap-4 mb-6">
@@ -3227,7 +3022,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 5 -->
                     <div class="timeline-step relative flex flex-col md:flex-row items-center gap-8 md:gap-24 opacity-30 transition-all duration-500"
                         data-step="5">
                         <div class="md:w-1/2 text-left md:text-right order-2 md:order-1 pl-20 md:pl-0 md:pr-16">
@@ -3240,7 +3034,7 @@
                             class="absolute left-8 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#011916] border-4 border-white/10 z-10 step-icon shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-all duration-500">
                         </div>
                         <div class="md:w-1/2 order-1 md:order-2">
-                            <!-- Step 5 Card -->
+
                             <div
                                 class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl relative overflow-hidden group hover:scale-105 transition-transform duration-500">
                                 <div class="flex items-center gap-4 mb-6">
@@ -3284,37 +3078,27 @@
                     const sectionHeight = timelineSection.offsetHeight;
                     const windowHeight = window.innerHeight;
 
-                    // Calculate how much of the section has been scrolled through relative to the viewport center
-                    // We start filling when the top of the section hits the center of the screen
                     const startOffset = windowHeight / 2;
                     let scrollY = window.scrollY || window.pageYOffset;
                     let sectionTop = timelineSection.offsetTop;
 
-                    // Calculate progress (0 to 1) based on scroll position
-                    // We want the line to be full when we reach the end of the steps container
                     const stepsContainer = document.getElementById('timeline-steps');
                     const stepsTop = stepsContainer.offsetTop;
                     const stepsHeight = stepsContainer.offsetHeight;
 
-                    // The line should start filling when the TOP of the steps container hits the middle of the screen
                     const triggerPoint = windowHeight / 2;
                     const relatveScroll = (scrollY + triggerPoint) - (sectionTop + stepsTop);
 
                     let progress = relatveScroll / stepsHeight;
 
-                    // Clamp progress
                     progress = Math.max(0, Math.min(1, progress));
 
-                    // Update Line Height
                     progressLine.style.height = `${progress * 100}%`;
 
-                    // Activate Steps
                     steps.forEach((step, index) => {
                         const stepRect = step.getBoundingClientRect();
                         const stepCenter = stepRect.top + stepRect.height / 2;
 
-                        // Activate when the step center is above the trigger point (highlight as we pass it)
-                        // Or slightly before
                         if (stepCenter < windowHeight / 1.5) {
                             step.classList.remove('opacity-30');
                             step.classList.add('opacity-100');
@@ -3327,7 +3111,7 @@
                             }
 
                         } else {
-                            // Deactivate if scrolling back up (optional, keeps it interactive)
+
                             step.classList.add('opacity-30');
                             step.classList.remove('opacity-100');
 
@@ -3347,7 +3131,6 @@
         </script>
     </section>
 
-    <!-- Accounting Integration Section -->
     <section class="py-16 md:py-32 bg-[#FFFBF5] relative overflow-hidden reveal reveal-up">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-12 text-[#06390C]">
@@ -3363,7 +3146,7 @@
             </div>
 
             <div class="integration-grid">
-                <!-- SQL Account -->
+
                 <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.1s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
@@ -3374,7 +3157,6 @@
                     </div>
                 </div>
 
-                <!-- AutoCount -->
                 <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.2s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
@@ -3385,7 +3167,6 @@
                     </div>
                 </div>
 
-                <!-- FlowAccount -->
                 <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.3s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
@@ -3396,7 +3177,6 @@
                     </div>
                 </div>
 
-                <!-- Peak -->
                 <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.4s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
@@ -3407,7 +3187,6 @@
                     </div>
                 </div>
 
-                <!-- Sap -->
                 <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.4s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
@@ -3418,7 +3197,6 @@
                     </div>
                 </div>
 
-                <!--Microsoft -->
                 <div class="logo-card reveal reveal-scale-up" style="transition-delay: 0.4s;">
                     <div class="integration-badge"></div>
                     <div class="flex flex-col items-center">
@@ -3429,19 +3207,15 @@
                     </div>
                 </div>
 
-
             </div>
 
-
         </div>
         </div>
 
-        <!-- Background Glows -->
         <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-sudu-sec/5 rounded-full blur-[120px]"></div>
         <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px]"></div>
     </section>
 
-    <!-- Pricing Section -->
     <section id="pricing" class="py-16 md:py-32 relative bg-[#FFFBF5] hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-10 md:mb-20">
@@ -3455,7 +3229,6 @@
                 </h2>
                 <p class="text-gray-600 max-w-2xl mx-auto text-base mb-8">Choose the plan that fits yours</p>
 
-                <!-- Pricing Toggle -->
                 <div class="flex justify-center">
                     <div class="bg-white rounded-full p-1.5 flex items-center shadow-sm border border-gray-100">
                         <button onclick="togglePricing('per')" id="toggle-per"
@@ -3472,7 +3245,6 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
 
-                <!-- Starter -->
                 <div
                     class="group bg-white p-8 rounded-3xl border border-gray-200 flex flex-col hover:border-sudu-sec/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Starter</h3>
@@ -3494,7 +3266,6 @@
                         Plan</button>
                 </div>
 
-                <!-- Growth (Highlighted) -->
                 <div
                     class="group bg-white p-8 rounded-3xl border-2 border-sudu-sec relative flex flex-col shadow-xl transform md:-translate-y-4 hover:-translate-y-6 hover:shadow-2xl transition-all duration-300">
                     <div
@@ -3519,7 +3290,6 @@
                         Plan</button>
                 </div>
 
-                <!-- Enterprise -->
                 <div
                     class="group bg-white p-8 rounded-3xl border border-gray-200 flex flex-col hover:border-sudu-sec/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">Enterprise</h3>
@@ -3544,7 +3314,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="py-16 md:py-32 relative overflow-hidden bg-[#F8FFFE] reveal reveal-up">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             <h2 class="text-4xl md:text-5xl font-semibold text-[#06390C] mb-6 tracking-tighter leading-[1.1]">
@@ -3566,14 +3335,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <div id="footer-container"></div>
 
-    <!-- Icons Init -->
-    <!-- Scroll Reveal Script -->
 </body>
-
-
-
 
 </html>

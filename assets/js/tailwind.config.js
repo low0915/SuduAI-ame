@@ -13,16 +13,16 @@ tailwind.config = {
                     100: '#d1fae5',
                     200: '#a7f3d0',
                     300: '#6ee7b7',
-                    400: '#35E5A2', // Updated to secondary
-                    500: '#2ec28b', // Slightly darker variant
+                    400: '#35E5A2', 
+                    500: '#2ec28b', 
                     600: '#059669',
                     700: '#047857',
                     800: '#065f46',
-                    900: '#011916', // Updated to main
+                    900: '#011916', 
                     950: '#002104',
                 },
                 dark: {
-                    bg: '#011916', // Updated to main
+                    bg: '#011916', 
                     surface: '#004708',
                     border: '#35E5A2'
                 }

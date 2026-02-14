@@ -1,11 +1,8 @@
-/* SuDu AI - Main Script */
 
-// Stars Generation
 function initStars() {
     const starsContainer = document.getElementById('stars');
     if (!starsContainer) return;
 
-    // Clear existing stars if any
     starsContainer.innerHTML = '';
 
     const starCount = 50;
@@ -15,15 +12,14 @@ function initStars() {
 
         const x = Math.random() * 100;
         const y = Math.random() * 100;
-        const size = Math.random() * 2 + 1; // 1px to 3px
-        const duration = Math.random() * 3 + 2; // 2s to 5s
+        const size = Math.random() * 2 + 1; 
+        const duration = Math.random() * 3 + 2; 
         const delay = Math.random() * 5;
         const opacity = Math.random() * 0.5 + 0.3;
 
-        // Drift properties
-        const driftX = (Math.random() - 0.5) * 40; // -20px to 20px
+        const driftX = (Math.random() - 0.5) * 40; 
         const driftY = (Math.random() - 0.5) * 40;
-        const driftDuration = Math.random() * 20 + 10; // 10s to 30s
+        const driftDuration = Math.random() * 20 + 10; 
 
         star.style.left = `${x}%`;
         star.style.top = `${y}%`;
@@ -40,13 +36,11 @@ function initStars() {
     }
 }
 
-// Mobile Menu Toggle
 function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     if (!mobileMenuBtn || !mobileMenu) return;
 
-    // Remove existing listeners by cloning the button (simple way to clear listeners)
     const newBtn = mobileMenuBtn.cloneNode(true);
     mobileMenuBtn.parentNode.replaceChild(newBtn, mobileMenuBtn);
 
@@ -70,7 +64,6 @@ function initMobileMenu() {
         toggleMenu(!isMenuOpen);
     });
 
-    // Close menu when clicking on a link
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -78,20 +71,17 @@ function initMobileMenu() {
         });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (isMenuOpen && !mobileMenu.contains(e.target) && !newBtn.contains(e.target)) {
             toggleMenu(false);
         }
     });
 
-    // Prevent clicks inside menu from closing it via the document listener
     mobileMenu.addEventListener('click', (e) => {
         e.stopPropagation();
     });
 }
 
-// Tab Switcher (Global)
 function showProductTab(tabId) {
     const btnCore = document.getElementById('btn-core');
     const btnRevenue = document.getElementById('btn-revenue');
@@ -117,13 +107,12 @@ function showProductTab(tabId) {
         contentRevenue.classList.remove('hidden');
         contentCore.classList.add('hidden');
     }
-    // Refresh icons for new content
+
     if (window.lucide) {
         lucide.createIcons();
     }
 }
 
-// Pricing Toggle
 function togglePricing(type) {
     const perBtn = document.getElementById('toggle-per');
     const fullBtn = document.getElementById('toggle-full');
@@ -143,7 +132,6 @@ function togglePricing(type) {
     }
 }
 
-// Agent Capabilities Data
 const agents = [
     {
         id: "text",
@@ -181,7 +169,7 @@ const agents = [
     {
         id: "capture",
         name: "Capture",
-        description: "Integrated with familiar messaging application such as WhatsApp and Email to send notify the customers.",
+        description: "Integrated with familiar messaging application such as WhatsApp and Email to send the details and notifications to the customers.",
         consoleTask: "Vision Stream Analysis",
         consoleStatus: "Scanning barcodes...",
         cpu: "32%",
@@ -199,7 +187,6 @@ function switchAgent(index, resetTimer = true) {
     const tabs = document.querySelectorAll('.agent-tab');
     const descArea = document.getElementById('agent-description');
 
-    // Console elements
     const termModule = document.getElementById('term-module');
     const termTask = document.getElementById('term-task');
     const termStatus = document.getElementById('term-status');
@@ -220,13 +207,11 @@ function switchAgent(index, resetTimer = true) {
         }
     });
 
-    // Update content with fade effect
     descArea.style.opacity = 0;
     setTimeout(() => {
         const p = descArea.querySelector('p');
         if (p) p.innerText = agents[index].description;
 
-        // Update Console
         if (termModule) termModule.innerText = agents[index].id + "_module";
         if (termTask) termTask.innerText = agents[index].consoleTask;
         if (termStatus) termStatus.innerText = agents[index].consoleStatus;
@@ -234,17 +219,15 @@ function switchAgent(index, resetTimer = true) {
         if (termMem) termMem.innerText = agents[index].mem;
         if (termNet) termNet.innerText = agents[index].net;
 
-        // Update Video
         if (agentVideo && agents[index].video) {
             agentVideo.src = agents[index].video;
-            agentVideo.load(); // Ensure the video reloads with the new source
-            agentVideo.play(); // Auto-play the new video
+            agentVideo.load(); 
+            agentVideo.play(); 
         }
 
         descArea.style.opacity = 1;
     }, 200);
 
-    // Reset auto-slide timer when user manually clicks
     if (resetTimer) {
         clearInterval(autoSlideInterval);
         startAutoSlide();
@@ -255,19 +238,15 @@ function startAutoSlide() {
     const agentVideo = document.getElementById('agent-video');
     if (!agentVideo) return;
 
-    // Remove any existing interval to prevent duplicates
     clearInterval(autoSlideInterval);
 
-    // Technique 1: Wait for video to end
     agentVideo.onended = () => {
         currentAgentIndex = (currentAgentIndex + 1) % agents.length;
         switchAgent(currentAgentIndex, false);
     };
 
-    // Technique 2: Safety fallback (if video fails to play or is extremely long)
-    // We'll reset a 15-second timer every time we switch, just in case.
     autoSlideInterval = setInterval(() => {
-        // Only trigger if video is paused/stopped (safeguard)
+
         if (agentVideo.paused || agentVideo.ended) {
             currentAgentIndex = (currentAgentIndex + 1) % agents.length;
             switchAgent(currentAgentIndex, false);
@@ -275,9 +254,8 @@ function startAutoSlide() {
     }, 15000);
 }
 
-// Reveal Animations (Intersection Observer)
 function initRevealAnimations() {
-    // For elements with .reveal class (used in index.html)
+
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -289,16 +267,15 @@ function initRevealAnimations() {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // For elements with .reveal-on-scroll class (used in product.html and careers.html)
     const scrollElements = document.querySelectorAll('.reveal-on-scroll');
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Determine which class to add based on existing classes or data attributes
+
                 if (entry.target.hasAttribute('data-reveal-class')) {
                     entry.target.classList.add(entry.target.getAttribute('data-reveal-class'));
                 } else if (entry.target.classList.contains('reveal-on-scroll')) {
-                    // Default to reveal-visible or animate-fade-in-up if specifically needed
+
                     if (window.location.pathname.includes('careers')) {
                         entry.target.classList.add('animate-fade-in-up');
                     } else {
@@ -313,7 +290,6 @@ function initRevealAnimations() {
     scrollElements.forEach(el => scrollObserver.observe(el));
 }
 
-// Contact Form Handler
 function initContactForm() {
     const contactForm = document.getElementById('contact-form');
     const successMessage = document.getElementById('success-message');
@@ -324,7 +300,6 @@ function initContactForm() {
         successMessage.classList.remove('hidden');
     });
 
-    // Handle reset if button exists
     const resetBtn = successMessage.querySelector('button');
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
@@ -334,7 +309,6 @@ function initContactForm() {
     }
 }
 
-// Onboarding Flow Handler (for partner.html)
 function initOnboardingFlow() {
     const section = document.getElementById('onboarding-section');
     const path = document.getElementById('onboarding-flow-path');
@@ -350,7 +324,6 @@ function initOnboardingFlow() {
         const sectionRect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        // Calculate progress based on scroll
         const start = windowHeight * 0.8;
         const end = windowHeight * 0.2;
         let progress = (start - sectionRect.top) / (start - end);
@@ -358,7 +331,6 @@ function initOnboardingFlow() {
 
         path.style.strokeDashoffset = pathLength * (1 - progress);
 
-        // Highlight steps
         steps.forEach((step, index) => {
             const stepThreshold = (index + 0.5) / steps.length;
             if (progress >= stepThreshold) {
@@ -370,10 +342,9 @@ function initOnboardingFlow() {
     }
 
     window.addEventListener('scroll', updateFlow);
-    updateFlow(); // Initial check
+    updateFlow(); 
 }
 
-// Initialize everything on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     initStars();
     initMobileMenu();
@@ -381,7 +352,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initOnboardingFlow();
 
-    // Initialize Agent Capabilities if they exist
     if (document.querySelector('.agent-tab')) {
         switchAgent(0, false);
         startAutoSlide();
