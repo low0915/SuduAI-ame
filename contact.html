@@ -40,8 +40,10 @@
     <!-- Main Content -->
     <main class="flex-grow pt-40 pb-20 px-6 bg-[#FCFAF2]">
         <!-- Glow Effect -->
+        <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none"></div>
         <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-sudu-sec/10 rounded-full blur-[120px] -z-10 opacity-50 pointer-events-none mix-blend-screen">
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-sudu-sec/10 rounded-full blur-[120px] opacity-50 mix-blend-screen">
+        </div>
         </div>
 
         <div class="max-w-6xl mx-auto">
@@ -63,46 +65,37 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up delay-100">
-                <!-- Phone Card -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up delay-100 max-w-4xl mx-auto">
+                <!-- Contact Us Card -->
                 <div
                     class="bg-white p-8 rounded-xl group hover:border-sudu-sec/30 border border-gray-100 transition-all duration-300 shadow-sm hover:shadow-md">
                     <div class="flex items-center gap-4 mb-6">
                         <div
                             class="w-12 h-12 rounded-2xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec group-hover:scale-110 transition-transform">
-                            <i data-lucide="phone" class="w-6 h-6"></i>
+                            <i data-lucide="message-square" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-[#06390C]">Phone</h3>
+                        <h3 class="text-xl font-bold text-[#06390C]">Contact Us</h3>
                     </div>
-                    <div class="space-y-2 mb-8">
-                        <p class="text-[#06390C] text-base font-semibold">Main Office: <a href="tel:+60390559389"
-                                class="hover:text-sudu-sec transition-colors">+603 9055 9389</a></p>
-                        <p class="text-[#06390C] text-base font-semibold">Mobile: <a href="tel:+60108760154"
-                                class="hover:text-sudu-sec transition-colors">+60 10-876 0154</a></p>
+                    <div class="space-y-3 mb-8">
+                        <p class="text-[#06390C] text-base font-semibold flex items-center gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-sudu-sec"></i>
+                            <a href="tel:+60390559389" class="hover:text-sudu-sec transition-colors">+603 9055 9389</a>
+                        </p>
+                        <p class="text-[#06390C] text-base font-semibold flex items-center gap-3">
+                            <i data-lucide="smartphone" class="w-4 h-4 text-sudu-sec"></i>
+                            <a href="tel:+60108760154" class="hover:text-sudu-sec transition-colors">+6010 876 0154</a>
+                        </p>
+                        <p class="text-[#06390C] text-base font-semibold flex items-center gap-3">
+                            <i data-lucide="mail" class="w-4 h-4 text-sudu-sec"></i>
+                            <a href="mailto:hi@aserious.co"
+                                class="hover:text-sudu-sec transition-colors">hi@aserious.co</a>
+                        </p>
                     </div>
                     <a href="https://wa.me/60108760154" target="_blank"
                         class="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#128C7E] text-white text-base font-bold rounded-xl transition-all w-full justify-center">
                         <i data-lucide="message-circle" class="w-4 h-4"></i>
                         WhatsApp Now
                     </a>
-                </div>
-
-                <!-- Email Card -->
-                <div
-                    class="bg-white p-8 rounded-xl group hover:border-sudu-sec/30 border border-gray-100 transition-all duration-300 shadow-sm hover:shadow-md">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="w-12 h-12 rounded-2xl bg-sudu-sec/10 flex items-center justify-center text-sudu-sec group-hover:scale-110 transition-transform">
-                            <i data-lucide="mail" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#06390C]">Email</h3>
-                    </div>
-                    <div class="space-y-2">
-                        <p class="text-[#06390C] text-base font-semibold">General: <a href="mailto:hi@aserious.co"
-                                class="hover:text-sudu-sec transition-colors">hi@aserious.co</a></p>
-                        <p class="text-[#06390C] text-base font-semibold">Support: <a href="mailto:support@aserious.co"
-                                class="hover:text-sudu-sec transition-colors">support@aserious.co</a></p>
-                    </div>
                 </div>
 
                 <!-- Office Card -->
@@ -148,68 +141,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/5 bg-[#02221F] pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16">
-            <div class="col-span-1 sm:col-span-2 md:col-span-3 space-y-8 md:space-y-12 md:pl-8">
-                <div class="flex flex-col gap-1 items-center md:items-start">
-                    <a href="index.html" class="block">
-                        <img src="assets/images/logo-white.png" alt="SuDu AI" class="h-6 w-auto">
-                    </a>
-                </div>
-
-                <div class="flex flex-col gap-6 items-center md:items-start">
-                    <div class="flex items-center gap-4 text-gray-400">
-                        <div class="w-5 flex justify-center"><i data-lucide="phone" class="w-5 h-5"></i></div>
-                        <span class="text-sm">+603 9055 9389</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-gray-400">
-                        <div class="w-5 flex justify-center"><i data-lucide="mail" class="w-5 h-5"></i></div>
-                        <span class="text-sm">hi@aserious.co</span>
-                    </div>
-                    <div class="flex items-start gap-4 text-gray-400">
-                        <div class="w-5 pt-1 flex justify-center"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
-                        <div class="text-sm leading-relaxed">
-                            A Serious Sdn. Bhd.<br>6-1, Jalan Radin Bagus 1,<br>Sri Petaling, 57000 Kuala<br>Lumpur,
-                            Malaysia
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center md:text-left md:pl-8">
-                <h4 class="text-white font-semibold mb-6 md:mb-8 text-base">Support</h4>
-                <ul class="flex flex-col gap-4 text-sm text-gray-400">
-                    <li><a href="product.html" class="hover:text-white transition-colors">Product</a></li>
-                    <li><a href="pricing.html" class="hover:text-white transition-colors">Pricing</a></li>
-                    <li><a href="partner.html" class="hover:text-white transition-colors">Partner</a></li>
-                    <li><a href="index.html#user-guide" class="hover:text-white transition-colors">User Guide</a></li>
-                    <li><a href="careers.html" class="hover:text-white transition-colors">Career</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/5">
-            <div class="flex flex-col md:flex-row justify-between items-center md:items-end gap-8">
-                <div class="text-[10px] text-gray-500 space-y-1 order-2 md:order-1 text-center md:text-left">
-                    <p>© A Serious AI Sdn. Bhd. [ 202301046091 ]</p>
-                    <p>All Rights Reserved 2024</p>
-                </div>
-
-                <div
-                    class="flex flex-wrap justify-center md:justify-end items-center gap-x-4 sm:gap-x-8 gap-y-4 text-[10px] text-gray-500 order-1 md:order-2 w-full md:w-auto">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Cancellation Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms & Conditions</a>
-                    <a href="#"
-                        class="bg-white p-1 rounded-sm text-[#011916] hover:bg-gray-200 transition-colors md:ml-4">
-                        <i data-lucide="linkedin" class="w-3 h-3"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
 
 </body>
 

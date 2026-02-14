@@ -27,6 +27,16 @@ async function injectComponent(containerId, filePath) {
                     link.classList.add('active-nav-link');
                 }
             });
+
+            // Re-initialize mobile menu after injection
+            if (typeof initMobileMenu === 'function') {
+                initMobileMenu();
+            }
+        }
+
+        // Re-initialize stars if footer/whatever contains them or just to be safe
+        if (typeof initStars === 'function') {
+            initStars();
         }
     } catch (error) {
         console.error('Error injecting component:', error);

@@ -46,36 +46,48 @@ function initMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     if (!mobileMenuBtn || !mobileMenu) return;
 
+    // Remove existing listeners by cloning the button (simple way to clear listeners)
+    const newBtn = mobileMenuBtn.cloneNode(true);
+    mobileMenuBtn.parentNode.replaceChild(newBtn, mobileMenuBtn);
+
     let isMenuOpen = false;
 
-    mobileMenuBtn.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
+    const toggleMenu = (show) => {
+        isMenuOpen = show;
         if (isMenuOpen) {
             mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
             mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+            newBtn.classList.add('opacity-50');
         } else {
             mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
             mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+            newBtn.classList.remove('opacity-50');
         }
+    };
+
+    newBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu(!isMenuOpen);
     });
 
     // Close menu when clicking on a link
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-            isMenuOpen = false;
-            mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-            mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+            toggleMenu(false);
         });
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-            isMenuOpen = false;
-            mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
-            mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+        if (isMenuOpen && !mobileMenu.contains(e.target) && !newBtn.contains(e.target)) {
+            toggleMenu(false);
         }
+    });
+
+    // Prevent clicks inside menu from closing it via the document listener
+    mobileMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
     });
 }
 

@@ -1,5 +1,16 @@
 /* SuDu AI - Main Stylesheet */
 
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
 body {
     background-color: white;
     color: #b4bcd0;
